@@ -2,6 +2,7 @@
   "name": "loaders",
   "version": "1.0.0",
   "author": "Griffin Johnston",
+  "license": "MIT",
   "description": "React CSS and SVG loaders by UI Ball",
   "main": "dist/index.js",
   "module": "dist/index.js",
