@@ -1,0 +1,70 @@
+.container {
+  --dur: 2.75s;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--uib-size);
+  width: var(--uib-size);
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--uib-color);
+    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%, 0% 50%);
+    animation: transmogrify var(--dur) ease infinite,
+      rotate calc(var(--dur) / 3) ease infinite;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: var(--uib-color);
+    border-radius: 50%;
+    animation: circleUp var(--dur) ease infinite;
+  }
+}
+
+@keyframes transmogrify {
+  0%,
+  100% {
+    clip-path: polygon(10% 10%, 90% 10%, 90% 90%, 10% 90%, 10% 90%);
+  }
+
+  33.333% {
+    clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
+  }
+
+  66.666% {
+    clip-path: polygon(30% 30%, 70% 30%, 70% 70%, 30% 70%, 30% 70%);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes circleUp {
+  0%,
+  33.333%,
+  100% {
+    transform: scale(0.5);
+  }
+
+  66.666% {
+    transform: scale(1);
+  }
+}

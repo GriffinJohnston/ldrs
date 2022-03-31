@@ -1,0 +1,41 @@
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--uib-line-weight);
+  width: var(--uib-size);
+  border-radius: calc(var(--uib-line-weight) / 2);
+  animation: rotate 2s 0.45s linear infinite;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    height: 100%;
+    width: 40%;
+    border-radius: calc(var(--uib-line-weight) / 2);
+    animation: wobble 2s ease-in-out infinite;
+    transform: translateX(-120%);
+    background-color: var(--uib-color);
+  }
+}
+
+@keyframes wobble {
+  0%,
+  100% {
+    transform: translateX(-120%);
+  }
+  50% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: translateY(calc(var(--uib-size) * -0.25)) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(calc(var(--uib-size) * -0.25)) rotate(360deg);
+  }
+}

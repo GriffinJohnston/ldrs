@@ -1,0 +1,23 @@
+{
+  "assumptions": {
+    "iterableIsArray": true
+  },
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        "shippedProposals": true,
+        "targets": {
+          "browsers": [">0.25%", "not dead"]
+        }
+      }
+    ],
+    [
+      "@babel/preset-react",
+      {
+        "useBuiltIns": true,
+        "runtime": "automatic"
+      }
+    ]
+  ]
+}
