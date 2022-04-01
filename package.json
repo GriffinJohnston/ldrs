@@ -1,9 +1,9 @@
 {
   "name": "@uiball/loaders",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "author": "Griffin Johnston",
   "license": "MIT",
-  "description": "CSS and SVG loaders for React. By UI Ball",
+  "description": "Tree-shakeable CSS and SVG loaders for React by UI Ball",
   "keywords": [
     "react",
     "react.js",
@@ -29,7 +29,7 @@
     "url": "https://github.com/GriffinJohnston/uiball-loaders/issues"
   },
   "scripts": {
-    "build": "npx rollup -c rollup.config.js",
+    "build": "rm -r dist && npx rollup -c rollup.config.js",
     "dev": "npx rollup -c rollup.config.js -w",
     "start": "npm run dev"
   },
@@ -38,26 +38,26 @@
     "@babel/plugin-transform-runtime": "^7.17.0",
     "@babel/preset-env": "^7.16.11",
     "@babel/preset-react": "^7.16.7",
-    "@rollup/plugin-commonjs": "21.0.2",
+    "@rollup/plugin-commonjs": "21.0.3",
     "@rollup/plugin-node-resolve": "^13.1.3",
-    "eslint": "^8.11.0",
+    "eslint": "^8.12.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-react": "^7.29.4",
     "postcss": "^8.4.12",
-    "prettier": "2.6.0",
+    "prettier": "2.6.1",
     "rollup": "^2.70.1",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-multi-input": "^1.3.1",
     "rollup-plugin-node-externals": "^4.0.0",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
-    "sass": "^1.49.9"
+    "sass": "^1.49.10"
   },
   "dependencies": {
     "prop-types": "^15.8.1"
   },
   "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   }
 }
