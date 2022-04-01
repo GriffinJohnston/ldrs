@@ -1,10 +1,9 @@
 .container {
-  --dur: 1s;
   position: relative;
   display: inline-block;
   height: var(--uib-size);
   width: var(--uib-size);
-  animation: spin 2.5s infinite linear;
+  animation: spin calc(var(--uib-duration) * 2.5) infinite linear;
   transform-origin: 50% 60%;
 }
 
@@ -34,8 +33,8 @@
     &::after {
       top: initial;
       bottom: 0;
-      animation: wobble1 var(--dur) infinite ease-in-out;
-      animation-delay: 0.3s;
+      animation: wobble1 var(--uib-duration) infinite ease-in-out;
+      animation-delay: calc(var(--uib-duration) * 0.3);
     }
   }
 
@@ -48,8 +47,8 @@
     &::after {
       top: initial;
       bottom: 0;
-      animation: wobble1 var(--dur) infinite ease-in-out;
-      animation-delay: 0.15s;
+      animation: wobble1 var(--uib-duration) infinite ease-in-out;
+      animation-delay: calc(var(--uib-duration) * 0.15);
     }
   }
 
@@ -58,7 +57,7 @@
     transform: translateX(116.6666%);
 
     &::after {
-      animation: wobble2 var(--dur) infinite ease-in-out;
+      animation: wobble2 var(--uib-duration) infinite ease-in-out;
     }
   }
 }

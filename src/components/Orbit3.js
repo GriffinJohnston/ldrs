@@ -1,28 +1,24 @@
 import PropTypes from 'prop-types'
-import styles from './RaceBy.module.scss'
+import styles from './Orbit3.module.scss'
 
-export default function RaceBy({
-  size = 80,
-  color = 'black',
-  lineWeight = 5,
-  duration = 1.4,
-}) {
+export default function Orbit3({ size = 45, color = 'black', duration = 1.4 }) {
   return (
     <div
       className={styles.container}
       style={{
         '--uib-size': size + 'px',
         '--uib-color': color,
-        '--uib-line-weight': lineWeight + 'px',
         '--uib-duration': duration + 's',
       }}
-    />
+    >
+      <div className={styles.electron} />
+      <div className={styles.electron} />
+    </div>
   )
 }
 
-RaceBy.propTypes = {
+Orbit3.propTypes = {
   size: PropTypes.number,
   color: PropTypes.string,
-  lineWeight: PropTypes.number,
   duration: PropTypes.number,
 }

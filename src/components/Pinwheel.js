@@ -5,6 +5,7 @@ export default function Pinwheel({
   size = 35,
   color = 'black',
   lineWeight = 3.5,
+  duration = 1,
 }) {
   return (
     <div
@@ -13,6 +14,7 @@ export default function Pinwheel({
         '--uib-size': size + 'px',
         '--uib-color': color,
         '--uib-line-weight': lineWeight + 'px',
+        '--uib-duration': duration + 's',
       }}
     >
       <div className={styles.line} />
@@ -29,4 +31,5 @@ Pinwheel.propTypes = {
   size: PropTypes.number,
   color: PropTypes.string,
   lineWeight: PropTypes.number,
+  duration: PropTypes.number,
 }

@@ -1,15 +1,25 @@
 {
   "name": "@uiball/loaders",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Griffin Johnston",
   "license": "MIT",
   "description": "CSS and SVG loaders for React. By UI Ball",
+  "keywords": [
+    "react",
+    "react.js",
+    "loaders",
+    "spinners"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.js",
   "sideEffects": false,
   "type": "module",
-  "files": ["dist"],
-  "browserslist": ["defaults"],
+  "files": [
+    "dist"
+  ],
+  "browserslist": [
+    "defaults"
+  ],
   "homepage": "https://uiball.com/loaders",
   "repository": {
     "type": "git",

@@ -28,17 +28,17 @@
   }
 
   &:nth-child(1) {
-    animation: leapFrog 2.25s ease infinite;
+    animation: leapFrog var(--uib-duration) ease infinite;
   }
 
   &:nth-child(2) {
     transform: translateX(calc(var(--uib-size) * 0.4));
-    animation: leapFrog2 2.25s ease infinite;
+    animation: leapFrog2 var(--uib-duration) ease infinite;
   }
 
   &:nth-child(3) {
     transform: translateX(calc(var(--uib-size) * 0.8)) rotate(0deg);
-    animation: leapFrog3 2.25s ease infinite;
+    animation: leapFrog3 var(--uib-duration) ease infinite;
   }
 }
 

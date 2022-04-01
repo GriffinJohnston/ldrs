@@ -13,12 +13,12 @@
     width: 100%;
     border-radius: 50%;
     background-color: var(--uib-color);
-    animation: pulse 1.5s ease-in-out infinite;
+    animation: pulse var(--uib-duration) ease-in-out infinite;
     transform: scale(0.45);
   }
 
   &::after {
-    animation-delay: 0.75s;
+    animation-delay: calc(var(--uib-duration) / 2);
   }
 }
 

@@ -1,5 +1,4 @@
 .container {
-  --dur: 0.9s;
   position: relative;
   display: flex;
   align-items: center;
@@ -33,7 +32,7 @@
     transform: rotate(45deg);
 
     &::before {
-      animation-delay: calc(var(--dur) * 0.125);
+      animation-delay: calc(var(--uib-duration) * 0.125);
     }
   }
 
@@ -41,7 +40,7 @@
     transform: rotate(90deg);
 
     &::before {
-      animation-delay: calc(var(--dur) * 0.25);
+      animation-delay: calc(var(--uib-duration) * 0.25);
     }
   }
 
@@ -49,7 +48,7 @@
     transform: rotate(135deg);
 
     &::before {
-      animation-delay: calc(var(--dur) * 0.375);
+      animation-delay: calc(var(--uib-duration) * 0.375);
     }
   }
 
@@ -57,7 +56,7 @@
     transform: rotate(180deg);
 
     &::before {
-      animation-delay: calc(var(--dur) * 0.5);
+      animation-delay: calc(var(--uib-duration) * 0.5);
     }
   }
 
@@ -65,7 +64,7 @@
     transform: rotate(225deg);
 
     &::before {
-      animation-delay: calc(var(--dur) * 0.625);
+      animation-delay: calc(var(--uib-duration) * 0.625);
     }
   }
 
@@ -73,7 +72,7 @@
     transform: rotate(270deg);
 
     &::before {
-      animation-delay: calc(var(--dur) * 0.75);
+      animation-delay: calc(var(--uib-duration) * 0.75);
     }
   }
 
@@ -81,7 +80,7 @@
     transform: rotate(315deg);
 
     &::before {
-      animation-delay: calc(var(--dur) * 0.875);
+      animation-delay: calc(var(--uib-duration) * 0.875);
     }
   }
 }

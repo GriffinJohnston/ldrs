@@ -1,5 +1,4 @@
 .container {
-  --dur: 2s;
   position: relative;
   height: var(--uib-size);
   width: var(--uib-size);
@@ -14,13 +13,13 @@
     width: 100%;
     border-radius: 50%;
     background-color: var(--uib-color);
-    animation: pulse var(--dur) linear infinite;
+    animation: pulse var(--uib-duration) linear infinite;
     transform: scale(0);
     opacity: 0;
   }
 
   &::after {
-    animation-delay: calc(var(--dur) * 0.25);
+    animation-delay: calc(var(--uib-duration) / 4);
   }
 }
 
@@ -35,17 +34,17 @@
     width: 100%;
     border-radius: 50%;
     background-color: var(--uib-color);
-    animation: pulse var(--dur) linear infinite;
+    animation: pulse var(--uib-duration) linear infinite;
     transform: scale(0);
     opacity: 0;
   }
 
   &::before {
-    animation-delay: calc(var(--dur) * 0.5);
+    animation-delay: calc(var(--uib-duration) * 0.5);
   }
 
   &::after {
-    animation-delay: calc(var(--dur) * 0.75);
+    animation-delay: calc(var(--uib-duration) * 0.75);
   }
 }
 

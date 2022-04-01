@@ -6,7 +6,8 @@
   height: var(--uib-line-weight);
   width: var(--uib-size);
   border-radius: calc(var(--uib-line-weight) / 2);
-  animation: rotate 2s 0.45s linear infinite;
+  animation: rotate var(--uib-duration) linear calc(var(--uib-duration) * 0.225)
+    infinite;
   overflow: hidden;
 
   &::before {
@@ -14,7 +15,7 @@
     height: 100%;
     width: 40%;
     border-radius: calc(var(--uib-line-weight) / 2);
-    animation: wobble 2s ease-in-out infinite;
+    animation: wobble var(--uib-duration) ease-in-out infinite;
     transform: translateX(-120%);
     background-color: var(--uib-color);
   }

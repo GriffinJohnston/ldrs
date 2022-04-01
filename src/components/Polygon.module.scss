@@ -1,5 +1,4 @@
 .container {
-  --dur: 2.75s;
   position: relative;
   display: flex;
   align-items: center;
@@ -16,8 +15,8 @@
     width: 100%;
     background-color: var(--uib-color);
     clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%, 0% 50%);
-    animation: transmogrify var(--dur) ease infinite,
-      rotate calc(var(--dur) / 3) ease infinite;
+    animation: transmogrify var(--uib-duration) ease infinite,
+      rotate calc(var(--uib-duration) / 3) ease infinite;
   }
 
   &::after {
@@ -29,7 +28,7 @@
     width: 100%;
     background-color: var(--uib-color);
     border-radius: 50%;
-    animation: circleUp var(--dur) ease infinite;
+    animation: circleUp var(--uib-duration) ease infinite;
   }
 }
 

@@ -1,11 +1,10 @@
 import PropTypes from 'prop-types'
-import styles from './RaceBy.module.scss'
+import styles from './DotPulse.module.scss'
 
-export default function RaceBy({
-  size = 80,
+export default function DotPulse({
+  size = 40,
   color = 'black',
-  lineWeight = 5,
-  duration = 1.4,
+  duration = 1.3,
 }) {
   return (
     <div
@@ -13,16 +12,16 @@ export default function RaceBy({
       style={{
         '--uib-size': size + 'px',
         '--uib-color': color,
-        '--uib-line-weight': lineWeight + 'px',
         '--uib-duration': duration + 's',
       }}
-    />
+    >
+      <div className={styles.dot} />
+    </div>
   )
 }
 
-RaceBy.propTypes = {
+DotPulse.propTypes = {
   size: PropTypes.number,
   color: PropTypes.string,
-  lineWeight: PropTypes.number,
   duration: PropTypes.number,
 }

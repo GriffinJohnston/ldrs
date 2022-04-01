@@ -24,7 +24,7 @@
     height: 100%;
     width: 100%;
     border-radius: calc(var(--uib-line-weight) / 2);
-    animation: wobble 1.75s ease-in-out infinite;
+    animation: wobble var(--uib-duration) ease-in-out infinite;
     transform: translateX(-95%);
     background-color: var(--uib-color);
   }

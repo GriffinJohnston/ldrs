@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types'
 import styles from './Ring.module.scss'
 
-export default function Ring({ size = 40, color = 'black', lineWeight = 5 }) {
+export default function Ring({
+  size = 40,
+  color = 'black',
+  lineWeight = 5,
+  duration = 2,
+}) {
   return (
     <svg
       className={styles.container}
@@ -10,6 +15,7 @@ export default function Ring({ size = 40, color = 'black', lineWeight = 5 }) {
       style={{
         '--uib-size': size + 'px',
         '--uib-color': color,
+        '--uib-duration': duration + 's',
       }}
     >
       <circle cx="50" cy="50" r="20" />
@@ -21,4 +27,5 @@ Ring.propTypes = {
   size: PropTypes.number,
   color: PropTypes.string,
   lineWeight: PropTypes.number,
+  duration: PropTypes.number,
 }

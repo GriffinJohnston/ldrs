@@ -1,7 +1,12 @@
 import PropTypes from 'prop-types'
-import styles from './Hop.module.scss'
+import styles from './Handsprings.module.scss'
 
-export default function Hop({ size = 80, color = 'black', lineWeight = 5 }) {
+export default function Handsprings({
+  size = 80,
+  color = 'black',
+  lineWeight = 5,
+  duration = 2,
+}) {
   return (
     <div
       className={styles.container}
@@ -9,13 +14,15 @@ export default function Hop({ size = 80, color = 'black', lineWeight = 5 }) {
         '--uib-size': size + 'px',
         '--uib-color': color,
         '--uib-line-weight': lineWeight + 'px',
+        '--uib-duration': duration + 's',
       }}
     />
   )
 }
 
-Hop.propTypes = {
+Handsprings.propTypes = {
   size: PropTypes.number,
   color: PropTypes.string,
   lineWeight: PropTypes.number,
+  duration: PropTypes.number,
 }

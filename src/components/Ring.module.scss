@@ -2,7 +2,7 @@
   height: var(--uib-size);
   width: var(--uib-size);
   transform-origin: center;
-  animation: rotate 2s linear infinite;
+  animation: rotate var(--uib-duration) linear infinite;
 
   circle {
     fill: none;
@@ -10,7 +10,7 @@
     stroke-dasharray: 1, 200;
     stroke-dashoffset: 0;
     stroke-linecap: round;
-    animation: stretch 1.5s ease-in-out infinite;
+    animation: stretch calc(var(--uib-duration) * 0.75) ease-in-out infinite;
   }
 }
 

@@ -19,11 +19,11 @@
   }
 
   &::before {
-    animation: orbit 1.5s linear infinite;
+    animation: orbit var(--uib-duration) linear infinite;
   }
 
   &::after {
-    animation: orbit2 1.5s linear infinite;
+    animation: orbit2 var(--uib-duration) linear infinite;
   }
 }
 

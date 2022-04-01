@@ -1,10 +1,11 @@
 import PropTypes from 'prop-types'
-import styles from './Pinwheel2.module.scss'
+import styles from './MrMiyagi.module.scss'
 
-export default function Pinwheel2({
+export default function MrMiyagi({
   size = 35,
   color = 'black',
   lineWeight = 3.5,
+  duration = 1,
 }) {
   return (
     <div
@@ -13,6 +14,7 @@ export default function Pinwheel2({
         '--uib-size': size + 'px',
         '--uib-color': color,
         '--uib-line-weight': lineWeight + 'px',
+        '--uib-duration': duration + 's',
       }}
     >
       <div className={styles.line} />
@@ -25,8 +27,9 @@ export default function Pinwheel2({
   )
 }
 
-Pinwheel2.propTypes = {
+MrMiyagi.propTypes = {
   size: PropTypes.number,
   color: PropTypes.string,
   lineWeight: PropTypes.number,
+  duration: PropTypes.number,
 }

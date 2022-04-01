@@ -1,5 +1,4 @@
 .container {
-  --dur: 1.4s;
   position: relative;
   display: flex;
   align-items: center;
@@ -26,10 +25,10 @@
   }
 
   &:first-child {
-    animation: swing var(--dur) linear infinite;
+    animation: swing var(--uib-duration) linear infinite;
   }
   &:last-child {
-    animation: swing2 var(--dur) linear infinite;
+    animation: swing2 var(--uib-duration) linear infinite;
   }
 }
 
