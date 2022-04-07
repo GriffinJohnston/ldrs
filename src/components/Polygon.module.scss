@@ -5,31 +5,28 @@
   justify-content: center;
   height: var(--uib-size);
   width: var(--uib-size);
+}
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: var(--uib-color);
-    clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%, 0% 50%);
-    animation: transmogrify var(--uib-duration) ease infinite,
-      rotate calc(var(--uib-duration) / 3) ease infinite;
-  }
+.container::before,
+.container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--uib-color);
+}
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: var(--uib-color);
-    border-radius: 50%;
-    animation: circleUp var(--uib-duration) ease infinite;
-  }
+.container::before {
+  clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%, 0% 50%);
+  animation: transmogrify var(--uib-duration) ease infinite,
+    rotate calc(var(--uib-duration) / 3) ease infinite;
+}
+
+.container::after {
+  border-radius: 50%;
+  animation: circleUp var(--uib-duration) ease infinite;
 }
 
 @keyframes transmogrify {

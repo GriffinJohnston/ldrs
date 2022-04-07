@@ -16,27 +16,31 @@
   border-radius: calc(var(--uib-line-weight) / 2);
   background-color: var(--uib-color);
   animation: rotate var(--uib-duration) ease-in-out infinite;
+}
 
-  &:nth-child(2) {
-    animation-delay: calc(var(--uib-duration) * 0.075);
-    opacity: 0.8;
-  }
-  &:nth-child(3) {
-    animation-delay: calc(var(--uib-duration) * 0.15);
-    opacity: 0.6;
-  }
-  &:nth-child(4) {
-    animation-delay: calc(var(--uib-duration) * 0.225);
-    opacity: 0.4;
-  }
-  &:nth-child(5) {
-    animation-delay: calc(var(--uib-duration) * 0.3);
-    opacity: 0.2;
-  }
-  &:nth-child(6) {
-    animation-delay: calc(var(--uib-duration) * 0.375);
-    opacity: 0.1;
-  }
+.line:nth-child(2) {
+  animation-delay: calc(var(--uib-duration) * 0.075);
+  opacity: 0.8;
+}
+
+.line:nth-child(3) {
+  animation-delay: calc(var(--uib-duration) * 0.15);
+  opacity: 0.6;
+}
+
+.line:nth-child(4) {
+  animation-delay: calc(var(--uib-duration) * 0.225);
+  opacity: 0.4;
+}
+
+.line:nth-child(5) {
+  animation-delay: calc(var(--uib-duration) * 0.3);
+  opacity: 0.2;
+}
+
+.line:nth-child(6) {
+  animation-delay: calc(var(--uib-duration) * 0.375);
+  opacity: 0.1;
 }
 
 @keyframes rotate {

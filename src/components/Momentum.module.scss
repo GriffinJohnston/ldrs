@@ -6,37 +6,27 @@
   height: var(--uib-size);
   width: var(--uib-size);
   animation: rotate var(--uib-duration) linear infinite;
-
-  &::before,
-  &::after {
-    content: '';
-    height: 25%;
-    width: 25%;
-    border-radius: 50%;
-    background-color: var(--uib-color);
-  }
-
-  &::before {
-    animation: wobble2 calc(var(--uib-duration) * 1.25) ease-in-out infinite;
-  }
-
-  &::after {
-    animation: wobble calc(var(--uib-duration) * 1.25) ease-in-out infinite;
-  }
-
-  &::before {
-    margin-right: 10%;
-  }
 }
 
-.dot {
-  position: absolute;
-  z-index: 1;
-  height: 10px;
-  width: 10px;
+.container::before,
+.container::after {
+  content: '';
+  height: 25%;
+  width: 25%;
   border-radius: 50%;
   background-color: var(--uib-color);
-  filter: blur(2px) contrast(120%);
+}
+
+.container::before {
+  animation: wobble2 calc(var(--uib-duration) * 1.25) ease-in-out infinite;
+}
+
+.container::after {
+  animation: wobble calc(var(--uib-duration) * 1.25) ease-in-out infinite;
+}
+
+.container::before {
+  margin-right: 10%;
 }
 
 @keyframes wobble {

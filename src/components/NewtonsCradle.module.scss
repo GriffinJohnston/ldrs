@@ -14,22 +14,23 @@
   height: 100%;
   width: 25%;
   transform-origin: center top;
+}
 
-  &::after {
-    content: '';
-    display: block;
-    width: 100%;
-    height: 25%;
-    border-radius: 50%;
-    background-color: var(--uib-color);
-  }
+.dot::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 25%;
+  border-radius: 50%;
+  background-color: var(--uib-color);
+}
 
-  &:first-child {
-    animation: swing var(--uib-duration) linear infinite;
-  }
-  &:last-child {
-    animation: swing2 var(--uib-duration) linear infinite;
-  }
+.dot:first-child {
+  animation: swing var(--uib-duration) linear infinite;
+}
+
+.dot:last-child {
+  animation: swing2 var(--uib-duration) linear infinite;
 }
 
 @keyframes swing {

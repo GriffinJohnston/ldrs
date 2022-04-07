@@ -17,41 +17,45 @@
   height: 100%;
   width: 100%;
   animation: swing var(--uib-duration) linear infinite;
+}
 
-  &::before {
-    content: '';
-    height: 25%;
-    width: 25%;
-    border-radius: 50%;
-    background-color: var(--uib-color);
-  }
+.dot::before {
+  content: '';
+  height: 25%;
+  width: 25%;
+  border-radius: 50%;
+  background-color: var(--uib-color);
+}
 
-  &:nth-child(2) {
-    animation-delay: calc(var(--uib-duration) * 0.08);
-    opacity: 0.8;
+.dot:nth-child(1) {
+  animation-delay: calc(var(--uib-duration) * -0.36);
+}
 
-    &::before {
-      transform: scale(0.9);
-    }
-  }
+.dot:nth-child(2) {
+  animation-delay: calc(var(--uib-duration) * -0.27);
+  opacity: 0.8;
+}
 
-  &:nth-child(3) {
-    animation-delay: calc(var(--uib-duration) * 0.16);
-    opacity: 0.6;
+.dot:nth-child(2)::before {
+  transform: scale(0.9);
+}
 
-    &::before {
-      transform: scale(0.8);
-    }
-  }
+.dot:nth-child(3) {
+  animation-delay: calc(var(--uib-duration) * -0.18);
+  opacity: 0.6;
+}
 
-  &:nth-child(4) {
-    animation-delay: calc(var(--uib-duration) * 0.24);
-    opacity: 0.4;
+.dot:nth-child(3)::before {
+  transform: scale(0.8);
+}
 
-    &::before {
-      transform: scale(0.7);
-    }
-  }
+.dot:nth-child(4) {
+  animation-delay: calc(var(--uib-duration) * -0.09);
+  opacity: 0.4;
+}
+
+.dot:nth-child(4)::before {
+  transform: scale(0.7);
 }
 
 @keyframes swing {

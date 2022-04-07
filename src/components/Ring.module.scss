@@ -1,17 +1,18 @@
 .container {
   height: var(--uib-size);
   width: var(--uib-size);
+  vertical-align: middle;
   transform-origin: center;
   animation: rotate var(--uib-duration) linear infinite;
+}
 
-  circle {
-    fill: none;
-    stroke: var(--uib-color);
-    stroke-dasharray: 1, 200;
-    stroke-dashoffset: 0;
-    stroke-linecap: round;
-    animation: stretch calc(var(--uib-duration) * 0.75) ease-in-out infinite;
-  }
+.container circle {
+  fill: none;
+  stroke: var(--uib-color);
+  stroke-dasharray: 1, 200;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: stretch calc(var(--uib-duration) * 0.75) ease-in-out infinite;
 }
 
 @keyframes rotate {

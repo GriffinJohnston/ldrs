@@ -7,27 +7,28 @@
   width: var(--uib-size);
   border-radius: calc(var(--uib-line-weight) / 2);
   overflow: hidden;
+  transform: translate3d(0, 0, 0);
+}
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-color: var(--uib-color);
-    opacity: 0.1;
-  }
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: var(--uib-color);
+  opacity: 0.1;
+}
 
-  &::after {
-    content: '';
-    height: 100%;
-    width: 100%;
-    border-radius: calc(var(--uib-line-weight) / 2);
-    animation: wobble var(--uib-duration) ease-in-out infinite;
-    transform: translateX(-95%);
-    background-color: var(--uib-color);
-  }
+.container::after {
+  content: '';
+  height: 100%;
+  width: 100%;
+  border-radius: calc(var(--uib-line-weight) / 2);
+  animation: wobble var(--uib-duration) ease-in-out infinite;
+  transform: translateX(-95%);
+  background-color: var(--uib-color);
 }
 
 @keyframes wobble {

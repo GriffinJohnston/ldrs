@@ -2,25 +2,25 @@
   position: relative;
   height: var(--uib-size);
   width: var(--uib-size);
+}
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    border-radius: 50%;
-    background-color: var(--uib-color);
-    animation: pulse var(--uib-duration) linear infinite;
-    transform: scale(0);
-    opacity: 0;
-  }
+.container::before,
+.container::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  background-color: var(--uib-color);
+  animation: pulse var(--uib-duration) linear infinite;
+  transform: scale(0);
+  opacity: 0;
+}
 
-  &::after {
-    animation-delay: calc(var(--uib-duration) / 2);
-  }
+.container::after {
+  animation-delay: calc(var(--uib-duration) / -2);
 }
 
 @keyframes pulse {

@@ -5,32 +5,32 @@
   justify-content: space-between;
   width: var(--uib-size);
   height: var(--uib-size);
+}
 
-  .dot,
-  &::before,
-  &::after {
-    content: '';
-    display: block;
-    height: calc(var(--uib-size) * 0.18);
-    width: calc(var(--uib-size) * 0.18);
-    border-radius: 50%;
-    background-color: var(--uib-color);
-    transform: scale(0);
-  }
+.dot,
+.container::before,
+.container::after {
+  content: '';
+  display: block;
+  height: calc(var(--uib-size) * 0.18);
+  width: calc(var(--uib-size) * 0.18);
+  border-radius: 50%;
+  background-color: var(--uib-color);
+  transform: scale(0);
+}
 
-  &::before {
-    animation: pulse var(--uib-duration) ease-in-out infinite;
-  }
+.container::before {
+  animation: pulse var(--uib-duration) ease-in-out infinite;
+}
 
-  .dot {
-    animation: pulse var(--uib-duration) ease-in-out
-      calc(var(--uib-duration) * 0.125) infinite both;
-  }
+.dot {
+  animation: pulse var(--uib-duration) ease-in-out
+    calc(var(--uib-duration) * 0.125) infinite both;
+}
 
-  &::after {
-    animation: pulse var(--uib-duration) ease-in-out
-      calc(var(--uib-duration) * 0.25) infinite;
-  }
+.container::after {
+  animation: pulse var(--uib-duration) ease-in-out
+    calc(var(--uib-duration) * 0.25) infinite;
 }
 
 @keyframes pulse {

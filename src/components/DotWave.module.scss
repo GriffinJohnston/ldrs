@@ -5,33 +5,35 @@
   justify-content: space-between;
   width: var(--uib-size);
   height: var(--uib-size);
+  padding-top: calc(var(--uib-size) * 0.34);
 }
 
 .dot {
-  width: 18%;
-  height: 18%;
+  flex-shrink: 0;
+  width: calc(var(--uib-size) * 0.17);
+  height: calc(var(--uib-size) * 0.17);
   border-radius: 50%;
   background-color: var(--uib-color);
   will-change: transform;
+}
 
-  &:nth-of-type(1) {
-    animation: jump var(--uib-duration) ease-in-out
-      calc(var(--uib-duration) * -0.45) infinite;
-  }
+.dot:nth-of-type(1) {
+  animation: jump var(--uib-duration) ease-in-out
+    calc(var(--uib-duration) * -0.45) infinite;
+}
 
-  &:nth-of-type(2) {
-    animation: jump var(--uib-duration) ease-in-out
-      calc(var(--uib-duration) * -0.3) infinite;
-  }
+.dot:nth-of-type(2) {
+  animation: jump var(--uib-duration) ease-in-out
+    calc(var(--uib-duration) * -0.3) infinite;
+}
 
-  &:nth-of-type(3) {
-    animation: jump var(--uib-duration) ease-in-out
-      calc(var(--uib-duration) * -0.15) infinite;
-  }
+.dot:nth-of-type(3) {
+  animation: jump var(--uib-duration) ease-in-out
+    calc(var(--uib-duration) * -0.15) infinite;
+}
 
-  &:nth-of-type(4) {
-    animation: jump var(--uib-duration) ease-in-out infinite;
-  }
+.dot:nth-of-type(4) {
+  animation: jump var(--uib-duration) ease-in-out infinite;
 }
 
 @keyframes jump {

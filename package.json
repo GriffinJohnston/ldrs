@@ -1,14 +1,24 @@
 {
   "name": "@uiball/loaders",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "author": "Griffin Johnston",
   "license": "MIT",
   "description": "Tree-shakeable CSS and SVG loaders for React by UI Ball",
   "keywords": [
     "react",
+    "react-component",
     "react.js",
     "loaders",
-    "spinners"
+    "spinners",
+    "loading",
+    "icon",
+    "waiting",
+    "react loaders",
+    "react loading",
+    "react loading gif",
+    "react loading indicator",
+    "react spinners",
+    "uiball"
   ],
   "main": "dist/index.js",
   "module": "dist/index.js",
