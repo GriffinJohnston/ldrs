@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: space-between;
   width: var(--uib-size);
-  height: var(--uib-size);
+  height: calc(var(--uib-size) * 0.27);
 }
 
 .dot,

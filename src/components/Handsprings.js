@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import styles from './Handsprings.module.scss'
 
 export default function Handsprings({
-  size = 80,
+  size = 37,
   color = 'black',
   lineWeight = 5,
   duration = 2,

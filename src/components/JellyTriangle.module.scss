@@ -1,0 +1,81 @@
+.container {
+  position: relative;
+  height: var(--uib-size);
+  width: var(--uib-size);
+  filter: url('#ooze');
+}
+
+.container::before,
+.container::after,
+.dot {
+  content: '';
+  position: absolute;
+  width: 32%;
+  height: 32%;
+  background: var(--uib-color);
+  border-radius: 100%;
+}
+
+.dot {
+  top: 6%;
+  left: 30%;
+  animation: grow var(--uib-duration) ease infinite;
+}
+
+.container::before {
+  bottom: 6%;
+  right: 0;
+  animation: grow var(--uib-duration) ease calc(var(--uib-duration) * -0.666)
+    infinite;
+}
+
+.container::after {
+  bottom: 6%;
+  left: 0;
+  animation: grow var(--uib-duration) ease calc(var(--uib-duration) * -0.333)
+    infinite;
+}
+
+.traveler {
+  position: absolute;
+  top: 6%;
+  left: 30%;
+  width: 32%;
+  height: 32%;
+  background: var(--uib-color);
+  border-radius: 100%;
+  animation: triangulate var(--uib-duration) ease infinite;
+}
+
+.svg {
+  width: 0;
+  height: 0;
+  position: absolute;
+}
+
+@keyframes triangulate {
+  0%,
+  100% {
+    transform: none;
+  }
+
+  33.333% {
+    transform: translate(120%, 175%);
+  }
+
+  66.666% {
+    transform: translate(-95%, 175%);
+  }
+}
+
+@keyframes grow {
+  0%,
+  100% {
+    transform: scale(1.5);
+  }
+
+  20%,
+  70% {
+    transform: none;
+  }
+}

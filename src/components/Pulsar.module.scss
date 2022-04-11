@@ -15,7 +15,7 @@
   border-radius: 50%;
   background-color: var(--uib-color);
   animation: pulse var(--uib-duration) ease-in-out infinite;
-  transform: scale(0.45);
+  transform: scale(0);
 }
 
 .container::after {
@@ -25,7 +25,7 @@
 @keyframes pulse {
   0%,
   100% {
-    transform: scale(0.45);
+    transform: scale(0);
     opacity: 1;
   }
   50% {

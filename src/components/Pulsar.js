@@ -1,7 +1,11 @@
 import PropTypes from 'prop-types'
 import styles from './Pulsar.module.scss'
 
-export default function Pulsar({ size = 40, color = 'black', duration = 1.5 }) {
+export default function Pulsar({
+  size = 40,
+  color = 'black',
+  duration = 1.75,
+}) {
   return (
     <div
       className={styles.container}
