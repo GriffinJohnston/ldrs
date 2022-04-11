@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import styles from './Jelly.module.scss'
 
-export default function Jelly({ size = 80, color = 'black', duration = 0.9 }) {
+export default function Jelly({ size = 80, color = 'black', speed = 0.9 }) {
   return (
     <>
       <div
@@ -9,7 +9,7 @@ export default function Jelly({ size = 80, color = 'black', duration = 0.9 }) {
         style={{
           '--uib-size': size + 'px',
           '--uib-color': color,
-          '--uib-duration': duration + 's',
+          '--uib-speed': speed + 's',
         }}
       />
 
@@ -38,5 +38,5 @@ export default function Jelly({ size = 80, color = 'black', duration = 0.9 }) {
 Jelly.propTypes = {
   size: PropTypes.number,
   color: PropTypes.string,
-  duration: PropTypes.number,
+  speed: PropTypes.number,
 }

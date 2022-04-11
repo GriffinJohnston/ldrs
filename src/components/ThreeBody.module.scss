@@ -3,7 +3,7 @@
   display: inline-block;
   height: var(--uib-size);
   width: var(--uib-size);
-  animation: spin calc(var(--uib-duration) * 2.5) infinite linear;
+  animation: spin calc(var(--uib-speed) * 2.5) infinite linear;
 }
 
 .dot {
@@ -32,8 +32,8 @@
 .dot:nth-child(1)::after {
   bottom: 0;
   left: 0;
-  animation: wobble1 var(--uib-duration) infinite ease-in-out;
-  animation-delay: calc(var(--uib-duration) * -0.3);
+  animation: wobble1 var(--uib-speed) infinite ease-in-out;
+  animation-delay: calc(var(--uib-speed) * -0.3);
 }
 
 .dot:nth-child(2) {
@@ -46,8 +46,8 @@
 .dot:nth-child(2)::after {
   bottom: 0;
   left: 0;
-  animation: wobble1 var(--uib-duration) infinite
-    calc(var(--uib-duration) * -0.15) ease-in-out;
+  animation: wobble1 var(--uib-speed) infinite calc(var(--uib-speed) * -0.15)
+    ease-in-out;
 }
 
 .dot:nth-child(3) {
@@ -59,7 +59,7 @@
 .dot:nth-child(3)::after {
   top: 0;
   left: 0;
-  animation: wobble2 var(--uib-duration) infinite ease-in-out;
+  animation: wobble2 var(--uib-speed) infinite ease-in-out;
 }
 
 @keyframes spin {

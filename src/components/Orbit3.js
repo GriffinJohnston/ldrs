@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types'
 import styles from './Orbit3.module.scss'
 
-export default function Orbit3({ size = 45, color = 'black', duration = 1.4 }) {
+export default function Orbit3({ size = 45, color = 'black', speed = 1.4 }) {
   return (
     <div
       className={styles.container}
       style={{
         '--uib-size': size + 'px',
         '--uib-color': color,
-        '--uib-duration': duration + 's',
+        '--uib-speed': speed + 's',
       }}
     >
       <div className={styles.electron} />
@@ -20,5 +20,5 @@ export default function Orbit3({ size = 45, color = 'black', duration = 1.4 }) {
 Orbit3.propTypes = {
   size: PropTypes.number,
   color: PropTypes.string,
-  duration: PropTypes.number,
+  speed: PropTypes.number,
 }

@@ -5,7 +5,7 @@ export default function Handsprings({
   size = 37,
   color = 'black',
   lineWeight = 5,
-  duration = 2,
+  speed = 2,
 }) {
   return (
     <div
@@ -14,7 +14,7 @@ export default function Handsprings({
         '--uib-size': size + 'px',
         '--uib-color': color,
         '--uib-line-weight': lineWeight + 'px',
-        '--uib-duration': duration + 's',
+        '--uib-speed': speed + 's',
       }}
     />
   )
@@ -24,5 +24,5 @@ Handsprings.propTypes = {
   size: PropTypes.number,
   color: PropTypes.string,
   lineWeight: PropTypes.number,
-  duration: PropTypes.number,
+  speed: PropTypes.number,
 }

@@ -4,7 +4,7 @@ import styles from './NewtonsCradle.module.scss'
 export default function NewtonsCradle({
   size = 40,
   color = 'black',
-  duration = 1.4,
+  speed = 1.4,
 }) {
   return (
     <div
@@ -12,7 +12,7 @@ export default function NewtonsCradle({
       style={{
         '--uib-size': size + 'px',
         '--uib-color': color,
-        '--uib-duration': duration + 's',
+        '--uib-speed': speed + 's',
       }}
     >
       <div className={styles.dot} />
@@ -26,5 +26,5 @@ export default function NewtonsCradle({
 NewtonsCradle.propTypes = {
   size: PropTypes.number,
   color: PropTypes.string,
-  duration: PropTypes.number,
+  speed: PropTypes.number,
 }

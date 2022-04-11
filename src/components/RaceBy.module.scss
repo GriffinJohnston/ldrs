@@ -26,7 +26,7 @@
   height: 100%;
   width: 100%;
   border-radius: calc(var(--uib-line-weight) / 2);
-  animation: raceBy var(--uib-duration) ease-in-out infinite;
+  animation: raceBy var(--uib-speed) ease-in-out infinite;
   transform: translateX(-100%);
   background-color: var(--uib-color);
 }

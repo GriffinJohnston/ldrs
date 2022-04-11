@@ -12,7 +12,7 @@
   height: 25%;
   width: 25%;
   border-radius: 50%;
-  animation: wobble var(--uib-duration) ease-in-out infinite;
+  animation: wobble var(--uib-speed) ease-in-out infinite;
   transform: translate(0, calc(var(--uib-size) * -0.4));
   background-color: var(--uib-color);
 }

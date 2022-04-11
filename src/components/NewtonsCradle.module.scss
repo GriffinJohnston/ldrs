@@ -26,11 +26,11 @@
 }
 
 .dot:first-child {
-  animation: swing var(--uib-duration) linear infinite;
+  animation: swing var(--uib-speed) linear infinite;
 }
 
 .dot:last-child {
-  animation: swing2 var(--uib-duration) linear infinite;
+  animation: swing2 var(--uib-speed) linear infinite;
 }
 
 @keyframes swing {

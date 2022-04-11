@@ -20,12 +20,11 @@
 }
 
 .container::before {
-  animation: orbit var(--uib-duration) linear infinite;
+  animation: orbit var(--uib-speed) linear infinite;
 }
 
 .container::after {
-  animation: orbit var(--uib-duration) linear calc(var(--uib-duration) / -2)
-    infinite;
+  animation: orbit var(--uib-speed) linear calc(var(--uib-speed) / -2) infinite;
 }
 
 @keyframes orbit {

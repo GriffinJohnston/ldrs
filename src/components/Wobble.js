@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types'
 import styles from './Wobble.module.scss'
 
-export default function Wobble({ size = 45, color = 'black', duration = 0.9 }) {
+export default function Wobble({ size = 45, color = 'black', speed = 0.9 }) {
   return (
     <div
       className={styles.container}
       style={{
         '--uib-size': size + 'px',
         '--uib-color': color,
-        '--uib-duration': duration + 's',
+        '--uib-speed': speed + 's',
       }}
     />
   )
@@ -17,5 +17,5 @@ export default function Wobble({ size = 45, color = 'black', duration = 0.9 }) {
 Wobble.propTypes = {
   size: PropTypes.number,
   color: PropTypes.string,
-  duration: PropTypes.number,
+  speed: PropTypes.number,
 }

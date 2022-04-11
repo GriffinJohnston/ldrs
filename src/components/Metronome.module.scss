@@ -16,7 +16,7 @@
   justify-content: flex-start;
   height: 100%;
   width: 100%;
-  animation: swing var(--uib-duration) linear infinite;
+  animation: swing var(--uib-speed) linear infinite;
 }
 
 .dot::before {
@@ -28,11 +28,11 @@
 }
 
 .dot:nth-child(1) {
-  animation-delay: calc(var(--uib-duration) * -0.36);
+  animation-delay: calc(var(--uib-speed) * -0.36);
 }
 
 .dot:nth-child(2) {
-  animation-delay: calc(var(--uib-duration) * -0.27);
+  animation-delay: calc(var(--uib-speed) * -0.27);
   opacity: 0.8;
 }
 
@@ -41,7 +41,7 @@
 }
 
 .dot:nth-child(3) {
-  animation-delay: calc(var(--uib-duration) * -0.18);
+  animation-delay: calc(var(--uib-speed) * -0.18);
   opacity: 0.6;
 }
 
@@ -50,7 +50,7 @@
 }
 
 .dot:nth-child(4) {
-  animation-delay: calc(var(--uib-duration) * -0.09);
+  animation-delay: calc(var(--uib-speed) * -0.09);
   opacity: 0.4;
 }
 

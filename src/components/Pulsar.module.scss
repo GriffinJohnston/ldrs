@@ -14,12 +14,12 @@
   width: 100%;
   border-radius: 50%;
   background-color: var(--uib-color);
-  animation: pulse var(--uib-duration) ease-in-out infinite;
+  animation: pulse var(--uib-speed) ease-in-out infinite;
   transform: scale(0);
 }
 
 .container::after {
-  animation-delay: calc(var(--uib-duration) / -2);
+  animation-delay: calc(var(--uib-speed) / -2);
 }
 
 @keyframes pulse {

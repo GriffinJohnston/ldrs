@@ -5,7 +5,7 @@
   justify-content: center;
   height: var(--uib-size);
   width: var(--uib-size);
-  animation: rotate var(--uib-duration) linear infinite;
+  animation: rotate var(--uib-speed) linear infinite;
 }
 
 .container::before,
@@ -18,11 +18,11 @@
 }
 
 .container::before {
-  animation: wobble2 calc(var(--uib-duration) * 1.25) ease-in-out infinite;
+  animation: wobble2 calc(var(--uib-speed) * 1.25) ease-in-out infinite;
 }
 
 .container::after {
-  animation: wobble calc(var(--uib-duration) * 1.25) ease-in-out infinite;
+  animation: wobble calc(var(--uib-speed) * 1.25) ease-in-out infinite;
 }
 
 .container::before {

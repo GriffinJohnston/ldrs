@@ -5,7 +5,7 @@ export default function Waveform({
   size = 40,
   color = 'black',
   lineWeight = 3.5,
-  duration = 1,
+  speed = 1,
 }) {
   return (
     <div
@@ -14,7 +14,7 @@ export default function Waveform({
         '--uib-size': size + 'px',
         '--uib-color': color,
         '--uib-line-weight': lineWeight + 'px',
-        '--uib-duration': duration + 's',
+        '--uib-speed': speed + 's',
       }}
     >
       <div className={styles.bar} />
@@ -29,5 +29,5 @@ Waveform.propTypes = {
   size: PropTypes.number,
   color: PropTypes.string,
   lineWeight: PropTypes.number,
-  duration: PropTypes.number,
+  speed: PropTypes.number,
 }

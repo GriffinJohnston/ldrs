@@ -5,7 +5,7 @@
   justify-content: center;
   height: var(--uib-size);
   width: var(--uib-size);
-  animation: rotate calc(var(--uib-duration) * 1.667) infinite linear;
+  animation: rotate calc(var(--uib-speed) * 1.667) infinite linear;
 }
 
 .container::before,
@@ -21,12 +21,11 @@
 }
 
 .container::before {
-  animation: orbit var(--uib-duration) linear infinite;
+  animation: orbit var(--uib-speed) linear infinite;
 }
 
 .container::after {
-  animation: orbit var(--uib-duration) linear calc(var(--uib-duration) / -2)
-    infinite;
+  animation: orbit var(--uib-speed) linear calc(var(--uib-speed) / -2) infinite;
 }
 
 @keyframes rotate {

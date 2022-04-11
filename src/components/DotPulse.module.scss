@@ -20,17 +20,17 @@
 }
 
 .container::before {
-  animation: pulse var(--uib-duration) ease-in-out infinite;
+  animation: pulse var(--uib-speed) ease-in-out infinite;
 }
 
 .dot {
-  animation: pulse var(--uib-duration) ease-in-out
-    calc(var(--uib-duration) * 0.125) infinite both;
+  animation: pulse var(--uib-speed) ease-in-out calc(var(--uib-speed) * 0.125)
+    infinite both;
 }
 
 .container::after {
-  animation: pulse var(--uib-duration) ease-in-out
-    calc(var(--uib-duration) * 0.25) infinite;
+  animation: pulse var(--uib-speed) ease-in-out calc(var(--uib-speed) * 0.25)
+    infinite;
 }
 
 @keyframes pulse {

@@ -4,7 +4,7 @@ import styles from './JellyTriangle.module.scss'
 export default function JellyTriangle({
   size = 60,
   color = 'black',
-  duration = 1.75,
+  speed = 1.75,
 }) {
   return (
     <>
@@ -13,7 +13,7 @@ export default function JellyTriangle({
         style={{
           '--uib-size': size + 'px',
           '--uib-color': color,
-          '--uib-duration': duration + 's',
+          '--uib-speed': speed + 's',
         }}
       >
         <div className={styles.dot} />
@@ -45,5 +45,5 @@ export default function JellyTriangle({
 JellyTriangle.propTypes = {
   size: PropTypes.number,
   color: PropTypes.string,
-  duration: PropTypes.number,
+  speed: PropTypes.number,
 }

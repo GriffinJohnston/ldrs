@@ -5,7 +5,7 @@ export default function LineWobble({
   size = 80,
   color = 'black',
   lineWeight = 5,
-  duration = 1.75,
+  speed = 1.75,
 }) {
   return (
     <div
@@ -14,7 +14,7 @@ export default function LineWobble({
         '--uib-size': size + 'px',
         '--uib-color': color,
         '--uib-line-weight': lineWeight + 'px',
-        '--uib-duration': duration + 's',
+        '--uib-speed': speed + 's',
       }}
     />
   )
@@ -24,5 +24,5 @@ LineWobble.propTypes = {
   size: PropTypes.number,
   color: PropTypes.string,
   lineWeight: PropTypes.number,
-  duration: PropTypes.number,
+  speed: PropTypes.number,
 }

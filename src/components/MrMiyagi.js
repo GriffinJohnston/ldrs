@@ -5,7 +5,7 @@ export default function MrMiyagi({
   size = 35,
   color = 'black',
   lineWeight = 3.5,
-  duration = 1,
+  speed = 1,
 }) {
   return (
     <div
@@ -14,7 +14,7 @@ export default function MrMiyagi({
         '--uib-size': size + 'px',
         '--uib-color': color,
         '--uib-line-weight': lineWeight + 'px',
-        '--uib-duration': duration + 's',
+        '--uib-speed': speed + 's',
       }}
     >
       <div className={styles.line} />
@@ -31,5 +31,5 @@ MrMiyagi.propTypes = {
   size: PropTypes.number,
   color: PropTypes.string,
   lineWeight: PropTypes.number,
-  duration: PropTypes.number,
+  speed: PropTypes.number,
 }

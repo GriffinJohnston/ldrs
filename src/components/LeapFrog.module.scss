@@ -29,19 +29,18 @@
 }
 
 .dot:nth-child(1) {
-  animation: leapFrog var(--uib-duration) ease infinite;
+  animation: leapFrog var(--uib-speed) ease infinite;
 }
 
 .dot:nth-child(2) {
   transform: translateX(calc(var(--uib-size) * 0.4));
-  animation: leapFrog var(--uib-duration) ease calc(var(--uib-duration) / -1.5)
+  animation: leapFrog var(--uib-speed) ease calc(var(--uib-speed) / -1.5)
     infinite;
 }
 
 .dot:nth-child(3) {
   transform: translateX(calc(var(--uib-size) * 0.8)) rotate(0deg);
-  animation: leapFrog var(--uib-duration) ease calc(var(--uib-duration) / -3)
-    infinite;
+  animation: leapFrog var(--uib-speed) ease calc(var(--uib-speed) / -3) infinite;
 }
 
 @keyframes leapFrog {

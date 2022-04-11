@@ -4,7 +4,7 @@ import styles from './DotSpinner.module.scss'
 export default function DotSpinner({
   size = 40,
   color = 'black',
-  duration = 0.9,
+  speed = 0.9,
 }) {
   return (
     <div
@@ -12,7 +12,7 @@ export default function DotSpinner({
       style={{
         '--uib-size': size + 'px',
         '--uib-color': color,
-        '--uib-duration': duration + 's',
+        '--uib-speed': speed + 's',
       }}
     >
       <div className={styles.dot} />
@@ -30,5 +30,5 @@ export default function DotSpinner({
 DotSpinner.propTypes = {
   size: PropTypes.number,
   color: PropTypes.string,
-  duration: PropTypes.number,
+  speed: PropTypes.number,
 }

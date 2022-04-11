@@ -3,7 +3,7 @@
   height: calc(var(--uib-size) / 2);
   width: var(--uib-size);
   filter: url('#ooze');
-  animation: rotate calc(var(--uib-duration) * 2) linear infinite;
+  animation: rotate calc(var(--uib-speed) * 2) linear infinite;
 }
 
 .container::before,
@@ -19,11 +19,11 @@
 }
 
 .container::before {
-  animation: shift-left var(--uib-duration) ease infinite;
+  animation: shift-left var(--uib-speed) ease infinite;
 }
 
 .container::after {
-  animation: shift-right var(--uib-duration) ease infinite;
+  animation: shift-right var(--uib-speed) ease infinite;
 }
 
 .svg {

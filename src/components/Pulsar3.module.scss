@@ -16,21 +16,21 @@
   width: 100%;
   border-radius: 50%;
   background-color: var(--uib-color);
-  animation: pulse var(--uib-duration) linear infinite;
+  animation: pulse var(--uib-speed) linear infinite;
   transform: scale(0);
   opacity: 0;
 }
 
 .container::after {
-  animation-delay: calc(var(--uib-duration) / -4);
+  animation-delay: calc(var(--uib-speed) / -4);
 }
 
 .dot::before {
-  animation-delay: calc(var(--uib-duration) * -0.5);
+  animation-delay: calc(var(--uib-speed) * -0.5);
 }
 
 .dot::after {
-  animation-delay: calc(var(--uib-duration) * -0.75);
+  animation-delay: calc(var(--uib-speed) * -0.75);
 }
 
 @keyframes pulse {

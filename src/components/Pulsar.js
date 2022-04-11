@@ -1,18 +1,14 @@
 import PropTypes from 'prop-types'
 import styles from './Pulsar.module.scss'
 
-export default function Pulsar({
-  size = 40,
-  color = 'black',
-  duration = 1.75,
-}) {
+export default function Pulsar({ size = 40, color = 'black', speed = 1.75 }) {
   return (
     <div
       className={styles.container}
       style={{
         '--uib-size': size + 'px',
         '--uib-color': color,
-        '--uib-duration': duration + 's',
+        '--uib-speed': speed + 's',
       }}
     />
   )
@@ -21,5 +17,5 @@ export default function Pulsar({
 Pulsar.propTypes = {
   size: PropTypes.number,
   color: PropTypes.string,
-  duration: PropTypes.number,
+  speed: PropTypes.number,
 }

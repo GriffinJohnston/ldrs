@@ -1,18 +1,14 @@
 import PropTypes from 'prop-types'
 import styles from './ThreeBody.module.scss'
 
-export default function ThreeBody({
-  size = 35,
-  color = 'black',
-  duration = 1.1,
-}) {
+export default function ThreeBody({ size = 35, color = 'black', speed = 1.1 }) {
   return (
     <div
       className={styles.container}
       style={{
         '--uib-size': size + 'px',
         '--uib-color': color,
-        '--uib-duration': duration + 's',
+        '--uib-speed': speed + 's',
       }}
     >
       <div className={styles.dot} />
@@ -25,5 +21,5 @@ export default function ThreeBody({
 ThreeBody.propTypes = {
   size: PropTypes.number,
   color: PropTypes.string,
-  duration: PropTypes.number,
+  speed: PropTypes.number,
 }

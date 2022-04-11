@@ -19,21 +19,19 @@
 .dot {
   top: 6%;
   left: 30%;
-  animation: grow var(--uib-duration) ease infinite;
+  animation: grow var(--uib-speed) ease infinite;
 }
 
 .container::before {
   bottom: 6%;
   right: 0;
-  animation: grow var(--uib-duration) ease calc(var(--uib-duration) * -0.666)
-    infinite;
+  animation: grow var(--uib-speed) ease calc(var(--uib-speed) * -0.666) infinite;
 }
 
 .container::after {
   bottom: 6%;
   left: 0;
-  animation: grow var(--uib-duration) ease calc(var(--uib-duration) * -0.333)
-    infinite;
+  animation: grow var(--uib-speed) ease calc(var(--uib-speed) * -0.333) infinite;
 }
 
 .traveler {
@@ -44,7 +42,7 @@
   height: 32%;
   background: var(--uib-color);
   border-radius: 100%;
-  animation: triangulate var(--uib-duration) ease infinite;
+  animation: triangulate var(--uib-speed) ease infinite;
 }
 
 .svg {

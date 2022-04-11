@@ -33,7 +33,7 @@
 }
 
 .electron:nth-child(1)::before {
-  animation: orbit var(--uib-duration) linear calc(var(--uib-duration) * -0.143)
+  animation: orbit var(--uib-speed) linear calc(var(--uib-speed) * -0.143)
     infinite;
 }
 
@@ -42,8 +42,7 @@
 }
 
 .electron:nth-child(2)::before {
-  animation: orbit var(--uib-duration) linear calc(var(--uib-duration) / -2)
-    infinite;
+  animation: orbit var(--uib-speed) linear calc(var(--uib-speed) / -2) infinite;
 }
 
 @keyframes orbit {

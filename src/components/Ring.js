@@ -5,7 +5,7 @@ export default function Ring({
   size = 40,
   color = 'black',
   lineWeight = 5,
-  duration = 2,
+  speed = 2,
 }) {
   return (
     <svg
@@ -14,7 +14,7 @@ export default function Ring({
       style={{
         '--uib-size': size + 'px',
         '--uib-color': color,
-        '--uib-duration': duration + 's',
+        '--uib-speed': speed + 's',
       }}
     >
       <circle cx="50" cy="50" r="20" strokeWidth={lineWeight} />
@@ -26,5 +26,5 @@ Ring.propTypes = {
   size: PropTypes.number,
   color: PropTypes.string,
   lineWeight: PropTypes.number,
-  duration: PropTypes.number,
+  speed: PropTypes.number,
 }
