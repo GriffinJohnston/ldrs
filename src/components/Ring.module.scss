@@ -4,6 +4,7 @@
   vertical-align: middle;
   transform-origin: center;
   animation: rotate var(--uib-speed) linear infinite;
+  will-change: transform;
 }
 
 .container circle {
@@ -13,6 +14,7 @@
   stroke-dashoffset: 0;
   stroke-linecap: round;
   animation: stretch calc(var(--uib-speed) * 0.75) ease-in-out infinite;
+  will-change: stroke-dasharray, stroke-dashoffset;
 }
 
 @keyframes rotate {

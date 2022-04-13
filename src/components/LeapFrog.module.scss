@@ -25,7 +25,6 @@
   width: calc(var(--uib-size) * 0.22);
   border-radius: 50%;
   background-color: var(--uib-color);
-  will-change: transform;
 }
 
 .dot:nth-child(1) {

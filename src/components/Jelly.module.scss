@@ -4,6 +4,7 @@
   width: var(--uib-size);
   filter: url('#ooze');
   animation: rotate calc(var(--uib-speed) * 2) linear infinite;
+  will-change: transform;
 }
 
 .container::before,
@@ -16,6 +17,7 @@
   height: 100%;
   background: var(--uib-color);
   border-radius: 100%;
+  will-change: transform;
 }
 
 .container::before {
