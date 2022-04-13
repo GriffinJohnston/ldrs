@@ -9,6 +9,8 @@ export default function Ring({
 }) {
   return (
     <svg
+      height={size}
+      width={size}
       className={styles.container}
       viewBox="25 25 50 50"
       style={{

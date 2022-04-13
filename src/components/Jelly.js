@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import styles from './Jelly.module.scss'
 
-export default function Jelly({ size = 80, color = 'black', speed = 0.9 }) {
+export default function Jelly({ size = 50, color = 'black', speed = 0.9 }) {
   return (
     <>
       <div
@@ -18,7 +18,7 @@ export default function Jelly({ size = 80, color = 'black', speed = 0.9 }) {
           <filter id="ooze">
             <feGaussianBlur
               in="SourceGraphic"
-              stdDeviation="10"
+              stdDeviation={size / 8}
               result="blur"
             />
             <feColorMatrix

@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import styles from './JellyTriangle.module.scss'
 
 export default function JellyTriangle({
-  size = 60,
+  size = 44,
   color = 'black',
   speed = 1.75,
 }) {
@@ -25,7 +25,7 @@ export default function JellyTriangle({
           <filter id="ooze">
             <feGaussianBlur
               in="SourceGraphic"
-              stdDeviation="10"
+              stdDeviation={size / 6}
               result="blur"
             />
             <feColorMatrix

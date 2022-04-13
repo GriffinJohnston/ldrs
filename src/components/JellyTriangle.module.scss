@@ -10,8 +10,8 @@
 .dot {
   content: '';
   position: absolute;
-  width: 32%;
-  height: 32%;
+  width: 33%;
+  height: 33%;
   background: var(--uib-color);
   border-radius: 100%;
 }
@@ -38,8 +38,8 @@
   position: absolute;
   top: 6%;
   left: 30%;
-  width: 32%;
-  height: 32%;
+  width: 33%;
+  height: 33%;
   background: var(--uib-color);
   border-radius: 100%;
   animation: triangulate var(--uib-speed) ease infinite;

@@ -57,7 +57,7 @@ _Each loader has different defaults. You can see them on [the website](https://u
 
 ### `size: number`
 
-This sets the size of the spinner. Specifically, it defines the largest dimension (height or width) in pixels.
+The size of the spinner. Specifically, this defines the largest dimension (height or width) in pixels.
 
 ```jsx
 <Ring size={35} />
@@ -65,7 +65,7 @@ This sets the size of the spinner. Specifically, it defines the largest dimensio
 
 ### `color: string`
 
-This sets the color of the loader. Any valid CSS color value is accepted, so `#000000`, `red`, `hsl(13, 68%, 63%)` and `var(--my-custom-color)` are all a-okay.
+The color of the loader. Any valid CSS color value is accepted, so `#000000`, `red`, `hsl(13, 68%, 63%)` and `var(--my-custom-color)` are all a-okay.
 
 ```jsx
 <Ring color="papayawhip" />
@@ -73,7 +73,7 @@ This sets the color of the loader. Any valid CSS color value is accepted, so `#0
 
 ### `speed: number`
 
-This sets the speed of the animation. Each loader uses this number a little differently (individual parts of a given loader might have different timing), but in general this number represents the duration of a single full animation loop in seconds, so smaller = faster.
+The speed of the animation. Each loader uses this number a little differently (individual parts of a given loader might have different timing), but in general this number represents the duration of a single full animation loop in seconds, so smaller = faster.
 
 ```jsx
 <Ring speed="1.75" />
@@ -81,7 +81,7 @@ This sets the speed of the animation. Each loader uses this number a little diff
 
 ### `lineWeight: number`
 
-This sets the width / stroke in pixels of line-based loaders like `<Waveform />` or `<RaceBy />`. You can see if an individual loader supports this property on [the website](https://uiball.com/loaders).
+The width / stroke in pixels of line-based loaders like `<Waveform />` or `<RaceBy />`. You can see if an individual loader supports this property on [the website](https://uiball.com/loaders).
 
 ```jsx
 <MrMiyagi lineWeight="3.5" />
