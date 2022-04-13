@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
-import styles from './Pulsar3.module.scss'
+import styles from './Ping.module.scss'
 
-export default function Pulsar3({ size = 45, color = 'black', speed = 2 }) {
+export default function Ping({ size = 45, color = 'black', speed = 2 }) {
   return (
     <div
       className={styles.container}
@@ -10,13 +10,11 @@ export default function Pulsar3({ size = 45, color = 'black', speed = 2 }) {
         '--uib-color': color,
         '--uib-speed': speed + 's',
       }}
-    >
-      <div className={styles.dot} />
-    </div>
+    />
   )
 }
 
-Pulsar3.propTypes = {
+Ping.propTypes = {
   size: PropTypes.number,
   color: PropTypes.string,
   speed: PropTypes.number,

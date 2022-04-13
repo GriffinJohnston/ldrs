@@ -1,7 +1,11 @@
 import PropTypes from 'prop-types'
-import styles from './Pulsar2.module.scss'
+import styles from './ChaoticOrbit.module.scss'
 
-export default function Pulsar2({ size = 45, color = 'black', speed = 2 }) {
+export default function ChaoticOrbit({
+  size = 25,
+  color = 'black',
+  speed = 1.5,
+}) {
   return (
     <div
       className={styles.container}
@@ -14,7 +18,7 @@ export default function Pulsar2({ size = 45, color = 'black', speed = 2 }) {
   )
 }
 
-Pulsar2.propTypes = {
+ChaoticOrbit.propTypes = {
   size: PropTypes.number,
   color: PropTypes.string,
   speed: PropTypes.number,

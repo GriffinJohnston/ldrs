@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
-import styles from './Orbit3.module.scss'
+import styles from './Ripples.module.scss'
 
-export default function Orbit3({ size = 45, color = 'black', speed = 1.4 }) {
+export default function Ripples({ size = 45, color = 'black', speed = 2 }) {
   return (
     <div
       className={styles.container}
@@ -11,13 +11,12 @@ export default function Orbit3({ size = 45, color = 'black', speed = 1.4 }) {
         '--uib-speed': speed + 's',
       }}
     >
-      <div className={styles.electron} />
-      <div className={styles.electron} />
+      <div className={styles.dot} />
     </div>
   )
 }
 
-Orbit3.propTypes = {
+Ripples.propTypes = {
   size: PropTypes.number,
   color: PropTypes.string,
   speed: PropTypes.number,

@@ -1,7 +1,11 @@
 import PropTypes from 'prop-types'
-import styles from './Orbit2.module.scss'
+import styles from './SuperBalls.module.scss'
 
-export default function Orbit2({ size = 25, color = 'black', speed = 1.5 }) {
+export default function SuperBalls({
+  size = 45,
+  color = 'black',
+  speed = 1.4,
+}) {
   return (
     <div
       className={styles.container}
@@ -10,11 +14,14 @@ export default function Orbit2({ size = 25, color = 'black', speed = 1.5 }) {
         '--uib-color': color,
         '--uib-speed': speed + 's',
       }}
-    />
+    >
+      <div className={styles.electron} />
+      <div className={styles.electron} />
+    </div>
   )
 }
 
-Orbit2.propTypes = {
+SuperBalls.propTypes = {
   size: PropTypes.number,
   color: PropTypes.string,
   speed: PropTypes.number,
