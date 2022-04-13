@@ -31,7 +31,7 @@ export default function JellyTriangle({
             <feColorMatrix
               in="blur"
               mode="matrix"
-              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 24 -7"
               result="ooze"
             />
             <feBlend in="SourceGraphic" in2="ooze" />

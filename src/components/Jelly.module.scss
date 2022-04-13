@@ -4,7 +4,6 @@
   width: var(--uib-size);
   filter: url('#ooze');
   animation: rotate calc(var(--uib-speed) * 2) linear infinite;
-  contain: strict;
 }
 
 .container::before,
