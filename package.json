@@ -1,6 +1,6 @@
 {
   "name": "@uiball/loaders",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "author": "Griffin Johnston",
   "license": "MIT",
   "description": "Tree-shakeable CSS and SVG loaders for React",
