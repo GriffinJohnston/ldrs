@@ -2,7 +2,7 @@
   position: relative;
   height: calc(var(--uib-size) / 2);
   width: var(--uib-size);
-  filter: url('#ooze');
+  filter: url('#uib-jelly-ooze');
   animation: rotate calc(var(--uib-speed) * 2) linear infinite;
   will-change: transform;
 }

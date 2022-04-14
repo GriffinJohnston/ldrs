@@ -15,7 +15,7 @@ export default function Jelly({ size = 50, color = 'black', speed = 0.9 }) {
 
       <svg width="0" height="0" className={styles.svg}>
         <defs>
-          <filter id="ooze">
+          <filter id="uib-jelly-ooze">
             <feGaussianBlur
               in="SourceGraphic"
               stdDeviation={size / 8}
