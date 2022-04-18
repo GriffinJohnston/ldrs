@@ -1,7 +1,11 @@
-import PropTypes from 'prop-types'
+import assert from '../lib/assert'
 import styles from './Jelly.module.scss'
 
 export default function Jelly({ size = 50, color = 'black', speed = 0.9 }) {
+  assert('Jelly', 'size', size, 'number')
+  assert('Jelly', 'color', color, 'string')
+  assert('Jelly', 'speed', speed, 'number')
+
   return (
     <>
       <div
@@ -33,10 +37,4 @@ export default function Jelly({ size = 50, color = 'black', speed = 0.9 }) {
       </svg>
     </>
   )
-}
-
-Jelly.propTypes = {
-  size: PropTypes.number,
-  color: PropTypes.string,
-  speed: PropTypes.number,
 }

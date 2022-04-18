@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import assert from '../lib/assert'
 import styles from './RaceBy.module.scss'
 
 export default function RaceBy({
@@ -7,6 +7,11 @@ export default function RaceBy({
   lineWeight = 5,
   speed = 1.4,
 }) {
+  assert('RaceBy', 'size', size, 'number')
+  assert('RaceBy', 'color', color, 'string')
+  assert('RaceBy', 'speed', speed, 'number')
+  assert('RaceBy', 'lineWeight', lineWeight, 'number')
+
   return (
     <div
       className={styles.container}
@@ -18,11 +23,4 @@ export default function RaceBy({
       }}
     />
   )
-}
-
-RaceBy.propTypes = {
-  size: PropTypes.number,
-  color: PropTypes.string,
-  lineWeight: PropTypes.number,
-  speed: PropTypes.number,
 }

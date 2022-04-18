@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import assert from '../lib/assert'
 import styles from './NewtonsCradle.module.scss'
 
 export default function NewtonsCradle({
@@ -6,6 +6,10 @@ export default function NewtonsCradle({
   color = 'black',
   speed = 1.4,
 }) {
+  assert('NewtonsCradle', 'size', size, 'number')
+  assert('NewtonsCradle', 'color', color, 'string')
+  assert('NewtonsCradle', 'speed', speed, 'number')
+
   return (
     <div
       className={styles.container}
@@ -21,10 +25,4 @@ export default function NewtonsCradle({
       <div className={styles.dot} />
     </div>
   )
-}
-
-NewtonsCradle.propTypes = {
-  size: PropTypes.number,
-  color: PropTypes.string,
-  speed: PropTypes.number,
 }

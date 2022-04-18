@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import assert from '../lib/assert'
 import styles from './ChaoticOrbit.module.scss'
 
 export default function ChaoticOrbit({
@@ -6,6 +6,10 @@ export default function ChaoticOrbit({
   color = 'black',
   speed = 1.5,
 }) {
+  assert('ChaoticOrbit', 'size', size, 'number')
+  assert('ChaoticOrbit', 'color', color, 'string')
+  assert('ChaoticOrbit', 'speed', speed, 'number')
+
   return (
     <div
       className={styles.container}
@@ -16,10 +20,4 @@ export default function ChaoticOrbit({
       }}
     />
   )
-}
-
-ChaoticOrbit.propTypes = {
-  size: PropTypes.number,
-  color: PropTypes.string,
-  speed: PropTypes.number,
 }

@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import assert from '../lib/assert'
 import styles from './Pinwheel.module.scss'
 
 export default function Pinwheel({
@@ -7,6 +7,11 @@ export default function Pinwheel({
   lineWeight = 3.5,
   speed = 1,
 }) {
+  assert('Pinwheel', 'size', size, 'number')
+  assert('Pinwheel', 'color', color, 'string')
+  assert('Pinwheel', 'speed', speed, 'number')
+  assert('Pinwheel', 'lineWeight', lineWeight, 'number')
+
   return (
     <div
       className={styles.container}
@@ -25,11 +30,4 @@ export default function Pinwheel({
       <div className={styles.line} />
     </div>
   )
-}
-
-Pinwheel.propTypes = {
-  size: PropTypes.number,
-  color: PropTypes.string,
-  lineWeight: PropTypes.number,
-  speed: PropTypes.number,
 }

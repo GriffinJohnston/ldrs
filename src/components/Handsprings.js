@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import assert from '../lib/assert'
 import styles from './Handsprings.module.scss'
 
 export default function Handsprings({
@@ -7,6 +7,11 @@ export default function Handsprings({
   lineWeight = 5,
   speed = 2,
 }) {
+  assert('Handsprings', 'size', size, 'number')
+  assert('Handsprings', 'color', color, 'string')
+  assert('Handsprings', 'lineWeight', lineWeight, 'number')
+  assert('Handsprings', 'speed', speed, 'number')
+
   return (
     <div
       className={styles.container}
@@ -18,11 +23,4 @@ export default function Handsprings({
       }}
     />
   )
-}
-
-Handsprings.propTypes = {
-  size: PropTypes.number,
-  color: PropTypes.string,
-  lineWeight: PropTypes.number,
-  speed: PropTypes.number,
 }

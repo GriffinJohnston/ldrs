@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import assert from '../lib/assert'
 import styles from './SuperBalls.module.scss'
 
 export default function SuperBalls({
@@ -6,6 +6,10 @@ export default function SuperBalls({
   color = 'black',
   speed = 1.4,
 }) {
+  assert('SuperBalls', 'size', size, 'number')
+  assert('SuperBalls', 'color', color, 'string')
+  assert('SuperBalls', 'speed', speed, 'number')
+
   return (
     <div
       className={styles.container}
@@ -19,10 +23,4 @@ export default function SuperBalls({
       <div className={styles.electron} />
     </div>
   )
-}
-
-SuperBalls.propTypes = {
-  size: PropTypes.number,
-  color: PropTypes.string,
-  speed: PropTypes.number,
 }

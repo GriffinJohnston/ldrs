@@ -10,8 +10,9 @@ Lightweight loaders & spinners for your next React project.
 
 - **24 Types 🎨** — Unique enough to be interesting; simple enough to use in real-world projects
 - **Customizable 🖌️** — Set the size, color, line weight and animation speed to match your design
-- **Tiny 🦐** — Individual loaders are ~1-1.5kb gzipped
-- **No images 📷** — Built with HTML and modern CSS. A couple loaders use lightweight SVG as well
+- **Tiny 🦐** — Individual loaders are < 1kb gzipped
+- **No gifs 📷** — Built with HTML and modern CSS. A couple loaders use lightweight SVG as well
+- **Zero dependencies ⛓️** — Zero worries.
 
 Visit the [🌐 Website](https://uiball.com/loaders) to see them all in action.
 
@@ -57,7 +58,7 @@ _Each loader has different defaults. You can see them on [the website](https://u
 
 ### `size: number`
 
-The size of the spinner. Specifically, this defines the largest dimension (height or width) in pixels.
+The size of the loader. Specifically, this defines the largest dimension (height or width) in pixels.
 
 ```jsx
 <Ring size={35} />
@@ -65,7 +66,7 @@ The size of the spinner. Specifically, this defines the largest dimension (heigh
 
 ### `color: string`
 
-The color of the loader. Any valid CSS color value is accepted, so `#000000`, `red`, `hsl(13, 68%, 63%)` and `var(--my-custom-color)` are all a-okay.
+Any valid CSS color value is accepted, so `#000000`, `red`, `hsl(13, 68%, 63%)` and `var(--my-custom-color)` are all a-okay.
 
 ```jsx
 <Ring color="papayawhip" />

@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import assert from '../lib/assert'
 import styles from './MrMiyagi.module.scss'
 
 export default function MrMiyagi({
@@ -7,6 +7,11 @@ export default function MrMiyagi({
   lineWeight = 3.5,
   speed = 1,
 }) {
+  assert('MrMiyagi', 'size', size, 'number')
+  assert('MrMiyagi', 'color', color, 'string')
+  assert('MrMiyagi', 'speed', speed, 'number')
+  assert('MrMiyagi', 'lineWeight', lineWeight, 'number')
+
   return (
     <div
       className={styles.container}
@@ -25,11 +30,4 @@ export default function MrMiyagi({
       <div className={styles.line} />
     </div>
   )
-}
-
-MrMiyagi.propTypes = {
-  size: PropTypes.number,
-  color: PropTypes.string,
-  lineWeight: PropTypes.number,
-  speed: PropTypes.number,
 }

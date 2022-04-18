@@ -62,9 +62,6 @@
     "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.49.10"
   },
-  "dependencies": {
-    "prop-types": "^15.8.1"
-  },
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"

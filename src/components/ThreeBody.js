@@ -1,7 +1,11 @@
-import PropTypes from 'prop-types'
+import assert from '../lib/assert'
 import styles from './ThreeBody.module.scss'
 
 export default function ThreeBody({ size = 35, color = 'black', speed = 1.1 }) {
+  assert('ThreeBody', 'size', size, 'number')
+  assert('ThreeBody', 'color', color, 'string')
+  assert('ThreeBody', 'speed', speed, 'number')
+
   return (
     <div
       className={styles.container}
@@ -16,10 +20,4 @@ export default function ThreeBody({ size = 35, color = 'black', speed = 1.1 }) {
       <div className={styles.dot} />
     </div>
   )
-}
-
-ThreeBody.propTypes = {
-  size: PropTypes.number,
-  color: PropTypes.string,
-  speed: PropTypes.number,
 }

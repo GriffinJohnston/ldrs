@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import assert from '../lib/assert'
 import styles from './LineWobble.module.scss'
 
 export default function LineWobble({
@@ -7,6 +7,11 @@ export default function LineWobble({
   lineWeight = 5,
   speed = 1.75,
 }) {
+  assert('LineWobble', 'size', size, 'number')
+  assert('LineWobble', 'color', color, 'string')
+  assert('LineWobble', 'speed', speed, 'number')
+  assert('LineWobble', 'lineWeight', lineWeight, 'number')
+
   return (
     <div
       className={styles.container}
@@ -18,11 +23,4 @@ export default function LineWobble({
       }}
     />
   )
-}
-
-LineWobble.propTypes = {
-  size: PropTypes.number,
-  color: PropTypes.string,
-  lineWeight: PropTypes.number,
-  speed: PropTypes.number,
 }

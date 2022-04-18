@@ -1,7 +1,11 @@
-import PropTypes from 'prop-types'
+import assert from '../lib/assert'
 import styles from './Metronome.module.scss'
 
 export default function Metronome({ size = 40, color = 'black', speed = 1.6 }) {
+  assert('Metronome', 'size', size, 'number')
+  assert('Metronome', 'color', color, 'string')
+  assert('Metronome', 'speed', speed, 'number')
+
   return (
     <div
       className={styles.container}
@@ -17,10 +21,4 @@ export default function Metronome({ size = 40, color = 'black', speed = 1.6 }) {
       <div className={styles.dot} />
     </div>
   )
-}
-
-Metronome.propTypes = {
-  size: PropTypes.number,
-  color: PropTypes.string,
-  speed: PropTypes.number,
 }

@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import assert from '../lib/assert'
 import styles from './Ring.module.scss'
 
 export default function Ring({
@@ -7,6 +7,11 @@ export default function Ring({
   lineWeight = 5,
   speed = 2,
 }) {
+  assert('Ring', 'size', size, 'number')
+  assert('Ring', 'color', color, 'string')
+  assert('Ring', 'lineWeight', lineWeight, 'number')
+  assert('Ring', 'speed', speed, 'number')
+
   return (
     <svg
       height={size}
@@ -22,11 +27,4 @@ export default function Ring({
       <circle cx="50" cy="50" r="20" strokeWidth={lineWeight} />
     </svg>
   )
-}
-
-Ring.propTypes = {
-  size: PropTypes.number,
-  color: PropTypes.string,
-  lineWeight: PropTypes.number,
-  speed: PropTypes.number,
 }

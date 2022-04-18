@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import assert from '../lib/assert'
 import styles from './DotSpinner.module.scss'
 
 export default function DotSpinner({
@@ -6,6 +6,10 @@ export default function DotSpinner({
   color = 'black',
   speed = 0.9,
 }) {
+  assert('DotSpinner', 'size', size, 'number')
+  assert('DotSpinner', 'color', color, 'string')
+  assert('DotSpinner', 'speed', speed, 'number')
+
   return (
     <div
       className={styles.container}
@@ -25,10 +29,4 @@ export default function DotSpinner({
       <div className={styles.dot} />
     </div>
   )
-}
-
-DotSpinner.propTypes = {
-  size: PropTypes.number,
-  color: PropTypes.string,
-  speed: PropTypes.number,
 }

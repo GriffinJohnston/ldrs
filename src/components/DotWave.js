@@ -1,7 +1,11 @@
-import PropTypes from 'prop-types'
+import assert from '../lib/assert'
 import styles from './DotWave.module.scss'
 
 export default function DotWave({ size = 47, color = 'black', speed = 1 }) {
+  assert('DotWave', 'size', size, 'number')
+  assert('DotWave', 'color', color, 'string')
+  assert('DotWave', 'speed', speed, 'number')
+
   return (
     <div
       className={styles.container}
@@ -17,10 +21,4 @@ export default function DotWave({ size = 47, color = 'black', speed = 1 }) {
       <div className={styles.dot} />
     </div>
   )
-}
-
-DotWave.propTypes = {
-  size: PropTypes.number,
-  color: PropTypes.string,
-  speed: PropTypes.number,
 }

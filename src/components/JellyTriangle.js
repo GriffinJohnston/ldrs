@@ -1,4 +1,4 @@
-import PropTypes from 'prop-types'
+import assert from '../lib/assert'
 import styles from './JellyTriangle.module.scss'
 
 export default function JellyTriangle({
@@ -6,6 +6,10 @@ export default function JellyTriangle({
   color = 'black',
   speed = 1.75,
 }) {
+  assert('JellyTriangle', 'size', size, 'number')
+  assert('JellyTriangle', 'color', color, 'string')
+  assert('JellyTriangle', 'speed', speed, 'number')
+
   return (
     <>
       <div
@@ -40,10 +44,4 @@ export default function JellyTriangle({
       </svg>
     </>
   )
-}
-
-JellyTriangle.propTypes = {
-  size: PropTypes.number,
-  color: PropTypes.string,
-  speed: PropTypes.number,
 }

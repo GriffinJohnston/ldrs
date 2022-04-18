@@ -1,7 +1,11 @@
-import PropTypes from 'prop-types'
+import assert from '../lib/assert'
 import styles from './DotPulse.module.scss'
 
 export default function DotPulse({ size = 40, color = 'black', speed = 1.3 }) {
+  assert('DotPulse', 'size', size, 'number')
+  assert('DotPulse', 'color', color, 'string')
+  assert('DotPulse', 'speed', speed, 'number')
+
   return (
     <div
       className={styles.container}
@@ -14,10 +18,4 @@ export default function DotPulse({ size = 40, color = 'black', speed = 1.3 }) {
       <div className={styles.dot} />
     </div>
   )
-}
-
-DotPulse.propTypes = {
-  size: PropTypes.number,
-  color: PropTypes.string,
-  speed: PropTypes.number,
 }
