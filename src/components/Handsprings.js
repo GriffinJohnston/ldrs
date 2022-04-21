@@ -3,10 +3,10 @@ import styles from './Handsprings.module.scss'
 
 /**
  * @typedef Props
- * @prop {number} size
- * @prop {string} color
- * @prop {number} speed
- * @prop {number} lineWeight
+ * @prop {number} [size]
+ * @prop {string} [color]
+ * @prop {number} [speed]
+ * @prop {number} [lineWeight]
  */
 
 /**
