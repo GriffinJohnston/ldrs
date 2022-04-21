@@ -94,6 +94,8 @@ This package only supports modern ESM import syntax, so no `require()`-ing.
 
 Next.js doesn't transpile imported modules by default, but you can add support with this package: https://www.npmjs.com/package/next-transpile-modules. More details can be found here: https://stackoverflow.com/a/65939797
 
+Lots of helpful detail from @sindresorhus: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
+
 Loaders make use of CSS custom properties (CSS variables) and keyframe animations, which work great in all modern browsers. Internet Explorer is not supported, however.
 
 ## License

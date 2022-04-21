@@ -1,3 +1,10 @@
+/**
+ * @param {string} componentName
+ * @param {string} propName
+ * @param {any} value
+ * @param {string} type
+ * @returns {void}
+ */
 export default function assert(componentName, propName, value, type) {
   const isValid = typeof value === type
 

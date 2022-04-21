@@ -1,6 +1,16 @@
 import assert from '../lib/assert'
 import styles from './DotSpinner.module.scss'
 
+/**
+ * @typedef Props
+ * @prop {number} size
+ * @prop {string} color
+ * @prop {number} speed
+ */
+
+/**
+ * @param {Props} props
+ */
 export default function DotSpinner({
   size = 40,
   color = 'black',

@@ -1,6 +1,17 @@
 import assert from '../lib/assert'
 import styles from './LineWobble.module.scss'
 
+/**
+ * @typedef Props
+ * @prop {number} size
+ * @prop {string} color
+ * @prop {number} speed
+ * @prop {number} lineWeight
+ */
+
+/**
+ * @param {Props} props
+ */
 export default function LineWobble({
   size = 80,
   color = 'black',

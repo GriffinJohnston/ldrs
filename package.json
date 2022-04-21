@@ -23,6 +23,7 @@
   "main": "dist/index.js",
   "module": "dist/index.js",
   "sideEffects": false,
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
@@ -38,7 +39,7 @@
     "url": "https://github.com/GriffinJohnston/uiball-loaders/issues"
   },
   "scripts": {
-    "build": "rm -r dist && npx rollup -c rollup.config.js",
+    "build": "rm -r dist && npx tsc && npx rollup -c rollup.config.js",
     "dev": "npx rollup -c rollup.config.js -w",
     "start": "npm run dev"
   },
@@ -60,7 +61,8 @@
     "rollup-plugin-node-externals": "^4.0.0",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
-    "sass": "^1.49.10"
+    "sass": "^1.49.10",
+    "typescript": "^4.6.3"
   },
   "peerDependencies": {
     "react": ">=16.8.0",

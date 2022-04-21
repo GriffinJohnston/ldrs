@@ -24,6 +24,7 @@ export default [
       postcss({
         modules: true,
         external: false,
+        minimize: true,
       }),
       babel({
         exclude: ['node_modules/**'],

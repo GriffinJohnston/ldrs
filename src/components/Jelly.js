@@ -1,6 +1,16 @@
 import assert from '../lib/assert'
 import styles from './Jelly.module.scss'
 
+/**
+ * @typedef Props
+ * @prop {number} size
+ * @prop {string} color
+ * @prop {number} speed
+ */
+
+/**
+ * @param {Props} props
+ */
 export default function Jelly({ size = 50, color = 'black', speed = 0.9 }) {
   assert('Jelly', 'size', size, 'number')
   assert('Jelly', 'color', color, 'string')

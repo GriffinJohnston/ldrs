@@ -1,6 +1,17 @@
 import assert from '../lib/assert'
 import styles from './MrMiyagi.module.scss'
 
+/**
+ * @typedef Props
+ * @prop {number} size
+ * @prop {string} color
+ * @prop {number} speed
+ * @prop {number} lineWeight
+ */
+
+/**
+ * @param {Props} props
+ */
 export default function MrMiyagi({
   size = 35,
   color = 'black',

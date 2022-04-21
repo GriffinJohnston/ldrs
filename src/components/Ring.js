@@ -1,6 +1,17 @@
 import assert from '../lib/assert'
 import styles from './Ring.module.scss'
 
+/**
+ * @typedef Props
+ * @prop {number} size
+ * @prop {string} color
+ * @prop {number} speed
+ * @prop {number} lineWeight
+ */
+
+/**
+ * @param {Props} props
+ */
 export default function Ring({
   size = 40,
   color = 'black',
