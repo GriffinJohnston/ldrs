@@ -3,9 +3,9 @@ import styles from './DotSpinner.module.scss'
 
 /**
  * @typedef Props
- * @prop {number} size
- * @prop {string} color
- * @prop {number} speed
+ * @prop {number} [size]
+ * @prop {string} [color]
+ * @prop {number} [speed]
  */
 
 /**
