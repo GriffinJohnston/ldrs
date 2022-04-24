@@ -50,7 +50,15 @@ export default function PageSection({ isLoading }) {
 
 ## Tree Shaking
 
-This package is designed to maximize the benefits of [tree shaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking); so when you use a modern bundler like Webpack, Rollup or Parcel, and `import { Orbit } from '@uiball/loaders'` only the tiny code for the Orbit loader ends up in your app.
+This package is designed to maximize the benefits of [tree shaking](https://developer.mozilla.org/en-US/docs/Glossary/Tree_shaking); so when you use a modern bundler like Webpack, Rollup or Parcel, and `import { Orbit } from '@uiball/loaders'` only the tiny code for the Orbit loader ends up in your app (most are less than 1kb).
+
+## Platform Support
+
+This is a pure ESM library, so no `require()`-ing from CommonJS.
+
+Next.js doesn't transpile ESM modules by default and will throw an error, but you can add support with this package: https://www.npmjs.com/package/next-transpile-modules.
+
+Loaders make use of CSS custom properties (CSS variables) and keyframe animations, which work great in all modern browsers. Internet Explorer is not supported, however.
 
 ## Options
 
@@ -87,16 +95,6 @@ The width / stroke in pixels of line-based loaders like `<Waveform />` or `<Race
 ```jsx
 <MrMiyagi lineWeight="3.5" />
 ```
-
-## Platform Support
-
-This package only supports modern ESM import syntax, so no `require()`-ing.
-
-Next.js doesn't transpile imported modules by default, but you can add support with this package: https://www.npmjs.com/package/next-transpile-modules. More details can be found here: https://stackoverflow.com/a/65939797
-
-Lots of helpful detail from @sindresorhus: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
-
-Loaders make use of CSS custom properties (CSS variables) and keyframe animations, which work great in all modern browsers. Internet Explorer is not supported, however.
 
 ## License
 
