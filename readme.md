@@ -82,10 +82,10 @@ Any valid CSS color value is accepted, so `#000000`, `red`, `hsl(13, 68%, 63%)` 
 
 ### `speed: number`
 
-The speed of the animation. Each loader uses this number a little differently (individual parts of a given loader might have different timing), but in general this number represents the duration of a single full animation loop in seconds, so smaller = faster.
+The speed of the animation. Each loader uses this number a little differently (individual parts of a given loader might have different timings), but in general this number represents the duration of a single full animation loop in seconds, so smaller = faster.
 
 ```jsx
-<Ring speed="1.75" />
+<Ring speed={1.75} />
 ```
 
 ### `lineWeight: number`
@@ -93,7 +93,7 @@ The speed of the animation. Each loader uses this number a little differently (i
 The width / stroke in pixels of line-based loaders like `<Waveform />` or `<RaceBy />`. You can see if an individual loader supports this property on [the website](https://uiball.com/loaders).
 
 ```jsx
-<MrMiyagi lineWeight="3.5" />
+<Ring lineWeight={3.5} />
 ```
 
 ## License
