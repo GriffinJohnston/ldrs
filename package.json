@@ -4,6 +4,7 @@
   "author": "Griffin Johnston",
   "license": "MIT",
   "description": "Tree-shakeable CSS and SVG loaders for React",
+  "type": "module",
   "keywords": [
     "react",
     "react-component",
