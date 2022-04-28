@@ -56,7 +56,7 @@ This package is designed to maximize the benefits of [tree shaking](https://deve
 
 This is a pure ESM library, so no `require()`-ing from CommonJS.
 
-Next.js doesn't transpile ESM modules by default and will throw an error, but you can add support with this package: https://www.npmjs.com/package/next-transpile-modules.
+Next.js versions less than 12 don't transpile ESM modules by default and will throw an error. If you are using Next v11.1, you can add support with an [experimental flag](https://nextjs.org/blog/next-11-1#es-modules-support). Otherwise you can add support with this package: https://www.npmjs.com/package/next-transpile-modules.
 
 Loaders make use of CSS custom properties (CSS variables) and keyframe animations, which work great in all modern browsers. Internet Explorer is not supported, however.
 

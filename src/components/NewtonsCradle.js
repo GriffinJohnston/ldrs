@@ -1,3 +1,4 @@
+import React from 'react'
 import assert from '../lib/assert'
 import styles from './NewtonsCradle.module.scss'
 

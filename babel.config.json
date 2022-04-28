@@ -16,7 +16,7 @@
       "@babel/preset-react",
       {
         "useBuiltIns": true,
-        "runtime": "automatic"
+        "runtime": "classic"
       }
     ]
   ]
