@@ -88,7 +88,7 @@ Any valid CSS color value is accepted, so `#000000`, `red`, `hsl(13, 68%, 63%)` 
 
 ### `speed: number`
 
-The speed of the animation. Each loader uses this number a little differently (individual parts of a given loader might have different timings), but in general this number represents the duration of a single full animation loop in seconds, so smaller = faster.
+The speed of the animation. Each loader uses this number a little differently (individual parts of a given loader might have different timings), but in general this number represents the duration of a single full animation loop in seconds, so smaller = faster. If you set speed to `0` or `Infinity` it will pause the animation.
 
 ```jsx
 <Ring speed={1.75} />
