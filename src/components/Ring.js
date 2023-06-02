@@ -36,7 +36,7 @@ export default function Ring({
         '--uib-speed': speed + 's',
       }}
     >
-      <circle cx="50" cy="50" r="20" strokeWidth={lineWeight} />
+      <circle cx="50" cy="50" r="20" strokeWidth={lineWeight} fill="none" />
     </svg>
   )
 }
