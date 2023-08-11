@@ -19,7 +19,7 @@ export default class DotPulse extends HTMLElement {
 
   connectedCallback() {
     applyDefaultProps(this, {
-      size: 40,
+      size: 43,
       color: 'black',
       speed: 1.3,
     })

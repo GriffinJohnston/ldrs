@@ -2,22 +2,24 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: var(--uib-size);
+  height: calc(var(--uib-size) * 0.3);
   width: var(--uib-size);
 }
 
 .container {
   position: relative;
+  top: 28%;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: var(--uib-size);
-  height: var(--uib-size);
+  width: 51%;
+  height: calc(var(--uib-size) * 0.51);
 }
 
 .dot {
   position: relative;
   display: flex;
+  flex-shrink: 0;
   align-items: center;
   height: 100%;
   width: 25%;

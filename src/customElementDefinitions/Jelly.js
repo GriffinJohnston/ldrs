@@ -19,7 +19,7 @@ export default class Jelly extends HTMLElement {
 
   connectedCallback() {
     applyDefaultProps(this, {
-      size: 50,
+      size: 40,
       color: 'black',
       speed: 0.9,
     })

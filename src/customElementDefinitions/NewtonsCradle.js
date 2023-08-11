@@ -19,7 +19,7 @@ export default class NewtonsCradle extends HTMLElement {
 
   connectedCallback() {
     applyDefaultProps(this, {
-      size: 40,
+      size: 78,
       color: 'black',
       speed: 1.4,
     })

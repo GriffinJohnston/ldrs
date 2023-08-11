@@ -10,30 +10,32 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  width: var(--uib-size);
-  height: var(--uib-size);
+  width: 100%;
+  height: 100%;
   transform: rotate(45deg);
   animation: rotate calc(var(--uib-speed) * 2) ease-in-out infinite;
 }
 
 .half {
+  --uib-half-size: calc(var(--uib-size) * 0.435);
   position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
-  width: calc(var(--uib-size) / 2);
-  height: calc(var(--uib-size) / 2);
+  width: var(--uib-half-size);
+  height: var(--uib-half-size);
   overflow: hidden;
+  isolation: isolate;
 
   &:first-child {
-    top: 1.5%;
-    left: 1.5%;
+    top: 8.25%;
+    left: 8.25%;
     border-radius: 50% 50% calc(var(--uib-size) / 15);
   }
 
   &:last-child {
-    bottom: 1.5%;
-    right: 1.5%;
+    bottom: 8.25%;
+    right: 8.25%;
     transform: rotate(180deg);
     align-self: flex-end;
     border-radius: 50% 50% calc(var(--uib-size) / 15);

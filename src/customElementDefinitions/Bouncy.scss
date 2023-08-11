@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: var(--uib-size);
+  height: calc(var(--uib-size) * 0.6);
   width: var(--uib-size);
 }
 
@@ -11,7 +11,7 @@
   align-items: flex-end;
   justify-content: space-between;
   width: var(--uib-size);
-  height: calc(var(--uib-size) * 0.5);
+  height: calc(var(--uib-size) * 0.6);
 }
 
 .cube {

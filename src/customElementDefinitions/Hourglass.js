@@ -21,7 +21,7 @@ export default class Hourglass extends HTMLElement {
     applyDefaultProps(this, {
       size: 40,
       color: 'black',
-      speed: 2,
+      speed: 1.75,
     })
 
     template.innerHTML = `

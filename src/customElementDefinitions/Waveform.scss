@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: var(--uib-size);
+  height: calc(var(--uib-size) * 0.9);
   width: var(--uib-size);
 }
 

@@ -79,12 +79,13 @@
 
 @keyframes grow {
   0%,
+  85%,
   100% {
     transform: scale(1.5);
   }
 
-  20%,
-  70% {
-    transform: none;
+  50%,
+  60% {
+    transform: scale(0);
   }
 }

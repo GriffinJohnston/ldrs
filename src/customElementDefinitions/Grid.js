@@ -1,10 +1,10 @@
 import reflect from '../lib/reflect'
 import applyDefaultProps from '../lib/applyDefaultProps'
-import styles from './DotGrid.scss'
+import styles from './Grid.scss'
 
 const template = document.createElement('template')
 
-export default class DotGrid extends HTMLElement {
+export default class Grid extends HTMLElement {
   static get observedAttributes() {
     return ['size', 'color', 'speed']
   }

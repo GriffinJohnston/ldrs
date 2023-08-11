@@ -33,44 +33,44 @@
   width: 100%;
 
   &:nth-child(1) {
-    --delay: 0;
+    --uib-delay: 0;
     transform: rotate(8deg);
   }
   &:nth-child(2) {
-    --delay: -0.4;
+    --uib-delay: -0.4;
     transform: rotate(36deg);
   }
 
   &:nth-child(3) {
-    --delay: -0.9;
+    --uib-delay: -0.9;
     transform: rotate(72deg);
   }
   &:nth-child(4) {
-    --delay: -0.5;
+    --uib-delay: -0.5;
     transform: rotate(90deg);
   }
   &:nth-child(5) {
-    --delay: -0.3;
+    --uib-delay: -0.3;
     transform: rotate(144deg);
   }
   &:nth-child(6) {
-    --delay: -0.2;
+    --uib-delay: -0.2;
     transform: rotate(180deg);
   }
   &:nth-child(7) {
-    --delay: -0.6;
+    --uib-delay: -0.6;
     transform: rotate(216deg);
   }
   &:nth-child(8) {
-    --delay: -0.7;
+    --uib-delay: -0.7;
     transform: rotate(252deg);
   }
   &:nth-child(9) {
-    --delay: -0.1;
+    --uib-delay: -0.1;
     transform: rotate(300deg);
   }
   &:nth-child(10) {
-    --delay: -0.8;
+    --uib-delay: -0.8;
     transform: rotate(324deg);
   }
 }
@@ -87,8 +87,8 @@
 }
 
 .particle::before {
-  --d: calc(var(--delay) * var(--uib-speed));
-  animation: orbit var(--uib-speed) linear var(--d) infinite;
+  --uib-d: calc(var(--uib-delay) * var(--uib-speed));
+  animation: orbit var(--uib-speed) linear var(--uib-d) infinite;
 }
 
 @keyframes orbit {

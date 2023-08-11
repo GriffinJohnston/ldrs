@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: var(--uib-size);
+  height: calc(var(--uib-size) * 0.25);
   width: var(--uib-size);
 }
 
@@ -11,13 +11,13 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  height: var(--uib-size);
-  width: var(--uib-size);
+  height: 100%;
+  width: 100%;
 }
 
 .container::before {
   content: '';
-  height: 25%;
+  height: calc(var(--uib-size) * 0.25);
   width: 25%;
   border-radius: 50%;
   animation: wobble var(--uib-speed) ease-in-out infinite;

@@ -19,7 +19,7 @@ export default class Orbit extends HTMLElement {
 
   connectedCallback() {
     applyDefaultProps(this, {
-      size: 25,
+      size: 35,
       color: 'black',
       speed: 1.5,
     })

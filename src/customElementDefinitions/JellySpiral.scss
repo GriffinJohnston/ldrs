@@ -7,7 +7,7 @@
 }
 
 .container {
-  --center: calc(var(--uib-size) / 2 - var(--uib-size) / 5 / 2);
+  --uib-center: calc(var(--uib-size) / 2 - var(--uib-size) / 5 / 2);
   position: relative;
   display: flex;
   align-items: center;
@@ -40,7 +40,7 @@
 }
 
 .dot:nth-child(1)::before {
-  transform: translateX(var(--center));
+  transform: translateX(var(--uib-center));
 }
 
 .dot:nth-child(2) {
@@ -48,7 +48,7 @@
 }
 
 .dot:nth-child(2)::before {
-  transform: translateX(var(--center));
+  transform: translateX(var(--uib-center));
   animation-delay: calc(var(--uib-speed) * -0.875);
 }
 
@@ -57,7 +57,7 @@
 }
 
 .dot:nth-child(3)::before {
-  transform: translateX(var(--center));
+  transform: translateX(var(--uib-center));
   animation-delay: calc(var(--uib-speed) * -0.75);
 }
 
@@ -66,7 +66,7 @@
 }
 
 .dot:nth-child(4)::before {
-  transform: translateX(var(--center));
+  transform: translateX(var(--uib-center));
   animation-delay: calc(var(--uib-speed) * -0.625);
 }
 
@@ -75,7 +75,7 @@
 }
 
 .dot:nth-child(5)::before {
-  transform: translateX(var(--center));
+  transform: translateX(var(--uib-center));
   animation-delay: calc(var(--uib-speed) * -0.5);
 }
 
@@ -84,7 +84,7 @@
 }
 
 .dot:nth-child(6)::before {
-  transform: translateX(var(--center));
+  transform: translateX(var(--uib-center));
   animation-delay: calc(var(--uib-speed) * -0.375);
 }
 
@@ -93,7 +93,7 @@
 }
 
 .dot:nth-child(7)::before {
-  transform: translateX(var(--center));
+  transform: translateX(var(--uib-center));
   animation-delay: calc(var(--uib-speed) * -0.25);
 }
 
@@ -102,13 +102,13 @@
 }
 
 .dot:nth-child(8)::before {
-  transform: translateX(var(--center));
+  transform: translateX(var(--uib-center));
   animation-delay: calc(var(--uib-speed) * -0.125);
 }
 
 @keyframes oscillate {
   0% {
-    transform: translateX(var(--center)) scale(0.6);
+    transform: translateX(var(--uib-center)) scale(0.6);
   }
 
   100% {

@@ -2,11 +2,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: var(--uib-size);
+  height: calc(var(--uib-size) * 0.63);
   width: var(--uib-size);
 }
 .container {
   position: relative;
+  top: 8%;
   display: flex;
   align-items: center;
   justify-content: flex-start;

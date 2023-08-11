@@ -34,9 +34,9 @@ export default class DotStream extends HTMLElement {
       </div>
       <style>
         :host{
-          --size: ${this.size}px;
-          --color: ${this.color};
-          --speed: ${this.speed}s;
+          --uib-size: ${this.size}px;
+          --uib-color: ${this.color};
+          --uib-speed: ${this.speed}s;
         }
         ${styles}
       </style>
@@ -52,9 +52,9 @@ export default class DotStream extends HTMLElement {
 
     styleEl.innerHTML = `
       :host{
-        --size: ${this.size}px;
-        --color: ${this.color};
-        --speed: ${this.speed}s;
+        --uib-size: ${this.size}px;
+        --uib-color: ${this.color};
+        --uib-speed: ${this.speed}s;
       }
       ${styles}
     `

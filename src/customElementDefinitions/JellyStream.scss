@@ -2,28 +2,28 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: var(--uib-size);
+  height: calc(var(--uib-size) * 0.23);
   width: var(--uib-size);
 }
 
 .container {
-  --dot-size: calc(var(--uib-size) * 0.23);
+  --uib-dot-size: calc(var(--uib-size) * 0.23);
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: var(--uib-size);
-  height: var(--dot-size);
+  height: var(--uib-dot-size);
   filter: url('#uib-jelly-ooze');
 }
 
 .dot {
   position: absolute;
-  top: calc(50% - var(--dot-size) / 2);
-  left: calc(0px - var(--dot-size) / 2);
+  top: calc(50% - var(--uib-dot-size) / 2);
+  left: calc(0px - var(--uib-dot-size) / 2);
   display: block;
-  height: var(--dot-size);
-  width: var(--dot-size);
+  height: var(--uib-dot-size);
+  width: var(--uib-dot-size);
   border-radius: 50%;
   background-color: var(--uib-color);
   animation: stream var(--uib-speed) linear infinite both;

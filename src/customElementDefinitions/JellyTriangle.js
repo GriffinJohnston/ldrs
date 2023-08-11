@@ -19,7 +19,7 @@ export default class JellyTriangle extends HTMLElement {
 
   connectedCallback() {
     applyDefaultProps(this, {
-      size: 40,
+      size: 30,
       color: 'black',
       speed: 1.75,
     })
@@ -36,7 +36,7 @@ export default class JellyTriangle extends HTMLElement {
           <filter id="uib-jelly-triangle-ooze">
             <feGaussianBlur
               in="SourceGraphic"
-              stdDeviation=${this.size / 6}
+              stdDeviation=${this.size / 9}
               result="blur"
             />
             <feColorMatrix

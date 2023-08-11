@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: var(--uib-size);
+  height: calc(var(--uib-size) * 0.5);
   width: var(--uib-size);
 }
 
@@ -10,8 +10,8 @@
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
-  width: var(--uib-size);
-  height: calc(var(--uib-size) * 0.5);
+  width: 100%;
+  height: 100%;
 }
 
 .dot {

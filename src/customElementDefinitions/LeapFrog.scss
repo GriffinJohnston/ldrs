@@ -2,12 +2,14 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: var(--uib-size);
+  height: calc(var(--uib-size) * 0.62);
   width: var(--uib-size);
 }
 
 .container {
   position: relative;
+  top: 31%;
+  left: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -61,11 +63,11 @@
   }
 
   66.666% {
-    transform: translateX(calc(var(--uib-size) * -0.4)) rotate(180deg);
+    transform: translateX(calc(var(--uib-size) * -0.38)) rotate(180deg);
   }
 
   99.999% {
-    transform: translateX(calc(var(--uib-size) * -0.8)) rotate(180deg);
+    transform: translateX(calc(var(--uib-size) * -0.78)) rotate(180deg);
   }
 
   100% {
