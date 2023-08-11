@@ -1,0 +1,61 @@
+:host {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--size);
+  width: var(--size);
+}
+
+.container {
+  --dot-size: calc(var(--size) * 0.18);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: var(--size);
+  height: var(--dot-size);
+}
+
+.dot {
+  position: absolute;
+  top: calc(50% - var(--dot-size) / 2);
+  left: calc(0px - var(--dot-size) / 2);
+  display: block;
+  height: var(--dot-size);
+  width: var(--dot-size);
+  border-radius: 50%;
+  background-color: var(--color);
+  animation: stream var(--speed) linear infinite both;
+  transition: background-color 0.3s ease;
+}
+
+.dot:nth-child(2) {
+  animation-delay: calc(var(--speed) * -0.2);
+}
+
+.dot:nth-child(3) {
+  animation-delay: calc(var(--speed) * -0.4);
+}
+
+.dot:nth-child(4) {
+  animation-delay: calc(var(--speed) * -0.6);
+}
+
+.dot:nth-child(5) {
+  animation-delay: calc(var(--speed) * -0.8);
+}
+
+@keyframes stream {
+  0%,
+  100% {
+    transform: translateX(0) scale(0);
+  }
+
+  50% {
+    transform: translateX(calc(var(--size) * 0.5)) scale(1);
+  }
+
+  99.999% {
+    transform: translateX(calc(var(--size))) scale(0);
+  }
+}

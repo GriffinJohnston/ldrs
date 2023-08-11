@@ -1,7 +1,6 @@
-import babel from 'rollup-plugin-babel'
-import { terser } from 'rollup-plugin-terser'
+import { babel } from '@rollup/plugin-babel'
+import terser from '@rollup/plugin-terser'
 import postcss from 'rollup-plugin-postcss'
-import externals from 'rollup-plugin-node-externals'
 import multiInput from 'rollup-plugin-multi-input'
 
 export default [
@@ -10,18 +9,21 @@ export default [
     output: {
       dir: 'dist/',
       format: 'esm',
+      sourcemap: true,
     },
+    external: ['react'],
     plugins: [
-      externals(),
-      multiInput(),
+      multiInput.default(),
       terser(),
       postcss({
-        modules: true,
+        inject: false,
+        autoModules: true,
         external: false,
         minimize: true,
       }),
       babel({
         exclude: ['node_modules/**'],
+        babelHelpers: 'bundled',
       }),
     ],
   },

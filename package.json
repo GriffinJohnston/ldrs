@@ -3,7 +3,7 @@
   "version": "1.3.0",
   "author": "Griffin Johnston",
   "license": "MIT",
-  "description": "Tree-shakeable CSS and SVG loaders for React",
+  "description": "Tiny CSS and SVG loaders as web components",
   "keywords": [
     "react",
     "react-component",
@@ -18,13 +18,25 @@
     "react loading gif",
     "react loading indicator",
     "react spinners",
+    "custom elements",
+    "web components",
     "uiball"
   ],
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
-  "sideEffects": false,
+  "sideEffects": [
+    "./dist/customElements/*",
+    "./dist/lib/*"
+  ],
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": "./dist/index.js",
+    "./elements": "./dist/elements.js",
+    "./elements.js": "./dist/elements.js",
+    "./*": "./dist/customElements/*.js",
+    "./*.js": "./dist/customElements/*.js"
+  },
   "files": [
     "dist"
   ],
@@ -45,26 +57,22 @@
     "start": "npm run dev"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.8",
-    "@babel/plugin-transform-runtime": "^7.17.0",
-    "@babel/preset-env": "^7.16.11",
-    "@babel/preset-react": "^7.16.7",
-    "eslint": "^8.12.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-react": "^7.29.4",
-    "postcss": "^8.4.12",
-    "prettier": "2.6.1",
-    "rollup": "^2.70.1",
-    "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-multi-input": "^1.3.1",
-    "rollup-plugin-node-externals": "^4.0.0",
+    "@babel/core": "^7.22.8",
+    "@babel/plugin-transform-runtime": "^7.22.7",
+    "@babel/preset-env": "^7.22.7",
+    "@babel/preset-react": "^7.22.5",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-terser": "^0.4.3",
+    "eslint": "^8.44.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-react": "^7.32.2",
+    "postcss": "^8.4.25",
+    "prettier": "3.0.0",
+    "rollup": "^3.26.2",
+    "rollup-plugin-multi-input": "^1.4.1",
+    "rollup-plugin-node-externals": "^6.1.1",
     "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-terser": "^7.0.2",
-    "sass": "^1.49.10",
-    "typescript": "^4.6.3"
-  },
-  "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0"
+    "sass": "^1.63.6",
+    "typescript": "^5.1.6"
   }
 }

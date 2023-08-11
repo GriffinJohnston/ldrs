@@ -1,0 +1,52 @@
+:host {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--uib-size);
+  width: calc(var(--uib-size) * 2);
+}
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--uib-line-weight);
+  width: calc(var(--uib-size) * 2);
+  margin-bottom: calc(var(--uib-size) * 0.65);
+  border-radius: calc(var(--uib-line-weight) / 2);
+  animation: rotate var(--uib-speed) linear infinite;
+  overflow: hidden;
+}
+
+.container::before {
+  content: '';
+  height: 100%;
+  width: 40%;
+  border-radius: calc(var(--uib-line-weight) / 2);
+  animation: wobble var(--uib-speed) ease-in-out calc(var(--uib-speed) * -0.225)
+    infinite;
+  transform: translateX(-120%);
+  background-color: var(--uib-color);
+  transition: background-color 0.3s ease;
+}
+
+@keyframes wobble {
+  0%,
+  100% {
+    transform: translateX(-120%);
+  }
+  50% {
+    transform: translateX(120%);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: translateY(calc(var(--uib-size) * -0.125)) rotate(0deg);
+  }
+
+  100% {
+    transform: translateY(calc(var(--uib-size) * -0.125)) rotate(360deg);
+  }
+}
