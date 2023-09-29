@@ -7,7 +7,7 @@ export default function reflect(obj, props) {
   props.forEach((prop) => {
     Object.defineProperty(obj, prop, {
       set(val) {
-        if (val) {
+        if ('string,number'.includes(typeof val)) {
           this.setAttribute(prop, val.toString())
         } else {
           this.removeAttribute(prop)

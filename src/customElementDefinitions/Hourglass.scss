@@ -68,7 +68,7 @@
     width: 100%;
     transform-origin: bottom right;
     border-radius: 0 0 calc(var(--uib-size) / 20) 0;
-    animation: flow calc(var(--uib-speed) * 2) linear infinite;
+    animation: flow calc(var(--uib-speed) * 2) linear infinite both;
     transition: background-color 0.3s ease;
   }
 }
