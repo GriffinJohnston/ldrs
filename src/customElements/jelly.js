@@ -1,9 +1,9 @@
 import Jelly from '../customElementDefinitions/Jelly'
 
-if (typeof window !== 'undefined' && !customElements.get('uib-jelly')) {
-  customElements.define('uib-jelly', class extends Jelly {})
+if (typeof window !== 'undefined' && !customElements.get('l-jelly')) {
+  customElements.define('l-jelly', class extends Jelly {})
 }
 
-if (typeof window !== 'undefined' && !customElements.get('uib-j')) {
-  customElements.define('uib-j', class extends Jelly {})
+if (typeof window !== 'undefined' && !customElements.get('l-j')) {
+  customElements.define('l-j', class extends Jelly {})
 }

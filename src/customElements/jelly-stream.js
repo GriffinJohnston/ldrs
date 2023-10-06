@@ -1,9 +1,9 @@
 import JellyStream from '../customElementDefinitions/JellyStream'
 
-if (typeof window !== 'undefined' && !customElements.get('uib-jelly-stream')) {
-  customElements.define('uib-jelly-stream', class extends JellyStream {})
+if (typeof window !== 'undefined' && !customElements.get('l-jelly-stream')) {
+  customElements.define('l-jelly-stream', class extends JellyStream {})
 }
 
-if (typeof window !== 'undefined' && !customElements.get('uib-jst')) {
-  customElements.define('uib-jst', class extends JellyStream {})
+if (typeof window !== 'undefined' && !customElements.get('l-jst')) {
+  customElements.define('l-jst', class extends JellyStream {})
 }

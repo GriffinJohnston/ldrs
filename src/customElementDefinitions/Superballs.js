@@ -19,7 +19,7 @@ export default class Superballs extends HTMLElement {
 
   connectedCallback() {
     applyDefaultProps(this, {
-      size: 45,
+      size: 40,
       color: 'black',
       speed: 1.4,
     })

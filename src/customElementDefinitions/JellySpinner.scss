@@ -31,8 +31,8 @@
 
 .dot::before {
   content: '';
-  height: 20%;
-  width: 20%;
+  height: 25%;
+  width: 25%;
   border-radius: 50%;
   background-color: var(--uib-color);
   animation: pulse var(--uib-speed) ease-in-out infinite;
@@ -78,7 +78,7 @@
   0% {
     transform: rotate(0deg);
   }
-  80%,
+  65%,
   100% {
     transform: rotate(360deg);
   }
@@ -90,7 +90,7 @@
   }
 
   50% {
-    transform: scale(0.75);
+    transform: scale(0.5);
   }
 }
 

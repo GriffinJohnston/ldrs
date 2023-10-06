@@ -1,9 +1,9 @@
 import Orbit from '../customElementDefinitions/Orbit'
 
-if (typeof window !== 'undefined' && !customElements.get('uib-orbit')) {
-  customElements.define('uib-orbit', class extends Orbit {})
+if (typeof window !== 'undefined' && !customElements.get('l-orbit')) {
+  customElements.define('l-orbit', class extends Orbit {})
 }
 
-if (typeof window !== 'undefined' && !customElements.get('uib-o')) {
-  customElements.define('uib-o', class extends Orbit {})
+if (typeof window !== 'undefined' && !customElements.get('l-o')) {
+  customElements.define('l-o', class extends Orbit {})
 }

@@ -6,7 +6,7 @@ const template = document.createElement('template')
 
 export default class Ring extends HTMLElement {
   static get observedAttributes() {
-    return ['size', 'color', 'lineweight', 'speed']
+    return ['size', 'color', 'stroke', 'speed']
   }
 
   constructor() {
@@ -14,14 +14,14 @@ export default class Ring extends HTMLElement {
     if (!this.shadow) {
       this.shadow = this.attachShadow({ mode: 'open' })
     }
-    reflect(this, ['size', 'color', 'lineweight', 'speed'])
+    reflect(this, ['size', 'color', 'stroke', 'speed'])
   }
 
   connectedCallback() {
     applyDefaultProps(this, {
       size: 40,
       color: 'black',
-      lineweight: 5,
+      stroke: 5,
       speed: 2,
     })
 
@@ -32,7 +32,7 @@ export default class Ring extends HTMLElement {
         height="${this.size}"
         width="${this.size}"
       >
-        <circle cx="50" cy="50" r="20" stroke-width="${this.lineweight}" fill="none" />
+        <circle cx="50" cy="50" r="20" stroke-width="${this.stroke}" fill="none" />
       </svg>
       <style>
         :host{
@@ -56,7 +56,7 @@ export default class Ring extends HTMLElement {
 
     svgEl.setAttribute('height', this.size)
     svgEl.setAttribute('width', this.size)
-    circleEl.setAttribute('stroke-width', this.lineweight)
+    circleEl.setAttribute('stroke-width', this.stroke)
 
     styleEl.innerHTML = `
       :host{

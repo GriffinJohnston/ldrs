@@ -60,9 +60,6 @@ export default class NewtonsCradle extends HTMLElement {
   }
 }
 
-if (
-  typeof window !== 'undefined' &&
-  !customElements.get('uib-newtons-cradle')
-) {
-  customElements.define('uib-newtons-cradle', NewtonsCradle)
+if (typeof window !== 'undefined' && !customElements.get('l-newtons-cradle')) {
+  customElements.define('l-newtons-cradle', NewtonsCradle)
 }

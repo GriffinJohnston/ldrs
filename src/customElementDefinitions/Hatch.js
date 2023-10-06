@@ -6,7 +6,7 @@ const template = document.createElement('template')
 
 export default class Hatch extends HTMLElement {
   static get observedAttributes() {
-    return ['size', 'color', 'speed', 'lineweight']
+    return ['size', 'color', 'speed', 'stroke']
   }
 
   constructor() {
@@ -14,7 +14,7 @@ export default class Hatch extends HTMLElement {
     if (!this.shadow) {
       this.shadow = this.attachShadow({ mode: 'open' })
     }
-    reflect(this, ['size', 'color', 'speed', 'lineweight'])
+    reflect(this, ['size', 'color', 'speed', 'stroke'])
   }
 
   connectedCallback() {
@@ -22,7 +22,7 @@ export default class Hatch extends HTMLElement {
       size: 28,
       color: 'black',
       speed: 3.5,
-      lineweight: 4,
+      stroke: 4,
     })
 
     template.innerHTML = `
@@ -32,7 +32,7 @@ export default class Hatch extends HTMLElement {
           --uib-size: ${this.size};
           --uib-color: ${this.color};
           --uib-speed: ${this.speed}s;
-          --uib-line-weight: ${this.lineweight};
+          --uib-line-weight: ${this.stroke};
         }
         ${styles}
       </style>
@@ -51,7 +51,7 @@ export default class Hatch extends HTMLElement {
         --uib-size: ${this.size};
         --uib-color: ${this.color};
         --uib-speed: ${this.speed}s;
-        --uib-line-weight: ${this.lineweight};
+        --uib-line-weight: ${this.stroke};
       }
       ${styles}
     `

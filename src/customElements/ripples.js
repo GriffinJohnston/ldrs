@@ -1,9 +1,9 @@
 import Ripples from '../customElementDefinitions/Ripples'
 
-if (typeof window !== 'undefined' && !customElements.get('uib-ripples')) {
-  customElements.define('uib-ripples', class extends Ripples {})
+if (typeof window !== 'undefined' && !customElements.get('l-ripples')) {
+  customElements.define('l-ripples', class extends Ripples {})
 }
 
-if (typeof window !== 'undefined' && !customElements.get('uib-ri')) {
-  customElements.define('uib-ri', class extends Ripples {})
+if (typeof window !== 'undefined' && !customElements.get('l-ri')) {
+  customElements.define('l-ri', class extends Ripples {})
 }

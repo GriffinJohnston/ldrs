@@ -1,10 +1,10 @@
 import reflect from '../lib/reflect'
 import applyDefaultProps from '../lib/applyDefaultProps'
-import styles from './LeapFrog.scss'
+import styles from './Leapfrog.scss'
 
 const template = document.createElement('template')
 
-export default class LeapFrog extends HTMLElement {
+export default class Leapfrog extends HTMLElement {
   static get observedAttributes() {
     return ['size', 'color', 'speed']
   }

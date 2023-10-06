@@ -78,9 +78,6 @@ export default class JellyTriangle extends HTMLElement {
   }
 }
 
-if (
-  typeof window !== 'undefined' &&
-  !customElements.get('uib-jelly-triangle')
-) {
-  customElements.define('uib-jelly-triangle', JellyTriangle)
+if (typeof window !== 'undefined' && !customElements.get('l-jelly-triangle')) {
+  customElements.define('l-jelly-triangle', JellyTriangle)
 }

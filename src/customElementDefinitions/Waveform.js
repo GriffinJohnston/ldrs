@@ -6,7 +6,7 @@ const template = document.createElement('template')
 
 export default class Waveform extends HTMLElement {
   static get observedAttributes() {
-    return ['size', 'color', 'speed', 'lineweight']
+    return ['size', 'color', 'speed', 'stroke']
   }
 
   constructor() {
@@ -14,15 +14,15 @@ export default class Waveform extends HTMLElement {
     if (!this.shadow) {
       this.shadow = this.attachShadow({ mode: 'open' })
     }
-    reflect(this, ['size', 'color', 'speed', 'lineweight'])
+    reflect(this, ['size', 'color', 'speed', 'stroke'])
   }
 
   connectedCallback() {
     applyDefaultProps(this, {
-      size: 40,
+      size: 35,
       color: 'black',
       speed: 1,
-      lineweight: 3.5,
+      stroke: 3.5,
     })
 
     template.innerHTML = `
@@ -37,7 +37,7 @@ export default class Waveform extends HTMLElement {
           --uib-size: ${this.size}px;
           --uib-color: ${this.color};
           --uib-speed: ${this.speed}s;
-          --uib-line-weight: ${this.lineweight}px;
+          --uib-line-weight: ${this.stroke}px;
         }
         ${styles}
       </style>
@@ -56,7 +56,7 @@ export default class Waveform extends HTMLElement {
         --uib-size: ${this.size}px;
         --uib-color: ${this.color};
         --uib-speed: ${this.speed}s;
-        --uib-line-weight: ${this.lineweight}px;
+        --uib-line-weight: ${this.stroke}px;
       }
       ${styles}
     `

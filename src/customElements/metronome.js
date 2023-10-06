@@ -1,9 +1,9 @@
 import Metronome from '../customElementDefinitions/Metronome'
 
-if (typeof window !== 'undefined' && !customElements.get('uib-metronome')) {
-  customElements.define('uib-metronome', class extends Metronome {})
+if (typeof window !== 'undefined' && !customElements.get('l-metronome')) {
+  customElements.define('l-metronome', class extends Metronome {})
 }
 
-if (typeof window !== 'undefined' && !customElements.get('uib-met')) {
-  customElements.define('uib-met', class extends Metronome {})
+if (typeof window !== 'undefined' && !customElements.get('l-me')) {
+  customElements.define('l-me', class extends Metronome {})
 }

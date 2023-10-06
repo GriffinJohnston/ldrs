@@ -27,28 +27,32 @@
   transition: background-color 0.3s ease;
 }
 
+.line:nth-child(1) {
+  animation-delay: calc(var(--uib-speed) * -0.375);
+}
+
 .line:nth-child(2) {
-  animation-delay: calc(var(--uib-speed) * 0.075);
+  animation-delay: calc(var(--uib-speed) * -0.375);
   opacity: 0.8;
 }
 
 .line:nth-child(3) {
-  animation-delay: calc(var(--uib-speed) * 0.15);
+  animation-delay: calc(var(--uib-speed) * -0.3);
   opacity: 0.6;
 }
 
 .line:nth-child(4) {
-  animation-delay: calc(var(--uib-speed) * 0.225);
+  animation-delay: calc(var(--uib-speed) * -0.225);
   opacity: 0.4;
 }
 
 .line:nth-child(5) {
-  animation-delay: calc(var(--uib-speed) * 0.3);
+  animation-delay: calc(var(--uib-speed) * -0.15);
   opacity: 0.2;
 }
 
 .line:nth-child(6) {
-  animation-delay: calc(var(--uib-speed) * 0.375);
+  animation-delay: calc(var(--uib-speed) * -0.075);
   opacity: 0.1;
 }
 

@@ -1,5 +1,5 @@
 import JellyTriangle from '../customElementDefinitions/JellyTriangle'
 
-if (typeof window !== 'undefined' && !customElements.get('uib-jt')) {
-  customElements.define('uib-jt', class extends JellyTriangle {})
+if (typeof window !== 'undefined' && !customElements.get('l-jt')) {
+  customElements.define('l-jt', class extends JellyTriangle {})
 }

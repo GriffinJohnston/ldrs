@@ -1,9 +1,9 @@
 import Momentum from '../customElementDefinitions/Momentum'
 
-if (typeof window !== 'undefined' && !customElements.get('uib-momentum')) {
-  customElements.define('uib-momentum', class extends Momentum {})
+if (typeof window !== 'undefined' && !customElements.get('l-momentum')) {
+  customElements.define('l-momentum', class extends Momentum {})
 }
 
-if (typeof window !== 'undefined' && !customElements.get('uib-mo')) {
-  customElements.define('uib-mo', class extends Momentum {})
+if (typeof window !== 'undefined' && !customElements.get('l-mo')) {
+  customElements.define('l-mo', class extends Momentum {})
 }

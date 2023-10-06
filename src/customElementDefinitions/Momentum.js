@@ -6,7 +6,7 @@ const template = document.createElement('template')
 
 export default class Momentum extends HTMLElement {
   static get observedAttributes() {
-    return ['size', 'color', 'speed', 'lineweight']
+    return ['size', 'color', 'speed', 'stroke']
   }
 
   constructor() {

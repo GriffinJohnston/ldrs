@@ -1,9 +1,9 @@
 import LineWobble from '../customElementDefinitions/LineWobble'
 
-if (typeof window !== 'undefined' && !customElements.get('uib-line-wobble')) {
-  customElements.define('uib-line-wobble', class extends LineWobble {})
+if (typeof window !== 'undefined' && !customElements.get('l-line-wobble')) {
+  customElements.define('l-line-wobble', class extends LineWobble {})
 }
 
-if (typeof window !== 'undefined' && !customElements.get('uib-lw')) {
-  customElements.define('uib-lw', class extends LineWobble {})
+if (typeof window !== 'undefined' && !customElements.get('l-lw')) {
+  customElements.define('l-lw', class extends LineWobble {})
 }

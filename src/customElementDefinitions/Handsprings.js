@@ -6,7 +6,7 @@ const template = document.createElement('template')
 
 export default class Handsprings extends HTMLElement {
   static get observedAttributes() {
-    return ['size', 'color', 'speed', 'lineweight']
+    return ['size', 'color', 'speed', 'stroke']
   }
 
   constructor() {
@@ -14,7 +14,7 @@ export default class Handsprings extends HTMLElement {
     if (!this.shadow) {
       this.shadow = this.attachShadow({ mode: 'open' })
     }
-    reflect(this, ['size', 'color', 'speed', 'lineweight'])
+    reflect(this, ['size', 'color', 'speed', 'stroke'])
   }
 
   connectedCallback() {
@@ -22,7 +22,7 @@ export default class Handsprings extends HTMLElement {
       size: 37,
       color: 'black',
       speed: 2,
-      lineweight: 5,
+      stroke: 5,
     })
 
     template.innerHTML = `
@@ -32,7 +32,7 @@ export default class Handsprings extends HTMLElement {
           --uib-size: ${this.size}px;
           --uib-color: ${this.color};
           --uib-speed: ${this.speed}s;
-          --uib-line-weight: ${this.lineweight}px;
+          --uib-line-weight: ${this.stroke}px;
         }
         ${styles}
       </style>
@@ -51,7 +51,7 @@ export default class Handsprings extends HTMLElement {
         --uib-size: ${this.size}px;
         --uib-color: ${this.color};
         --uib-speed: ${this.speed}s;
-        --uib-line-weight: ${this.lineweight}px;
+        --uib-line-weight: ${this.stroke}px;
       }
       ${styles}
     `

@@ -1,9 +1,9 @@
 import DotSpinner from '../customElementDefinitions/DotSpinner'
 
-if (typeof window !== 'undefined' && !customElements.get('uib-dot-spinner')) {
-  customElements.define('uib-dot-spinner', class extends DotSpinner {})
+if (typeof window !== 'undefined' && !customElements.get('l-dot-spinner')) {
+  customElements.define('l-dot-spinner', class extends DotSpinner {})
 }
 
-if (typeof window !== 'undefined' && !customElements.get('uib-ds')) {
-  customElements.define('uib-ds', class extends DotSpinner {})
+if (typeof window !== 'undefined' && !customElements.get('l-ds')) {
+  customElements.define('l-ds', class extends DotSpinner {})
 }

@@ -11,6 +11,7 @@
   height: var(--uib-size);
   width: var(--uib-size);
   animation: rotate calc(var(--uib-speed) * 4) linear infinite;
+  filter: url('#uib-jelly-ooze');
 }
 
 @keyframes rotate {
@@ -73,6 +74,18 @@
     --uib-delay: -0.8;
     transform: rotate(324deg);
   }
+  &:nth-child(11) {
+    --uib-delay: -1.2;
+    transform: rotate(335deg);
+  }
+  &:nth-child(12) {
+    --uib-delay: -0.5;
+    transform: rotate(290deg);
+  }
+  &:nth-child(13) {
+    --uib-delay: -0.2;
+    transform: rotate(240deg);
+  }
 }
 
 .particle::before {
@@ -84,9 +97,6 @@
   background-color: var(--uib-color);
   flex-shrink: 0;
   transition: background-color 0.3s ease;
-}
-
-.particle::before {
   --uib-d: calc(var(--uib-delay) * var(--uib-speed));
   animation: orbit var(--uib-speed) linear var(--uib-d) infinite;
 }
