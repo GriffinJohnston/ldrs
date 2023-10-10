@@ -11,7 +11,6 @@
   height: var(--uib-size);
   width: var(--uib-size);
   animation: rotate calc(var(--uib-speed) * 4) linear infinite;
-  filter: url('#uib-jelly-ooze');
 }
 
 @keyframes rotate {

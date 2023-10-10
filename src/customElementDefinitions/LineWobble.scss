@@ -2,7 +2,7 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: var(--uib-line-weight);
+  height: var(--uib-stroke);
   width: var(--uib-size);
 }
 
@@ -11,9 +11,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: var(--uib-line-weight);
+  height: var(--uib-stroke);
   width: var(--uib-size);
-  border-radius: calc(var(--uib-line-weight) / 2);
+  border-radius: calc(var(--uib-stroke) / 2);
   overflow: hidden;
   transform: translate3d(0, 0, 0);
 }
@@ -26,7 +26,7 @@
   height: 100%;
   width: 100%;
   background-color: var(--uib-color);
-  opacity: 0.1;
+  opacity: var(--uib-bg-opacity);
   transition: background-color 0.3s ease;
 }
 
@@ -34,7 +34,7 @@
   content: '';
   height: 100%;
   width: 100%;
-  border-radius: calc(var(--uib-line-weight) / 2);
+  border-radius: calc(var(--uib-stroke) / 2);
   animation: wobble var(--uib-speed) ease-in-out infinite;
   transform: translateX(-95%);
   background-color: var(--uib-color);

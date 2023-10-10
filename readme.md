@@ -96,7 +96,7 @@ The speed of the animation. Each loader uses this number a little differently (i
 
 ### `lineWeight: number`
 
-The width / stroke in pixels of line-based loaders like `<Waveform />` or `<RaceBy />`. You can see if an individual loader supports this property on [the website](https://uiball.com/loaders).
+The width / stroke in pixels of line-based loaders like `<Waveform />` or `<Zoomies />`. You can see if an individual loader supports this property on [the website](https://uiball.com/loaders).
 
 ```jsx
 <Ring lineWeight={3.5} />

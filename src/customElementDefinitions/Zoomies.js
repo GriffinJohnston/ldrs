@@ -6,7 +6,7 @@ const template = document.createElement('template')
 
 export default class Zoomies extends HTMLElement {
   static get observedAttributes() {
-    return ['size', 'color', 'speed']
+    return ['size', 'color', 'speed', 'stroke', 'bg-opacity']
   }
 
   constructor() {
@@ -14,7 +14,7 @@ export default class Zoomies extends HTMLElement {
     if (!this.shadow) {
       this.shadow = this.attachShadow({ mode: 'open' })
     }
-    reflect(this, ['size', 'color', 'speed', 'stroke'])
+    reflect(this, ['size', 'color', 'speed', 'stroke', 'bg-opacity'])
   }
 
   connectedCallback() {
@@ -23,6 +23,7 @@ export default class Zoomies extends HTMLElement {
       color: 'black',
       speed: 1.4,
       stroke: 5,
+      'bg-opacity': 0.1,
     })
 
     template.innerHTML = `
@@ -32,7 +33,8 @@ export default class Zoomies extends HTMLElement {
           --uib-size: ${this.size}px;
           --uib-color: ${this.color};
           --uib-speed: ${this.speed}s;
-          --uib-line-weight: ${this.stroke}px;
+          --uib-stroke: ${this.stroke}px;
+          --uib-bg-opacity: ${this['bg-opacity']};
         }
         ${styles}
       </style>
@@ -51,7 +53,8 @@ export default class Zoomies extends HTMLElement {
         --uib-size: ${this.size}px;
         --uib-color: ${this.color};
         --uib-speed: ${this.speed}s;
-        --uib-line-weight: ${this.stroke}px;
+        --uib-stroke: ${this.stroke}px;
+        --uib-bg-opacity: ${this['bg-opacity']};
       }
       ${styles}
     `

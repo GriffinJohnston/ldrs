@@ -1,10 +1,11 @@
 {
-  "name": "@uiball/loaders",
-  "version": "2.0.0",
+  "name": "ldrs",
+  "version": "1.0.0",
   "author": "Griffin Johnston",
   "license": "MIT",
   "description": "Tiny HTML and SVG loaders as web components",
   "keywords": [
+    "uiball",
     "loaders",
     "loading animations",
     "indeterminate loaders",
@@ -13,8 +14,7 @@
     "icon",
     "waiting",
     "custom elements",
-    "web components",
-    "uiball"
+    "web components"
   ],
   "type": "module",
   "main": "dist/index.js",
@@ -26,8 +26,6 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": "./dist/index.js",
-    "./elements": "./dist/elements.js",
-    "./elements.js": "./dist/elements.js",
     "./*": "./dist/customElements/*.js",
     "./*.js": "./dist/customElements/*.js"
   },
@@ -37,36 +35,31 @@
   "browserslist": [
     "defaults"
   ],
-  "homepage": "https://uiball.com/loaders",
+  "homepage": "https://uiball.com/ldrs",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/GriffinJohnston/uiball-loaders.git"
+    "url": "git+https://github.com/GriffinJohnston/ldrs.git"
   },
   "bugs": {
-    "url": "https://github.com/GriffinJohnston/uiball-loaders/issues"
+    "url": "https://github.com/GriffinJohnston/ldrs/issues"
   },
   "scripts": {
-    "build": "rm -r dist && npx tsc && npx rollup -c rollup.config.js",
+    "build": "rm -rf dist && npx tsc && npx rollup -c rollup.config.js",
     "dev": "npx rollup -c rollup.config.js -w",
+    "demo": "cp -r src/demos dist && npx http-server dist",
     "start": "npm run dev"
   },
   "devDependencies": {
-    "@babel/core": "^7.22.8",
-    "@babel/plugin-transform-runtime": "^7.22.7",
-    "@babel/preset-env": "^7.22.7",
-    "@babel/preset-react": "^7.22.5",
-    "@rollup/plugin-babel": "^6.0.3",
-    "@rollup/plugin-terser": "^0.4.3",
-    "eslint": "^8.44.0",
-    "eslint-config-prettier": "^8.8.0",
-    "eslint-plugin-react": "^7.32.2",
-    "postcss": "^8.4.25",
-    "prettier": "3.0.0",
-    "rollup": "^3.26.2",
+    "@rollup/plugin-terser": "^0.4.4",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "postcss": "^8.4.31",
+    "prettier": "3.0.3",
+    "rollup": "^4.0.2",
     "rollup-plugin-multi-input": "^1.4.1",
-    "rollup-plugin-node-externals": "^6.1.1",
+    "rollup-plugin-node-externals": "^6.1.2",
     "rollup-plugin-postcss": "^4.0.2",
-    "sass": "^1.63.6",
-    "typescript": "^5.1.6"
+    "sass": "^1.69.0",
+    "typescript": "^5.2.2"
   }
 }

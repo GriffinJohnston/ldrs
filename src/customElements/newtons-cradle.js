@@ -1,5 +1,5 @@
 import NewtonsCradle from '../customElementDefinitions/NewtonsCradle'
 
-if (typeof window !== 'undefined' && !customElements.get('l-nc')) {
-  customElements.define('l-nc', class extends NewtonsCradle {})
+if (typeof window !== 'undefined' && !customElements.get('l-newtons-cradle')) {
+  customElements.define('l-newtons-cradle', class extends NewtonsCradle {})
 }

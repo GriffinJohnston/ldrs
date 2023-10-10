@@ -32,7 +32,7 @@ export default class Hatch extends HTMLElement {
           --uib-size: ${this.size};
           --uib-color: ${this.color};
           --uib-speed: ${this.speed}s;
-          --uib-line-weight: ${this.stroke};
+          --uib-stroke: ${this.stroke};
         }
         ${styles}
       </style>
@@ -51,7 +51,7 @@ export default class Hatch extends HTMLElement {
         --uib-size: ${this.size};
         --uib-color: ${this.color};
         --uib-speed: ${this.speed}s;
-        --uib-line-weight: ${this.stroke};
+        --uib-stroke: ${this.stroke};
       }
       ${styles}
     `

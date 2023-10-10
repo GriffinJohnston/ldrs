@@ -1,0 +1,219 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initiascale=1.0" />
+    <title>Auto-Defined Elements</title>
+  </head>
+  <body>
+    <div>
+      <h1>Auto-Defined Elements</h1>
+      <div class="container">
+        <div class="cell">
+          <l-quantum></l-quantum>
+          Quantum
+        </div>
+        <div class="cell">
+          <l-bouncy-arc></l-bouncy-arc>
+          BouncyArc
+        </div>
+        <div class="cell">
+          <l-hourglass></l-hourglass>
+          Hourglass
+        </div>
+        <div class="cell">
+          <l-grid></l-grid>
+          Grid
+        </div>
+        <div class="cell">
+          <l-bouncy></l-bouncy>
+          Bouncy
+        </div>
+        <div class="cell">
+          <l-helix></l-helix>
+          Helix
+        </div>
+        <div class="cell">
+          <l-dot-stream></l-dot-stream>
+          DotStream
+        </div>
+        <div class="cell">
+          <l-jelly-stream></l-jelly-stream>
+          JellyStream
+        </div>
+        <div class="cell">
+          <l-hatch></l-hatch>
+          Hatch
+        </div>
+        <div class="cell">
+          <l-spiral></l-spiral>
+          Spiral
+        </div>
+
+        <div class="cell">
+          <l-tail-chase></l-tail-chase>
+          TailChase
+        </div>
+        <div class="cell">
+          <l-ring></l-ring>
+          Ring
+        </div>
+        <div class="cell">
+          <l-chaotic-orbit></l-chaotic-orbit>
+          ChaoticOrbit
+        </div>
+        <div class="cell">
+          <l-dot-pulse></l-dot-pulse>
+          DotPulse
+        </div>
+        <div class="cell">
+          <l-dot-spinner></l-dot-spinner>
+          DotSpinner
+        </div>
+        <div class="cell">
+          <l-dot-wave></l-dot-wave>
+          DotWave
+        </div>
+        <div class="cell">
+          <l-treadmill></l-treadmill>
+          Treadmill
+        </div>
+        <div class="cell">
+          <l-jelly></l-jelly>
+          Jelly
+        </div>
+        <div class="cell">
+          <l-jelly-triangle></l-jelly-triangle>
+          JellyTriangle
+        </div>
+        <div class="cell">
+          <l-leapfrog></l-leapfrog>
+          Leapfrog
+        </div>
+        <div class="cell">
+          <l-line-wobble></l-line-wobble>
+          LineWobble
+        </div>
+        <div class="cell">
+          <l-metronome></l-metronome>
+          Metronome
+        </div>
+        <div class="cell">
+          <l-momentum></l-momentum>
+          Momentum
+        </div>
+        <div class="cell">
+          <l-miyagi></l-miyagi>
+          Miyagi
+        </div>
+        <div class="cell">
+          <l-newtons-cradle></l-newtons-cradle>
+          NewtonsCradle
+        </div>
+        <div class="cell">
+          <l-orbit></l-orbit>
+          Orbit
+        </div>
+        <div class="cell">
+          <l-ping></l-ping>
+          Ping
+        </div>
+        <div class="cell">
+          <l-pinwheel></l-pinwheel>
+          Pinwheel
+        </div>
+        <div class="cell">
+          <l-pulsar></l-pulsar>
+          Pulsar
+        </div>
+        <div class="cell">
+          <l-ripples></l-ripples>
+          Ripples
+        </div>
+        <div class="cell">
+          <l-superballs></l-superballs>
+          Superballs
+        </div>
+        <div class="cell">
+          <l-trio></l-trio>
+          Trio
+        </div>
+        <div class="cell">
+          <l-waveform></l-waveform>
+          Waveform
+        </div>
+        <div class="cell">
+          <l-wobble></l-wobble>
+          Wobble
+        </div>
+        <div class="cell">
+          <l-zoomies></l-zoomies>
+          Zoomies
+        </div>
+      </div>
+    </div>
+
+    <script type="module">
+      import '../customElements/ring.js'
+      import '../customElements/chaotic-orbit.js'
+      import '../customElements/dot-pulse.js'
+      import '../customElements/dot-spinner.js'
+      import '../customElements/dot-wave.js'
+      import '../customElements/treadmill.js'
+      import '../customElements/jelly.js'
+      import '../customElements/jelly-triangle.js'
+      import '../customElements/leapfrog.js'
+      import '../customElements/line-wobble.js'
+      import '../customElements/metronome.js'
+      import '../customElements/momentum.js'
+      import '../customElements/miyagi.js'
+      import '../customElements/newtons-cradle.js'
+      import '../customElements/orbit.js'
+      import '../customElements/ping.js'
+      import '../customElements/pinwheel.js'
+      import '../customElements/pulsar.js'
+      import '../customElements/zoomies.js'
+      import '../customElements/ripples.js'
+      import '../customElements/superballs.js'
+      import '../customElements/trio.js'
+      import '../customElements/waveform.js'
+      import '../customElements/wobble.js'
+      import '../customElements/helix.js'
+      import '../customElements/dot-stream.js'
+      import '../customElements/jelly-stream.js'
+      import '../customElements/hatch.js'
+      import '../customElements/spiral.js'
+      import '../customElements/jelly-spiral.js'
+      import '../customElements/tail-chase.js'
+      import '../customElements/bouncy.js'
+      import '../customElements/grid.js'
+      import '../customElements/hourglass.js'
+      import '../customElements/bouncy-arc.js'
+      import '../customElements/quantum.js'
+    </script>
+
+    <style>
+      h1 {
+        text-align: center;
+        margin: 60px 0 20px;
+        font-family: monospace;
+      }
+      .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-auto-rows: 300px;
+        gap: 5px;
+        padding: 40px;
+      }
+
+      .cell {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        background-color: #f9f9f9;
+        font-family: monospace;
+      }
+    </style>
+  </body>
+</html>

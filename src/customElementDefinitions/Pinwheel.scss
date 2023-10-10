@@ -17,11 +17,11 @@
 
 .line {
   position: absolute;
-  top: calc(50% - var(--uib-line-weight) / 2);
+  top: calc(50% - var(--uib-stroke) / 2);
   left: 0;
-  height: var(--uib-line-weight);
+  height: var(--uib-stroke);
   width: 100%;
-  border-radius: calc(var(--uib-line-weight) / 2);
+  border-radius: calc(var(--uib-stroke) / 2);
   background-color: var(--uib-color);
   animation: rotate var(--uib-speed) ease-in-out infinite;
   transition: background-color 0.3s ease;

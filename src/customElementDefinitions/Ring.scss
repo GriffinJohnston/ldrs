@@ -15,7 +15,7 @@
   overflow: visible;
 }
 
-.container circle {
+.car {
   fill: none;
   stroke: var(--uib-color);
   stroke-dasharray: 1, 200;
@@ -23,6 +23,13 @@
   stroke-linecap: round;
   animation: stretch calc(var(--uib-speed) * 0.75) ease-in-out infinite;
   will-change: stroke-dasharray, stroke-dashoffset;
+  transition: stroke 0.5s ease;
+}
+
+.track {
+  fill: none;
+  stroke: var(--uib-color);
+  opacity: var(--uib-bg-opacity);
   transition: stroke 0.5s ease;
 }
 
@@ -34,14 +41,14 @@
 
 @keyframes stretch {
   0% {
-    stroke-dasharray: 1, 200;
+    stroke-dasharray: 0, 150;
     stroke-dashoffset: 0;
   }
   50% {
-    stroke-dasharray: 90, 200;
-    stroke-dashoffset: -35px;
+    stroke-dasharray: 75, 150;
+    stroke-dashoffset: -25;
   }
   100% {
-    stroke-dashoffset: -124px;
+    stroke-dashoffset: -100;
   }
 }

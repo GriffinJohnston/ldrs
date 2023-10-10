@@ -1,6 +1,6 @@
 :host {
-  --uib-mult: calc(var(--uib-size) / var(--uib-line-weight));
-  --uib-line-weight-px: calc(var(--uib-line-weight) * 1px);
+  --uib-mult: calc(var(--uib-size) / var(--uib-stroke));
+  --uib-stroke-px: calc(var(--uib-stroke) * 1px);
   --uib-size-px: calc(var(--uib-size) * 1px);
   position: relative;
   display: inline-flex;
@@ -18,10 +18,10 @@
 
 .line {
   position: absolute;
-  top: calc(50% - var(--uib-line-weight-px) / 2);
-  left: calc(50% - var(--uib-line-weight-px) / 2);
-  width: var(--uib-line-weight-px);
-  height: var(--uib-line-weight-px);
+  top: calc(50% - var(--uib-stroke-px) / 2);
+  left: calc(50% - var(--uib-stroke-px) / 2);
+  width: var(--uib-stroke-px);
+  height: var(--uib-stroke-px);
   background-color: var(--uib-color);
   animation: center-line var(--uib-speed) ease infinite;
   transition: background-color 0.3s ease;
@@ -31,8 +31,8 @@
 .container::after {
   content: '';
   position: absolute;
-  width: var(--uib-line-weight-px);
-  height: var(--uib-line-weight-px);
+  width: var(--uib-stroke-px);
+  height: var(--uib-stroke-px);
   background-color: var(--uib-color);
   animation: explore var(--uib-speed) ease infinite;
   transition: background-color 0.3s ease;

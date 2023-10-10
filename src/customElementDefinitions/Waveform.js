@@ -37,7 +37,7 @@ export default class Waveform extends HTMLElement {
           --uib-size: ${this.size}px;
           --uib-color: ${this.color};
           --uib-speed: ${this.speed}s;
-          --uib-line-weight: ${this.stroke}px;
+          --uib-stroke: ${this.stroke}px;
         }
         ${styles}
       </style>
@@ -56,7 +56,7 @@ export default class Waveform extends HTMLElement {
         --uib-size: ${this.size}px;
         --uib-color: ${this.color};
         --uib-speed: ${this.speed}s;
-        --uib-line-weight: ${this.stroke}px;
+        --uib-stroke: ${this.stroke}px;
       }
       ${styles}
     `

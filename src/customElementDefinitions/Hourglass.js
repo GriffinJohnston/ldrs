@@ -6,7 +6,7 @@ const template = document.createElement('template')
 
 export default class Hourglass extends HTMLElement {
   static get observedAttributes() {
-    return ['size', 'color', 'speed']
+    return ['size', 'color', 'speed', 'bg-opacity']
   }
 
   constructor() {
@@ -14,7 +14,7 @@ export default class Hourglass extends HTMLElement {
     if (!this.shadow) {
       this.shadow = this.attachShadow({ mode: 'open' })
     }
-    reflect(this, ['size', 'color', 'speed'])
+    reflect(this, ['size', 'color', 'speed', 'bg-opacity'])
   }
 
   connectedCallback() {
@@ -22,6 +22,7 @@ export default class Hourglass extends HTMLElement {
       size: 40,
       color: 'black',
       speed: 1.75,
+      'bg-opacity': 0.1,
     })
 
     template.innerHTML = `
@@ -34,6 +35,7 @@ export default class Hourglass extends HTMLElement {
           --uib-size: ${this.size}px;
           --uib-color: ${this.color};
           --uib-speed: ${this.speed}s;
+          --uib-bg-opacity: ${this['bg-opacity']};
         }
         ${styles}
       </style>
@@ -52,6 +54,7 @@ export default class Hourglass extends HTMLElement {
         --uib-size: ${this.size}px;
         --uib-color: ${this.color};
         --uib-speed: ${this.speed}s;
+        --uib-bg-opacity: ${this['bg-opacity']};
       }
       ${styles}
     `

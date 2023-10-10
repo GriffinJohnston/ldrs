@@ -6,7 +6,7 @@ const template = document.createElement('template')
 
 export default class Ring extends HTMLElement {
   static get observedAttributes() {
-    return ['size', 'color', 'stroke', 'speed']
+    return ['size', 'color', 'stroke', 'speed', 'bg-opacity']
   }
 
   constructor() {
@@ -14,7 +14,7 @@ export default class Ring extends HTMLElement {
     if (!this.shadow) {
       this.shadow = this.attachShadow({ mode: 'open' })
     }
-    reflect(this, ['size', 'color', 'stroke', 'speed'])
+    reflect(this, ['size', 'color', 'stroke', 'speed', 'bg-opacity'])
   }
 
   connectedCallback() {
@@ -23,22 +23,41 @@ export default class Ring extends HTMLElement {
       color: 'black',
       stroke: 5,
       speed: 2,
+      'bg-opacity': 0,
     })
 
     template.innerHTML = `
       <svg
         class="container"
-        viewBox="25 25 50 50"
+        viewBox="${this.size / 2} ${this.size / 2} ${this.size} ${this.size}"
         height="${this.size}"
         width="${this.size}"
       >
-        <circle cx="50" cy="50" r="20" stroke-width="${this.stroke}" fill="none" />
+        <circle 
+          class="track"
+          cx="${this.size}" 
+          cy="${this.size}" 
+          r="${this.size / 2 - this.stroke / 2}" 
+          pathlength="100" 
+          stroke-width="${this.stroke}px" 
+          fill="none" 
+        />
+        <circle 
+          class="car"
+          cx="${this.size}" 
+          cy="${this.size}" 
+          r="${this.size / 2 - this.stroke / 2}" 
+          pathlength="100" 
+          stroke-width="${this.stroke}px" 
+          fill="none" 
+        />
       </svg>
       <style>
         :host{
           --uib-size: ${this.size}px;
           --uib-color: ${this.color};
           --uib-speed: ${this.speed}s;
+          --uib-bg-opacity: ${this['bg-opacity']};
         }
         ${styles}
       </style>
@@ -56,6 +75,13 @@ export default class Ring extends HTMLElement {
 
     svgEl.setAttribute('height', this.size)
     svgEl.setAttribute('width', this.size)
+    svgEl.setAttribute(
+      'viewBox',
+      `${this.size / 2} ${this.size / 2} ${this.size} ${this.size}`,
+    )
+    circleEl.setAttribute('cx', this.size)
+    circleEl.setAttribute('cy', this.size)
+    circleEl.setAttribute('r', this.size / 2 - this.stroke / 2)
     circleEl.setAttribute('stroke-width', this.stroke)
 
     styleEl.innerHTML = `
@@ -63,6 +89,7 @@ export default class Ring extends HTMLElement {
         --uib-size: ${this.size}px;
         --uib-color: ${this.color};
         --uib-speed: ${this.speed}s;
+        --uib-bg-opacity: ${this['bg-opacity']};
       }
       ${styles}
     `

@@ -1,0 +1,60 @@
+:host {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--uib-size);
+  width: var(--uib-size);
+}
+
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: var(--uib-size);
+  width: var(--uib-size);
+}
+
+.line {
+  position: absolute;
+  top: 0;
+  left: calc(50% - var(--uib-stroke) / 2);
+  display: flex;
+  align-items: flex-start;
+  height: 100%;
+  width: var(--uib-stroke);
+}
+
+.line::before {
+  content: '';
+  height: 22%;
+  width: 100%;
+  border-radius: calc(var(--uib-stroke) / 2);
+  background-color: var(--uib-color);
+  animation: pulse calc(var(--uib-speed)) ease-in-out infinite;
+  transition: background-color 0.3s ease;
+  transform-origin: center bottom;
+}
+
+@for $i from 1 through 11 {
+  .line:nth-child(#{$i}) {
+    transform: rotate(calc(360deg / -12 * $i));
+
+    &::before {
+      animation-delay: calc(var(--uib-speed) / -12 * $i);
+    }
+  }
+}
+
+@keyframes pulse {
+  0%,
+  80%,
+  100% {
+    transform: scaleY(0.75);
+    opacity: 0;
+  }
+  20% {
+    transform: scaleY(1);
+    opacity: 1;
+  }
+}

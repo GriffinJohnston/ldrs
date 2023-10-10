@@ -2,11 +2,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: calc(var(--uib-size) * 0.55);
+  height: calc(var(--uib-size) * 0.51);
   width: var(--uib-size);
 }
 
 .container {
+  --uib-cube-size: calc(var(--uib-size) / 5.5);
   --uib-arc-1: -80deg;
   --uib-arc-2: 80deg;
   display: flex;
@@ -17,8 +18,8 @@
 }
 
 .cube {
-  width: calc(var(--uib-size) / 5);
-  height: calc(var(--uib-size) * 0.47);
+  width: var(--uib-cube-size);
+  height: calc(var(--uib-size) * 0.5);
   transform-origin: center bottom;
   transform: rotate(var(var(--uib-arc-1)));
   animation: metronome var(--uib-speed) linear infinite;
@@ -26,8 +27,8 @@
   &::after {
     content: '';
     display: block;
-    width: calc(var(--uib-size) / 5);
-    height: calc(var(--uib-size) / 5);
+    width: var(--uib-cube-size);
+    height: var(--uib-cube-size);
     background-color: var(--uib-color);
     border-radius: 25%;
     animation: morph var(--uib-speed) linear infinite;
@@ -71,12 +72,12 @@
     transform-origin: center left;
   }
 
-  25% {
+  27.5% {
     transform: scaleX(1);
     transform-origin: center left;
   }
 
-  25.0001%,
+  27.5001%,
   42.5% {
     transform: scaleX(1);
     transform-origin: center right;
