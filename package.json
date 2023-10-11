@@ -19,10 +19,7 @@
   "type": "module",
   "main": "dist/index.js",
   "module": "dist/index.js",
-  "sideEffects": [
-    "./dist/customElements/*",
-    "./dist/lib/*"
-  ],
+  "sideEffects": false,
   "types": "./dist/index.d.ts",
   "exports": {
     ".": "./dist/index.js",

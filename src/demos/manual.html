@@ -7,155 +7,14 @@
   <body>
     <div>
       <h1>Manually Defined Elements</h1>
-      <div class="container">
-        <div class="cell">
-          <custom-quantum></custom-quantum>
-          Quantum
-        </div>
-        <div class="cell">
-          <custom-bouncy-arc></custom-bouncy-arc>
-          BouncyArc
-        </div>
-        <div class="cell">
-          <custom-hourglass></custom-hourglass>
-          Hourglass
-        </div>
-        <div class="cell">
-          <custom-grid></custom-grid>
-          Grid
-        </div>
-        <div class="cell">
-          <custom-bouncy></custom-bouncy>
-          Bouncy
-        </div>
-        <div class="cell">
-          <custom-helix></custom-helix>
-          Helix
-        </div>
-        <div class="cell">
-          <custom-dot-stream></custom-dot-stream>
-          DotStream
-        </div>
-        <div class="cell">
-          <custom-jelly-stream></custom-jelly-stream>
-          JellyStream
-        </div>
-        <div class="cell">
-          <custom-hatch></custom-hatch>
-          Hatch
-        </div>
-        <div class="cell">
-          <custom-spiral></custom-spiral>
-          Spiral
-        </div>
-
-        <div class="cell">
-          <custom-tail-chase></custom-tail-chase>
-          TailChase
-        </div>
-        <div class="cell">
-          <custom-ring></custom-ring>
-          Ring
-        </div>
-        <div class="cell">
-          <custom-chaotic-orbit></custom-chaotic-orbit>
-          ChaoticOrbit
-        </div>
-        <div class="cell">
-          <custom-dot-pulse></custom-dot-pulse>
-          DotPulse
-        </div>
-        <div class="cell">
-          <custom-dot-spinner></custom-dot-spinner>
-          DotSpinner
-        </div>
-        <div class="cell">
-          <custom-dot-wave></custom-dot-wave>
-          DotWave
-        </div>
-        <div class="cell">
-          <custom-treadmill></custom-treadmill>
-          Treadmill
-        </div>
-        <div class="cell">
-          <custom-jelly></custom-jelly>
-          Jelly
-        </div>
-        <div class="cell">
-          <custom-jelly-triangle></custom-jelly-triangle>
-          JellyTriangle
-        </div>
-        <div class="cell">
-          <custom-leapfrog></custom-leapfrog>
-          Leapfrog
-        </div>
-        <div class="cell">
-          <custom-line-wobble></custom-line-wobble>
-          LineWobble
-        </div>
-        <div class="cell">
-          <custom-metronome></custom-metronome>
-          Metronome
-        </div>
-        <div class="cell">
-          <custom-momentum></custom-momentum>
-          Momentum
-        </div>
-        <div class="cell">
-          <custom-miyagi></custom-miyagi>
-          Miyagi
-        </div>
-        <div class="cell">
-          <custom-newtons-cradle></custom-newtons-cradle>
-          NewtonsCradle
-        </div>
-        <div class="cell">
-          <custom-orbit></custom-orbit>
-          Orbit
-        </div>
-        <div class="cell">
-          <custom-ping></custom-ping>
-          Ping
-        </div>
-        <div class="cell">
-          <custom-pinwheel></custom-pinwheel>
-          Pinwheel
-        </div>
-        <div class="cell">
-          <custom-pulsar></custom-pulsar>
-          Pulsar
-        </div>
-        <div class="cell">
-          <custom-ripples></custom-ripples>
-          Ripples
-        </div>
-        <div class="cell">
-          <custom-superballs></custom-superballs>
-          Superballs
-        </div>
-        <div class="cell">
-          <custom-trio></custom-trio>
-          Trio
-        </div>
-        <div class="cell">
-          <custom-waveform></custom-waveform>
-          Waveform
-        </div>
-        <div class="cell">
-          <custom-wobble></custom-wobble>
-          Wobble
-        </div>
-        <div class="cell">
-          <custom-zoomies></custom-zoomies>
-          Zoomies
-        </div>
-      </div>
+      <div class="container"></div>
     </div>
 
     <script type="module">
       import {
         Bouncy,
         BouncyArc,
+        Cardio,
         ChaoticOrbit,
         Grid,
         DotPulse,
@@ -168,7 +27,6 @@
         Hourglass,
         Jelly,
         TailChase,
-        JellySpiral,
         JellyStream,
         JellyTriangle,
         Leapfrog,
@@ -182,10 +40,16 @@
         Pinwheel,
         Pulsar,
         Quantum,
+        Reuleaux,
         Ring,
+        Ring2,
         Ripples,
         Spiral,
+        Square,
+        Squircle,
         Superballs,
+        Tailspin,
+        Trefoil,
         Trio,
         Waveform,
         Wobble,
@@ -194,6 +58,7 @@
 
       customElements.define('custom-bouncy', class extends Bouncy {})
       customElements.define('custom-bouncy-arc', class extends BouncyArc {})
+      customElements.define('custom-cardio', class extends Cardio {})
       customElements.define(
         'custom-chaotic-orbit',
         class extends ChaoticOrbit {},
@@ -208,7 +73,6 @@
       customElements.define('custom-helix', class extends Helix {})
       customElements.define('custom-hourglass', class extends Hourglass {})
       customElements.define('custom-jelly', class extends Jelly {})
-      customElements.define('custom-tail-chase', class extends TailChase {})
       customElements.define('custom-jelly-stream', class extends JellyStream {})
       customElements.define(
         'custom-jelly-triangle',
@@ -228,14 +92,77 @@
       customElements.define('custom-pinwheel', class extends Pinwheel {})
       customElements.define('custom-pulsar', class extends Pulsar {})
       customElements.define('custom-quantum', class extends Quantum {})
+      customElements.define('custom-reuleaux', class extends Reuleaux {})
       customElements.define('custom-ring', class extends Ring {})
+      customElements.define('custom-ring-2', class extends Ring2 {})
       customElements.define('custom-ripples', class extends Ripples {})
       customElements.define('custom-spiral', class extends Spiral {})
+      customElements.define('custom-square', class extends Square {})
+      customElements.define('custom-squircle', class extends Squircle {})
       customElements.define('custom-superballs', class extends Superballs {})
+      customElements.define('custom-tail-chase', class extends TailChase {})
+      customElements.define('custom-tailspin', class extends Tailspin {})
+      customElements.define('custom-trefoil', class extends Trefoil {})
       customElements.define('custom-trio', class extends Trio {})
       customElements.define('custom-waveform', class extends Waveform {})
       customElements.define('custom-wobble', class extends Wobble {})
       customElements.define('custom-zoomies', class extends Zoomies {})
+
+      const tags = [
+        'bouncy',
+        'bouncy-arc',
+        'cardio',
+        'chaotic-orbit',
+        'dot-pulse',
+        'dot-spinner',
+        'dot-stream',
+        'dot-wave',
+        'grid',
+        'hatch',
+        'helix',
+        'hourglass',
+        'infinity',
+        'jelly',
+        'jelly-stream',
+        'jelly-triangle',
+        'leapfrog',
+        'line-wobble',
+        'metronome',
+        'miyagi',
+        'momentum',
+        'newtons-cradle',
+        'orbit',
+        'ping',
+        'pinwheel',
+        'pulsar',
+        'quantum',
+        'reuleaux',
+        'ring',
+        'ring-2',
+        'ripples',
+        'spiral',
+        'square',
+        'squircle',
+        'superballs',
+        'tail-chase',
+        'tail-chase',
+        'tailspin',
+        'treadmill',
+        'trefoil',
+        'trio',
+        'waveform',
+        'wobble',
+        'zoomies',
+      ]
+
+      const containerEl = document.querySelector('.container')
+
+      tags.forEach((tag) => {
+        const loaderCard = document.createElement('div')
+        loaderCard.classList.add('cell')
+        loaderCard.innerHTML = `<custom-${tag}></custom-${tag}>${tag}`
+        containerEl.append(loaderCard)
+      })
     </script>
 
     <style>
@@ -246,7 +173,7 @@
       }
       .container {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
         grid-auto-rows: 300px;
         gap: 5px;
         padding: 40px;

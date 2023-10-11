@@ -7,6 +7,7 @@
 }
 
 .container {
+  --dot-size: calc(var(--uib-size) * 0.17);
   position: relative;
   display: flex;
   align-items: center;
@@ -30,8 +31,8 @@
 
 .dot::before {
   content: '';
-  height: 17%;
-  width: 17%;
+  height: var(--dot-size);
+  width: var(--dot-size);
   border-radius: 50%;
   background-color: var(--uib-color);
   transition: background-color 0.3s ease;
