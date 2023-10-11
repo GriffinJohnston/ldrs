@@ -1,11 +1,11 @@
 /**
- * @param {object} obj
- * @param {object} props
+ * @param {object} el
+ * @param {string[]} props
  * @returns {void}
  */
-export default function reflect(obj, props) {
+export default function reflect(el, props) {
   props.forEach((prop) => {
-    Object.defineProperty(obj, prop, {
+    Object.defineProperty(el, prop, {
       set(val) {
         if ('string,number'.includes(typeof val)) {
           this.setAttribute(prop, val.toString())
