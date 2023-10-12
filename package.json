@@ -1,6 +1,6 @@
 {
   "name": "ldrs",
-  "version": "1.0.0",
+  "version": "0.0.3",
   "author": "Griffin Johnston",
   "license": "MIT",
   "description": "Tiny HTML and SVG loaders as web components",
@@ -23,8 +23,10 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": "./dist/index.js",
-    "./*": "./dist/customElements/*.js",
-    "./*.js": "./dist/customElements/*.js"
+    "./*": "./dist/elements/*.js",
+    "./*.js": "./dist/elements/*.js",
+    "./auto/*": "./dist/auto/*.js",
+    "./auto/*.js": "./dist/auto/*.js"
   },
   "files": [
     "dist"

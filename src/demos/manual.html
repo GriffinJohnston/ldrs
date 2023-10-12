@@ -12,101 +12,92 @@
 
     <script type="module">
       import {
-        Bouncy,
-        BouncyArc,
-        Cardio,
-        ChaoticOrbit,
-        Grid,
-        DotPulse,
-        DotSpinner,
-        DotStream,
-        DotWave,
-        Treadmill,
-        Hatch,
-        Helix,
-        Hourglass,
-        Jelly,
-        TailChase,
-        JellyStream,
-        JellyTriangle,
-        Leapfrog,
-        LineWobble,
-        Metronome,
-        Miyagi,
-        Momentum,
-        NewtonsCradle,
-        Orbit,
-        Ping,
-        Pinwheel,
-        Pulsar,
-        Quantum,
-        Reuleaux,
-        Ring,
-        Ring2,
-        Ripples,
-        Spiral,
-        Square,
-        Squircle,
-        Superballs,
-        Tailspin,
-        Trefoil,
-        Trio,
-        Waveform,
-        Wobble,
-        Zoomies,
+        bouncy,
+        bouncyArc,
+        cardio,
+        chaoticOrbit,
+        grid,
+        dotPulse,
+        dotSpinner,
+        dotStream,
+        dotWave,
+        treadmill,
+        hatch,
+        helix,
+        hourglass,
+        jelly,
+        tailChase,
+        jellyStream,
+        jellyTriangle,
+        leapfrog,
+        lineWobble,
+        metronome,
+        miyagi,
+        momentum,
+        newtonsCradle,
+        orbit,
+        ping,
+        pinwheel,
+        pulsar,
+        quantum,
+        reuleaux,
+        ring,
+        ring2,
+        ripples,
+        spiral,
+        square,
+        squircle,
+        superballs,
+        tailspin,
+        trefoil,
+        trio,
+        waveform,
+        wobble,
+        zoomies,
       } from '../index.js'
 
-      customElements.define('custom-bouncy', class extends Bouncy {})
-      customElements.define('custom-bouncy-arc', class extends BouncyArc {})
-      customElements.define('custom-cardio', class extends Cardio {})
-      customElements.define(
-        'custom-chaotic-orbit',
-        class extends ChaoticOrbit {},
-      )
-      customElements.define('custom-grid', class extends Grid {})
-      customElements.define('custom-dot-pulse', class extends DotPulse {})
-      customElements.define('custom-dot-spinner', class extends DotSpinner {})
-      customElements.define('custom-dot-stream', class extends DotStream {})
-      customElements.define('custom-dot-wave', class extends DotWave {})
-      customElements.define('custom-treadmill', class extends Treadmill {})
-      customElements.define('custom-hatch', class extends Hatch {})
-      customElements.define('custom-helix', class extends Helix {})
-      customElements.define('custom-hourglass', class extends Hourglass {})
-      customElements.define('custom-jelly', class extends Jelly {})
-      customElements.define('custom-jelly-stream', class extends JellyStream {})
-      customElements.define(
-        'custom-jelly-triangle',
-        class extends JellyTriangle {},
-      )
-      customElements.define('custom-leapfrog', class extends Leapfrog {})
-      customElements.define('custom-line-wobble', class extends LineWobble {})
-      customElements.define('custom-metronome', class extends Metronome {})
-      customElements.define('custom-miyagi', class extends Miyagi {})
-      customElements.define('custom-momentum', class extends Momentum {})
-      customElements.define(
-        'custom-newtons-cradle',
-        class extends NewtonsCradle {},
-      )
-      customElements.define('custom-orbit', class extends Orbit {})
-      customElements.define('custom-ping', class extends Ping {})
-      customElements.define('custom-pinwheel', class extends Pinwheel {})
-      customElements.define('custom-pulsar', class extends Pulsar {})
-      customElements.define('custom-quantum', class extends Quantum {})
-      customElements.define('custom-reuleaux', class extends Reuleaux {})
-      customElements.define('custom-ring', class extends Ring {})
-      customElements.define('custom-ring-2', class extends Ring2 {})
-      customElements.define('custom-ripples', class extends Ripples {})
-      customElements.define('custom-spiral', class extends Spiral {})
-      customElements.define('custom-square', class extends Square {})
-      customElements.define('custom-squircle', class extends Squircle {})
-      customElements.define('custom-superballs', class extends Superballs {})
-      customElements.define('custom-tail-chase', class extends TailChase {})
-      customElements.define('custom-tailspin', class extends Tailspin {})
-      customElements.define('custom-trefoil', class extends Trefoil {})
-      customElements.define('custom-trio', class extends Trio {})
-      customElements.define('custom-waveform', class extends Waveform {})
-      customElements.define('custom-wobble', class extends Wobble {})
-      customElements.define('custom-zoomies', class extends Zoomies {})
+      bouncy.register('my-bouncy')
+      bouncyArc.register('my-bouncy-arc')
+      cardio.register('my-cardio')
+      chaoticOrbit.register('my-chaotic-orbit')
+      grid.register('my-grid')
+      dotPulse.register('my-dot-pulse')
+      dotSpinner.register('my-dot-spinner')
+      dotStream.register('my-dot-stream')
+      dotWave.register('my-dot-wave')
+      treadmill.register('my-treadmill')
+      hatch.register('my-hatch')
+      helix.register('my-helix')
+      hourglass.register('my-hourglass')
+      jelly.register('my-jelly')
+      jellyStream.register('my-jelly-stream')
+      jellyTriangle.register('my-jelly-triangle')
+      leapfrog.register('my-leapfrog')
+      lineWobble.register('my-line-wobble')
+      metronome.register('my-metronome')
+      miyagi.register('my-miyagi')
+      momentum.register('my-momentum')
+      newtonsCradle.register('my-newtons-cradle')
+      orbit.register('my-orbit')
+      ping.register('my-ping')
+      pinwheel.register('my-pinwheel')
+      pulsar.register('my-pulsar')
+      quantum.register('my-quantum')
+      reuleaux.register('my-reuleaux')
+      ring.register('my-ring')
+      ring2.register('my-ring-2')
+      ripples.register('my-ripples')
+      spiral.register('my-spiral')
+      square.register('my-square')
+      squircle.register('my-squircle')
+      superballs.register('my-superballs')
+      tailChase.register('my-tail-chase')
+      tailspin.register('my-tailspin')
+      trefoil.register('my-trefoil')
+      trio.register('my-trio')
+      waveform.register('my-waveform')
+      wobble.register('my-wobble')
+      zoomies.register('my-zoomies')
 
       const tags = [
         'bouncy',
@@ -160,7 +151,7 @@
       tags.forEach((tag) => {
         const loaderCard = document.createElement('div')
         loaderCard.classList.add('cell')
-        loaderCard.innerHTML = `<custom-${tag}></custom-${tag}>${tag}`
+        loaderCard.innerHTML = `<my-${tag}></my-${tag}>${tag}`
         containerEl.append(loaderCard)
       })
     </script>
