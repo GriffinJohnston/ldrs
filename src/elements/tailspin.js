@@ -2,7 +2,7 @@ import Base from '../lib/LdrsBaseElement'
 import styles from './tailspin.scss'
 
 class Tailspin extends Base {
-  #attributes = ['size', 'color', 'speed', 'stroke']
+  _attributes = ['size', 'color', 'speed', 'stroke']
 
   static get observedAttributes() {
     return ['size', 'color', 'speed', 'stroke']
@@ -11,8 +11,8 @@ class Tailspin extends Base {
   constructor() {
     super()
 
-    this.storePropsToUpgrade(this.#attributes)
-    this.reflect(this.#attributes)
+    this.storePropsToUpgrade(this._attributes)
+    this.reflect(this._attributes)
   }
 
   connectedCallback() {

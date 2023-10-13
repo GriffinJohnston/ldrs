@@ -3,7 +3,7 @@ import Base from '../lib/LdrsBaseElement'
 import styles from './reuleaux.scss'
 
 class Reuleaux extends Base {
-  #attributes = ['size', 'color', 'speed', 'stroke', 'bg-opacity']
+  _attributes = ['size', 'color', 'speed', 'stroke', 'bg-opacity']
 
   static get observedAttributes() {
     return ['size', 'color', 'speed', 'stroke', 'bg-opacity']
@@ -12,8 +12,8 @@ class Reuleaux extends Base {
   constructor() {
     super()
 
-    this.storePropsToUpgrade(this.#attributes)
-    this.reflect(this.#attributes)
+    this.storePropsToUpgrade(this._attributes)
+    this.reflect(this._attributes)
 
     this.d =
       'M49.5,42.9c0-18.1-9.9-34-24.5-42.4C10.4,9,0.5,24.8,0.5,42.9c7.2,4.2,15.6,6.6,24.5,6.6S42.3,47.1,49.5,42.9z'

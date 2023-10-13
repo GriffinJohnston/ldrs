@@ -3,7 +3,7 @@ import Base from '../lib/LdrsBaseElement'
 import styles from './squircle.scss'
 
 class Squircle extends Base {
-  #attributes = ['size', 'color', 'speed', 'stroke', 'bg-opacity']
+  _attributes = ['size', 'color', 'speed', 'stroke', 'bg-opacity']
 
   static get observedAttributes() {
     return ['size', 'color', 'speed', 'stroke', 'bg-opacity']
@@ -12,8 +12,8 @@ class Squircle extends Base {
   constructor() {
     super()
 
-    this.storePropsToUpgrade(this.#attributes)
-    this.reflect(this.#attributes)
+    this.storePropsToUpgrade(this._attributes)
+    this.reflect(this._attributes)
 
     this.d =
       'M0.5,25C0.5,7.8,7.8,0.5,25,0.5S49.5,7.8,49.5,25S42.2,49.5,25,49.5S0.5,42.2,0.5,25'

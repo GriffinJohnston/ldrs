@@ -3,7 +3,7 @@ import Base from '../lib/LdrsBaseElement'
 import styles from './cardio.scss'
 
 class Cardio extends Base {
-  #attributes = ['size', 'color', 'speed', 'stroke', 'bg-opacity']
+  _attributes = ['size', 'color', 'speed', 'stroke', 'bg-opacity']
 
   static get observedAttributes() {
     return ['size', 'color', 'speed', 'stroke', 'bg-opacity']
@@ -12,8 +12,8 @@ class Cardio extends Base {
   constructor() {
     super()
 
-    this.storePropsToUpgrade(this.#attributes)
-    this.reflect(this.#attributes)
+    this.storePropsToUpgrade(this._attributes)
+    this.reflect(this._attributes)
 
     this.d = 'M0.5,17.2h8.2l3-4.7l5.9,12l7.8-24l5.9,16.7v0h8.2'
   }

@@ -3,7 +3,7 @@ import Base from '../lib/LdrsBaseElement'
 import styles from './trefoil.scss'
 
 class Trefoil extends Base {
-  #attributes = ['size', 'color', 'speed', 'stroke', 'bg-opacity']
+  _attributes = ['size', 'color', 'speed', 'stroke', 'bg-opacity']
 
   static get observedAttributes() {
     return ['size', 'color', 'speed', 'stroke', 'bg-opacity']
@@ -12,8 +12,8 @@ class Trefoil extends Base {
   constructor() {
     super()
 
-    this.storePropsToUpgrade(this.#attributes)
-    this.reflect(this.#attributes)
+    this.storePropsToUpgrade(this._attributes)
+    this.reflect(this._attributes)
 
     this.d =
       'M37.2,23.4c0,9.1-4.9,17-12.3,21.2c-3.6,2.1-7.8,3.3-12.3,3.3c-4.5,0-8.6-1.2-12.2-3.3c0-9.1,4.9-16.9,12.3-21.2c3.6-2.1,7.8-3.3,12.2-3.3S33.6,21.3,37.2,23.4c7.3,4.2,12.2,12.1,12.3,21.2c-3.6,2.1-7.8,3.3-12.2,3.3c-4.5,0-8.6-1.2-12.3-3.3c-7.3-4.2-12.2-12.1-12.2-21.2c0-9.1,4.9-17,12.2-21.2C32.3,6.4,37.2,14.3,37.2,23.4z'

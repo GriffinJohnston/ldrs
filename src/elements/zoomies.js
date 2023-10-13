@@ -2,7 +2,7 @@ import Base from '../lib/LdrsBaseElement'
 import styles from './zoomies.scss'
 
 class Zoomies extends Base {
-  #attributes = ['size', 'color', 'speed', 'stroke', 'bg-opacity']
+  _attributes = ['size', 'color', 'speed', 'stroke', 'bg-opacity']
 
   static get observedAttributes() {
     return ['size', 'color', 'speed', 'stroke', 'bg-opacity']
@@ -11,8 +11,8 @@ class Zoomies extends Base {
   constructor() {
     super()
 
-    this.storePropsToUpgrade(this.#attributes)
-    this.reflect(this.#attributes)
+    this.storePropsToUpgrade(this._attributes)
+    this.reflect(this._attributes)
   }
 
   connectedCallback() {

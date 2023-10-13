@@ -2,7 +2,7 @@ import Base from '../lib/LdrsBaseElement'
 import styles from './treadmill.scss'
 
 class Treadmill extends Base {
-  #attributes = ['size', 'color', 'speed']
+  _attributes = ['size', 'color', 'speed']
 
   static get observedAttributes() {
     return ['size', 'color', 'speed']
@@ -11,8 +11,8 @@ class Treadmill extends Base {
   constructor() {
     super()
 
-    this.storePropsToUpgrade(this.#attributes)
-    this.reflect(this.#attributes)
+    this.storePropsToUpgrade(this._attributes)
+    this.reflect(this._attributes)
   }
 
   connectedCallback() {

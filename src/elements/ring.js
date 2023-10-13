@@ -2,7 +2,7 @@ import Base from '../lib/LdrsBaseElement'
 import styles from './ring.scss'
 
 class Ring extends Base {
-  #attributes = ['size', 'color', 'stroke', 'speed', 'bg-opacity']
+  _attributes = ['size', 'color', 'stroke', 'speed', 'bg-opacity']
 
   static get observedAttributes() {
     return ['size', 'color', 'stroke', 'speed', 'bg-opacity']
@@ -11,8 +11,8 @@ class Ring extends Base {
   constructor() {
     super()
 
-    this.storePropsToUpgrade(this.#attributes)
-    this.reflect(this.#attributes)
+    this.storePropsToUpgrade(this._attributes)
+    this.reflect(this._attributes)
   }
 
   connectedCallback() {
