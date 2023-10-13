@@ -15,7 +15,7 @@ fs.readdir('./src/elements', (err, files) => {
 
     indexString += `export { default as ${sansJs} } from './elements/${sansJs}'
     `
-    globalString += `      'l-${kebabCase(sansJs)}': any
+    globalString += `    'l-${kebabCase(sansJs)}': any
 `
 
     fs.writeFileSync(
@@ -29,13 +29,9 @@ ${sansJs}.register()`,
 
   fs.writeFileSync(
     'src/global.d.ts',
-    `export {}
-
-declare global {
-  namespace JSX {
-    interface IntrinsicElements {
-${globalString}
-    }
+    `declare namespace JSX {
+  interface IntrinsicElements {
+${globalString.trimEnd()}
   }
 }`,
   )
