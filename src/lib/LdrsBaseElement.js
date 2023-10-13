@@ -1,5 +1,5 @@
 export default class LdrsBaseElement extends HTMLElement {
-  #propsToUpgrade = {}
+  _propsToUpgrade = {}
 
   constructor() {
     super()
@@ -15,7 +15,7 @@ export default class LdrsBaseElement extends HTMLElement {
   storePropsToUpgrade(props) {
     props.forEach((prop) => {
       if (this.hasOwnProperty(prop)) {
-        this.#propsToUpgrade[prop] = this[prop]
+        this._propsToUpgrade[prop] = this[prop]
         delete this[prop]
       }
     })
@@ -25,7 +25,7 @@ export default class LdrsBaseElement extends HTMLElement {
    * @returns {void}
    */
   upgradeStoredProps() {
-    Object.entries(this.#propsToUpgrade).forEach(([key, val]) => {
+    Object.entries(this._propsToUpgrade).forEach(([key, val]) => {
       this.setAttribute(key, val)
     })
   }
