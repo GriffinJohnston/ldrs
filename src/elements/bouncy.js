@@ -1,6 +1,10 @@
 import Base from '../lib/LdrsBaseElement'
 import styles from './bouncy.scss'
 
+/*
+ *   @typedef {JSX.intrinsicElements["l-bouncy"]} BouncyType
+ *   @type {BouncyType}
+ */
 class Bouncy extends Base {
   _attributes = ['size', 'color', 'speed']
 
