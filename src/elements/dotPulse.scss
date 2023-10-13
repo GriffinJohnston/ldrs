@@ -1,5 +1,6 @@
 :host {
   --uib-dot-size: calc(var(--uib-size) * 0.24);
+  flex-shrink: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;

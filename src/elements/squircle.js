@@ -1,27 +1,27 @@
-import reflect from '../lib/reflect'
-import applyDefaultProps from '../lib/applyDefaultProps'
 import scaleD from '../lib/scaleD'
+import Base from '../lib/LdrsBaseElement'
 import styles from './squircle.scss'
 
-const template = document.createElement('template')
+class Squircle extends Base {
+  #attributes = ['size', 'color', 'speed', 'stroke', 'bg-opacity']
 
-class Squircle extends HTMLElement {
   static get observedAttributes() {
     return ['size', 'color', 'speed', 'stroke', 'bg-opacity']
   }
 
   constructor() {
     super()
-    if (!this.shadow) {
-      this.shadow = this.attachShadow({ mode: 'open' })
-    }
-    reflect(this, ['size', 'color', 'speed', 'stroke', 'bg-opacity'])
+
+    this.storePropsToUpgrade(this.#attributes)
+    this.reflect(this.#attributes)
+
     this.d =
       'M0.5,25C0.5,7.8,7.8,0.5,25,0.5S49.5,7.8,49.5,25S42.2,49.5,25,49.5S0.5,42.2,0.5,25'
   }
 
   connectedCallback() {
-    applyDefaultProps(this, {
+    this.upgradeStoredProps()
+    this.applyDefaultProps({
       size: 37,
       color: 'black',
       stroke: 5,
@@ -31,7 +31,7 @@ class Squircle extends HTMLElement {
 
     const scaledD = scaleD(this.size / 50, this.d)
 
-    template.innerHTML = `
+    this.template.innerHTML = `
       <svg
         class="container" 
         x="0px" 
@@ -68,7 +68,7 @@ class Squircle extends HTMLElement {
       </style>
     `
 
-    this.shadow.replaceChildren(template.content.cloneNode(true))
+    this.shadow.replaceChildren(this.template.content.cloneNode(true))
 
     this.dispatchEvent(new Event('ready'))
   }

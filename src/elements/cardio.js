@@ -1,26 +1,26 @@
-import reflect from '../lib/reflect'
-import applyDefaultProps from '../lib/applyDefaultProps'
 import scaleD from '../lib/scaleD'
+import Base from '../lib/LdrsBaseElement'
 import styles from './cardio.scss'
 
-const template = document.createElement('template')
+class Cardio extends Base {
+  #attributes = ['size', 'color', 'speed', 'stroke', 'bg-opacity']
 
-class Cardio extends HTMLElement {
   static get observedAttributes() {
     return ['size', 'color', 'speed', 'stroke', 'bg-opacity']
   }
 
   constructor() {
     super()
-    if (!this.shadow) {
-      this.shadow = this.attachShadow({ mode: 'open' })
-    }
-    reflect(this, ['size', 'color', 'speed', 'stroke', 'bg-opacity'])
+
+    this.storePropsToUpgrade(this.#attributes)
+    this.reflect(this.#attributes)
+
     this.d = 'M0.5,17.2h8.2l3-4.7l5.9,12l7.8-24l5.9,16.7v0h8.2'
   }
 
   connectedCallback() {
-    applyDefaultProps(this, {
+    this.upgradeStoredProps()
+    this.applyDefaultProps({
       size: 50,
       color: 'black',
       speed: 1.5,
@@ -30,7 +30,7 @@ class Cardio extends HTMLElement {
 
     const scaledD = scaleD(this.size / 40, this.d)
 
-    template.innerHTML = `
+    this.template.innerHTML = `
       <svg
         class="container" 
         x="0px" 
@@ -66,7 +66,7 @@ class Cardio extends HTMLElement {
       </style>
     `
 
-    this.shadow.replaceChildren(template.content.cloneNode(true))
+    this.shadow.replaceChildren(this.template.content.cloneNode(true))
 
     this.dispatchEvent(new Event('ready'))
   }

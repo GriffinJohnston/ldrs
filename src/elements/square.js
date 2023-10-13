@@ -1,24 +1,23 @@
-import reflect from '../lib/reflect'
-import applyDefaultProps from '../lib/applyDefaultProps'
+import Base from '../lib/LdrsBaseElement'
 import styles from './square.scss'
 
-const template = document.createElement('template')
+class Square extends Base {
+  #attributes = ['size', 'color', 'stroke', 'speed', 'bg-opacity']
 
-class Square extends HTMLElement {
   static get observedAttributes() {
     return ['size', 'color', 'stroke', 'speed', 'bg-opacity']
   }
 
   constructor() {
     super()
-    if (!this.shadow) {
-      this.shadow = this.attachShadow({ mode: 'open' })
-    }
-    reflect(this, ['size', 'color', 'stroke', 'speed', 'bg-opacity'])
+
+    this.storePropsToUpgrade(this.#attributes)
+    this.reflect(this.#attributes)
   }
 
   connectedCallback() {
-    applyDefaultProps(this, {
+    this.upgradeStoredProps()
+    this.applyDefaultProps({
       size: 35,
       color: 'black',
       stroke: 5,
@@ -26,7 +25,7 @@ class Square extends HTMLElement {
       'bg-opacity': 0.1,
     })
 
-    template.innerHTML = `
+    this.template.innerHTML = `
       <svg
         class="container"
         viewBox="0 0 ${this.size} ${this.size}"
@@ -64,7 +63,7 @@ class Square extends HTMLElement {
       </style>
     `
 
-    this.shadow.replaceChildren(template.content.cloneNode(true))
+    this.shadow.replaceChildren(this.template.content.cloneNode(true))
 
     this.dispatchEvent(new Event('ready'))
   }

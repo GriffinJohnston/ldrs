@@ -1,31 +1,30 @@
-import reflect from '../lib/reflect'
-import applyDefaultProps from '../lib/applyDefaultProps'
+import Base from '../lib/LdrsBaseElement'
 import styles from './pinwheel.scss'
 
-const template = document.createElement('template')
+class Pinwheel extends Base {
+  #attributes = ['size', 'color', 'speed', 'stroke']
 
-class Pinwheel extends HTMLElement {
   static get observedAttributes() {
     return ['size', 'color', 'speed', 'stroke']
   }
 
   constructor() {
     super()
-    if (!this.shadow) {
-      this.shadow = this.attachShadow({ mode: 'open' })
-    }
-    reflect(this, ['size', 'color', 'speed', 'stroke'])
+
+    this.storePropsToUpgrade(this.#attributes)
+    this.reflect(this.#attributes)
   }
 
   connectedCallback() {
-    applyDefaultProps(this, {
+    this.upgradeStoredProps()
+    this.applyDefaultProps({
       size: 35,
       color: 'black',
       speed: 0.9,
       stroke: 3.5,
     })
 
-    template.innerHTML = `
+    this.template.innerHTML = `
       <div class="container">
         <div class="line"></div>
         <div class="line"></div>
@@ -45,7 +44,7 @@ class Pinwheel extends HTMLElement {
       </style>
     `
 
-    this.shadow.replaceChildren(template.content.cloneNode(true))
+    this.shadow.replaceChildren(this.template.content.cloneNode(true))
 
     this.dispatchEvent(new Event('ready'))
   }

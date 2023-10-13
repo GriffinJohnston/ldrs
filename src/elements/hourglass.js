@@ -1,31 +1,30 @@
-import reflect from '../lib/reflect'
-import applyDefaultProps from '../lib/applyDefaultProps'
+import Base from '../lib/LdrsBaseElement'
 import styles from './hourglass.scss'
 
-const template = document.createElement('template')
+class Hourglass extends Base {
+  #attributes = ['size', 'color', 'speed', 'bg-opacity']
 
-class Hourglass extends HTMLElement {
   static get observedAttributes() {
     return ['size', 'color', 'speed', 'bg-opacity']
   }
 
   constructor() {
     super()
-    if (!this.shadow) {
-      this.shadow = this.attachShadow({ mode: 'open' })
-    }
-    reflect(this, ['size', 'color', 'speed', 'bg-opacity'])
+
+    this.storePropsToUpgrade(this.#attributes)
+    this.reflect(this.#attributes)
   }
 
   connectedCallback() {
-    applyDefaultProps(this, {
+    this.upgradeStoredProps()
+    this.applyDefaultProps({
       size: 40,
       color: 'black',
       speed: 1.75,
       'bg-opacity': 0.1,
     })
 
-    template.innerHTML = `
+    this.template.innerHTML = `
       <div class="container">
         <div class="half"></div>
         <div class="half"></div>
@@ -41,7 +40,7 @@ class Hourglass extends HTMLElement {
       </style>
     `
 
-    this.shadow.replaceChildren(template.content.cloneNode(true))
+    this.shadow.replaceChildren(this.template.content.cloneNode(true))
 
     this.dispatchEvent(new Event('ready'))
   }

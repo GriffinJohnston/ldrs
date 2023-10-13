@@ -2,6 +2,7 @@
   --uib-mult: calc(var(--uib-size) / var(--uib-stroke));
   --uib-stroke-px: calc(var(--uib-stroke) * 1px);
   --uib-size-px: calc(var(--uib-size) * 1px);
+  flex-shrink: 0;
   position: relative;
   display: inline-flex;
   align-items: flex-start;

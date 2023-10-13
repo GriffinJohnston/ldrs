@@ -1,27 +1,27 @@
-import reflect from '../lib/reflect'
-import applyDefaultProps from '../lib/applyDefaultProps'
 import scaleD from '../lib/scaleD'
+import Base from '../lib/LdrsBaseElement'
 import styles from './infinity.scss'
 
-const template = document.createElement('template')
+class Infinity extends Base {
+  #attributes = ['size', 'color', 'speed', 'stroke', 'bg-opacity']
 
-class Infinity extends HTMLElement {
   static get observedAttributes() {
     return ['size', 'color', 'speed', 'stroke', 'bg-opacity']
   }
 
   constructor() {
     super()
-    if (!this.shadow) {
-      this.shadow = this.attachShadow({ mode: 'open' })
-    }
-    reflect(this, ['size', 'color', 'speed', 'stroke', 'bg-opacity'])
+
+    this.storePropsToUpgrade(this.#attributes)
+    this.reflect(this.#attributes)
+
     this.d =
       'M26.7,12.2c3.5,3.4,7.4,7.8,12.7,7.8c5.5,0,9.6-4.4,9.6-9.5C49,5,45.1,1,39.8,1c-5.5,0-9.5,4.2-13.1,7.8l-3.4,3.3c-3.6,3.6-7.6,7.8-13.1,7.8C4.9,20,1,16,1,10.5C1,5.4,5.1,1,10.6,1c5.3,0,9.2,4.5,12.7,7.8L26.7,12.2z'
   }
 
   connectedCallback() {
-    applyDefaultProps(this, {
+    this.upgradeStoredProps()
+    this.applyDefaultProps({
       size: 55,
       color: 'black',
       speed: 1.3,
@@ -31,7 +31,7 @@ class Infinity extends HTMLElement {
 
     const scaledD = scaleD(this.size / 50, this.d)
 
-    template.innerHTML = `
+    this.template.innerHTML = `
       <svg
         class="container" 
         x="0px" 
@@ -68,7 +68,7 @@ class Infinity extends HTMLElement {
       </style>
     `
 
-    this.shadow.replaceChildren(template.content.cloneNode(true))
+    this.shadow.replaceChildren(this.template.content.cloneNode(true))
 
     this.dispatchEvent(new Event('ready'))
   }

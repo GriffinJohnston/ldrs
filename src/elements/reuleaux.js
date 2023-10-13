@@ -1,27 +1,27 @@
-import reflect from '../lib/reflect'
-import applyDefaultProps from '../lib/applyDefaultProps'
 import scaleD from '../lib/scaleD'
+import Base from '../lib/LdrsBaseElement'
 import styles from './reuleaux.scss'
 
-const template = document.createElement('template')
+class Reuleaux extends Base {
+  #attributes = ['size', 'color', 'speed', 'stroke', 'bg-opacity']
 
-class Reuleaux extends HTMLElement {
   static get observedAttributes() {
     return ['size', 'color', 'speed', 'stroke', 'bg-opacity']
   }
 
   constructor() {
     super()
-    if (!this.shadow) {
-      this.shadow = this.attachShadow({ mode: 'open' })
-    }
-    reflect(this, ['size', 'color', 'speed', 'stroke', 'bg-opacity'])
+
+    this.storePropsToUpgrade(this.#attributes)
+    this.reflect(this.#attributes)
+
     this.d =
       'M49.5,42.9c0-18.1-9.9-34-24.5-42.4C10.4,9,0.5,24.8,0.5,42.9c7.2,4.2,15.6,6.6,24.5,6.6S42.3,47.1,49.5,42.9z'
   }
 
   connectedCallback() {
-    applyDefaultProps(this, {
+    this.upgradeStoredProps()
+    this.applyDefaultProps({
       size: 37,
       color: 'black',
       stroke: 5,
@@ -31,7 +31,7 @@ class Reuleaux extends HTMLElement {
 
     const scaledD = scaleD(this.size / 50, this.d)
 
-    template.innerHTML = `
+    this.template.innerHTML = `
       <svg
         class="container" 
         x="0px" 
@@ -68,7 +68,7 @@ class Reuleaux extends HTMLElement {
       </style>
     `
 
-    this.shadow.replaceChildren(template.content.cloneNode(true))
+    this.shadow.replaceChildren(this.template.content.cloneNode(true))
 
     this.dispatchEvent(new Event('ready'))
   }

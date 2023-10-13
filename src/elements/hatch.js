@@ -1,31 +1,30 @@
-import reflect from '../lib/reflect'
-import applyDefaultProps from '../lib/applyDefaultProps'
+import Base from '../lib/LdrsBaseElement'
 import styles from './hatch.scss'
 
-const template = document.createElement('template')
+class Hatch extends Base {
+  #attributes = ['size', 'color', 'speed', 'stroke']
 
-class Hatch extends HTMLElement {
   static get observedAttributes() {
     return ['size', 'color', 'speed', 'stroke']
   }
 
   constructor() {
     super()
-    if (!this.shadow) {
-      this.shadow = this.attachShadow({ mode: 'open' })
-    }
-    reflect(this, ['size', 'color', 'speed', 'stroke'])
+
+    this.storePropsToUpgrade(this.#attributes)
+    this.reflect(this.#attributes)
   }
 
   connectedCallback() {
-    applyDefaultProps(this, {
+    this.upgradeStoredProps()
+    this.applyDefaultProps({
       size: 28,
       color: 'black',
       speed: 3.5,
       stroke: 4,
     })
 
-    template.innerHTML = `
+    this.template.innerHTML = `
       <div class="container"><div class="line"></div></div>
       <style>
         :host{
@@ -38,7 +37,7 @@ class Hatch extends HTMLElement {
       </style>
     `
 
-    this.shadow.replaceChildren(template.content.cloneNode(true))
+    this.shadow.replaceChildren(this.template.content.cloneNode(true))
 
     this.dispatchEvent(new Event('ready'))
   }

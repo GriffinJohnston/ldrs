@@ -1,30 +1,29 @@
-import reflect from '../lib/reflect'
-import applyDefaultProps from '../lib/applyDefaultProps'
+import Base from '../lib/LdrsBaseElement'
 import styles from './grid.scss'
 
-const template = document.createElement('template')
+class Grid extends Base {
+  #attributes = ['size', 'color', 'speed']
 
-class Grid extends HTMLElement {
   static get observedAttributes() {
     return ['size', 'color', 'speed']
   }
 
   constructor() {
     super()
-    if (!this.shadow) {
-      this.shadow = this.attachShadow({ mode: 'open' })
-    }
-    reflect(this, ['size', 'color', 'speed'])
+
+    this.storePropsToUpgrade(this.#attributes)
+    this.reflect(this.#attributes)
   }
 
   connectedCallback() {
-    applyDefaultProps(this, {
+    this.upgradeStoredProps()
+    this.applyDefaultProps({
       size: 60,
       color: 'black',
       speed: 1.5,
     })
 
-    template.innerHTML = `
+    this.template.innerHTML = `
       <div class="container">
         <div class="dot"></div>
         <div class="dot"></div>
@@ -53,7 +52,7 @@ class Grid extends HTMLElement {
       </style>
     `
 
-    this.shadow.replaceChildren(template.content.cloneNode(true))
+    this.shadow.replaceChildren(this.template.content.cloneNode(true))
 
     this.dispatchEvent(new Event('ready'))
   }

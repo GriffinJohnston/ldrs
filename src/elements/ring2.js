@@ -1,32 +1,31 @@
-import reflect from '../lib/reflect'
-import applyDefaultProps from '../lib/applyDefaultProps'
+import Base from '../lib/LdrsBaseElement'
 import styles from './ring2.scss'
 
-const template = document.createElement('template')
+class Ring2 extends Base {
+  #attributes = ['size', 'color', 'stroke', 'speed', 'bg-opacity']
 
-class Ring2 extends HTMLElement {
   static get observedAttributes() {
     return ['size', 'color', 'stroke', 'speed', 'bg-opacity']
   }
 
   constructor() {
     super()
-    if (!this.shadow) {
-      this.shadow = this.attachShadow({ mode: 'open' })
-    }
-    reflect(this, ['size', 'color', 'stroke', 'speed', 'bg-opacity'])
+
+    this.storePropsToUpgrade(this.#attributes)
+    this.reflect(this.#attributes)
   }
 
   connectedCallback() {
-    applyDefaultProps(this, {
+    this.upgradeStoredProps()
+    this.applyDefaultProps({
       size: 40,
       color: 'black',
       stroke: 5,
-      speed: 0.7,
+      speed: 0.8,
       'bg-opacity': 0.1,
     })
 
-    template.innerHTML = `
+    this.template.innerHTML = `
       <svg
         class="container"
         viewBox="${this.size / 2} ${this.size / 2} ${this.size} ${this.size}"
@@ -62,7 +61,7 @@ class Ring2 extends HTMLElement {
       </style>
     `
 
-    this.shadow.replaceChildren(template.content.cloneNode(true))
+    this.shadow.replaceChildren(this.template.content.cloneNode(true))
 
     this.dispatchEvent(new Event('ready'))
   }

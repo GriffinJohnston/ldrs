@@ -1,24 +1,23 @@
-import reflect from '../lib/reflect'
-import applyDefaultProps from '../lib/applyDefaultProps'
+import Base from '../lib/LdrsBaseElement'
 import styles from './zoomies.scss'
 
-const template = document.createElement('template')
+class Zoomies extends Base {
+  #attributes = ['size', 'color', 'speed', 'stroke', 'bg-opacity']
 
-class Zoomies extends HTMLElement {
   static get observedAttributes() {
     return ['size', 'color', 'speed', 'stroke', 'bg-opacity']
   }
 
   constructor() {
     super()
-    if (!this.shadow) {
-      this.shadow = this.attachShadow({ mode: 'open' })
-    }
-    reflect(this, ['size', 'color', 'speed', 'stroke', 'bg-opacity'])
+
+    this.storePropsToUpgrade(this.#attributes)
+    this.reflect(this.#attributes)
   }
 
   connectedCallback() {
-    applyDefaultProps(this, {
+    this.upgradeStoredProps()
+    this.applyDefaultProps({
       size: 80,
       color: 'black',
       speed: 1.4,
@@ -26,7 +25,7 @@ class Zoomies extends HTMLElement {
       'bg-opacity': 0.1,
     })
 
-    template.innerHTML = `
+    this.template.innerHTML = `
       <div class="container"></div>
       <style>
         :host{
@@ -40,7 +39,7 @@ class Zoomies extends HTMLElement {
       </style>
     `
 
-    this.shadow.replaceChildren(template.content.cloneNode(true))
+    this.shadow.replaceChildren(this.template.content.cloneNode(true))
 
     this.dispatchEvent(new Event('ready'))
   }
