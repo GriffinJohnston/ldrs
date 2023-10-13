@@ -15,7 +15,7 @@ fs.readdir('./src/elements', (err, files) => {
 
     indexString += `export { default as ${sansJs} } from './elements/${sansJs}'
     `
-    globalString += `      '${kebabCase(sansJs)}': any
+    globalString += `      'l-${kebabCase(sansJs)}': any
 `
 
     fs.writeFileSync(
