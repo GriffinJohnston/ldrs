@@ -1,6 +1,6 @@
 {
   "name": "ldrs",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": "Griffin Johnston",
   "license": "MIT",
   "description": "Tiny HTML and SVG loaders as web components",
