@@ -1,16 +1,14 @@
-import { HTMLAttributes } from 'react'
 import Base from '../lib/LdrsBaseElement.js'
 import styles from './helix.scss'
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'l-helix': LdrAttributes
-    }
-    interface LdrAttributes extends HTMLAttributes<HTMLElement> {
-      size: string
-      color: string
-      speed: string
+      'l-helix': {
+        size?: string | number
+        color?: string | number
+        speed?: string | number
+      }
     }
   }
 }

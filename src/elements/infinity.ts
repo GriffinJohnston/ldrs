@@ -1,4 +1,3 @@
-import { HTMLAttributes } from 'react'
 import scaleD from '../lib/scaleD.js'
 import Base from '../lib/LdrsBaseElement.js'
 import styles from './infinity.scss'
@@ -6,14 +5,13 @@ import styles from './infinity.scss'
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'l-infinity': LdrAttributes
-    }
-    interface LdrAttributes extends HTMLAttributes<HTMLElement> {
-      size: string
-      color: string
-      speed: string
-      stroke: string
-      'bg-opacity': string
+      'l-infinity': {
+        size?: string | number
+        color?: string | number
+        speed?: string | number
+        stroke?: string | number
+        'bg-opacity'?: string | number
+      }
     }
   }
 }

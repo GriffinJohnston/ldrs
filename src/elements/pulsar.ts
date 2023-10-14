@@ -1,16 +1,14 @@
-import { HTMLAttributes } from 'react'
 import Base from '../lib/LdrsBaseElement.js'
 import styles from './pulsar.scss'
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'l-pulsar': LdrAttributes
-    }
-    interface LdrAttributes extends HTMLAttributes<HTMLElement> {
-      size: string
-      color: string
-      speed: string
+      'l-pulsar': {
+        size?: string | number
+        color?: string | number
+        speed?: string | number
+      }
     }
   }
 }

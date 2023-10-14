@@ -1,16 +1,14 @@
-import { HTMLAttributes } from 'react'
 import Base from '../lib/LdrsBaseElement.js'
 import styles from './bouncy.scss'
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'l-bouncy': LdrAttributes
-    }
-    interface LdrAttributes extends HTMLAttributes<HTMLElement> {
-      size: string
-      color: string
-      speed: string
+      'l-bouncy': {
+        size?: string | number
+        color?: string | number
+        speed?: string | number
+      }
     }
   }
 }

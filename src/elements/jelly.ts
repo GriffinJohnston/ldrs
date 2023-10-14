@@ -1,16 +1,14 @@
-import { HTMLAttributes } from 'react'
 import Base from '../lib/LdrsBaseElement.js'
 import styles from './jelly.scss'
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'l-jelly': LdrAttributes
-    }
-    interface LdrAttributes extends HTMLAttributes<HTMLElement> {
-      size: string
-      color: string
-      speed: string
+      'l-jelly': {
+        size?: string | number
+        color?: string | number
+        speed?: string | number
+      }
     }
   }
 }

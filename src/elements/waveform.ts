@@ -1,17 +1,15 @@
-import { HTMLAttributes } from 'react'
 import Base from '../lib/LdrsBaseElement.js'
 import styles from './waveform.scss'
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'l-waveform': LdrAttributes
-    }
-    interface LdrAttributes extends HTMLAttributes<HTMLElement> {
-      size: string
-      color: string
-      speed: string
-      stroke: string
+      'l-waveform': {
+        size?: string | number
+        color?: string | number
+        speed?: string | number
+        stroke?: string | number
+      }
     }
   }
 }

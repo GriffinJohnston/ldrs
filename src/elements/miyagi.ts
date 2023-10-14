@@ -1,17 +1,15 @@
-import { HTMLAttributes } from 'react'
 import Base from '../lib/LdrsBaseElement.js'
 import styles from './miyagi.scss'
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'l-miyagi': LdrAttributes
-    }
-    interface LdrAttributes extends HTMLAttributes<HTMLElement> {
-      size: string
-      color: string
-      speed: string
-      stroke: string
+      'l-miyagi': {
+        size?: string | number
+        color?: string | number
+        speed?: string | number
+        stroke?: string | number
+      }
     }
   }
 }

@@ -1,17 +1,15 @@
-import { HTMLAttributes } from 'react'
 import Base from '../lib/LdrsBaseElement.js'
 import styles from './pinwheel.scss'
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'l-pinwheel': LdrAttributes
-    }
-    interface LdrAttributes extends HTMLAttributes<HTMLElement> {
-      size: string
-      color: string
-      speed: string
-      stroke: string
+      'l-pinwheel': {
+        size?: string | number
+        color?: string | number
+        speed?: string | number
+        stroke?: string | number
+      }
     }
   }
 }

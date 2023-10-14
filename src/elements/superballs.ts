@@ -1,16 +1,14 @@
-import { HTMLAttributes } from 'react'
 import Base from '../lib/LdrsBaseElement.js'
 import styles from './superballs.scss'
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'l-superballs': LdrAttributes
-    }
-    interface LdrAttributes extends HTMLAttributes<HTMLElement> {
-      size: string
-      color: string
-      speed: string
+      'l-superballs': {
+        size?: string | number
+        color?: string | number
+        speed?: string | number
+      }
     }
   }
 }

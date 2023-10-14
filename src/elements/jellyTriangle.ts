@@ -1,16 +1,14 @@
-import { HTMLAttributes } from 'react'
 import Base from '../lib/LdrsBaseElement.js'
 import styles from './jellyTriangle.scss'
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'l-jelly-triangle': LdrAttributes
-    }
-    interface LdrAttributes extends HTMLAttributes<HTMLElement> {
-      size: string
-      color: string
-      speed: string
+      'l-jelly-triangle': {
+        size?: string | number
+        color?: string | number
+        speed?: string | number
+      }
     }
   }
 }

@@ -1,16 +1,14 @@
-import { HTMLAttributes } from 'react'
 import Base from '../lib/LdrsBaseElement.js'
 import styles from './chaoticOrbit.scss'
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'l-chaotic-orbit': LdrAttributes
-    }
-    interface LdrAttributes extends HTMLAttributes<HTMLElement> {
-      size: string
-      color: string
-      speed: string
+      'l-chaotic-orbit': {
+        size?: string | number
+        color?: string | number
+        speed?: string | number
+      }
     }
   }
 }

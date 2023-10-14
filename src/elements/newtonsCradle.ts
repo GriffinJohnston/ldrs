@@ -1,16 +1,14 @@
-import { HTMLAttributes } from 'react'
 import Base from '../lib/LdrsBaseElement.js'
 import styles from './newtonsCradle.scss'
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'l-newtons-cradle': LdrAttributes
-    }
-    interface LdrAttributes extends HTMLAttributes<HTMLElement> {
-      size: string
-      color: string
-      speed: string
+      'l-newtons-cradle': {
+        size?: string | number
+        color?: string | number
+        speed?: string | number
+      }
     }
   }
 }

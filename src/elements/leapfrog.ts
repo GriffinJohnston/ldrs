@@ -1,16 +1,14 @@
-import { HTMLAttributes } from 'react'
 import Base from '../lib/LdrsBaseElement.js'
 import styles from './leapfrog.scss'
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'l-leapfrog': LdrAttributes
-    }
-    interface LdrAttributes extends HTMLAttributes<HTMLElement> {
-      size: string
-      color: string
-      speed: string
+      'l-leapfrog': {
+        size?: string | number
+        color?: string | number
+        speed?: string | number
+      }
     }
   }
 }

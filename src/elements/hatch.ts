@@ -1,17 +1,15 @@
-import { HTMLAttributes } from 'react'
 import Base from '../lib/LdrsBaseElement.js'
 import styles from './hatch.scss'
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'l-hatch': LdrAttributes
-    }
-    interface LdrAttributes extends HTMLAttributes<HTMLElement> {
-      size: string
-      color: string
-      speed: string
-      stroke: string
+      'l-hatch': {
+        size?: string | number
+        color?: string | number
+        speed?: string | number
+        stroke?: string | number
+      }
     }
   }
 }

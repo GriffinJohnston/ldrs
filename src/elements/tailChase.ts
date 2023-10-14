@@ -1,16 +1,14 @@
-import { HTMLAttributes } from 'react'
 import Base from '../lib/LdrsBaseElement.js'
 import styles from './tailChase.scss'
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'l-tail-chase': LdrAttributes
-    }
-    interface LdrAttributes extends HTMLAttributes<HTMLElement> {
-      size: string
-      color: string
-      speed: string
+      'l-tail-chase': {
+        size?: string | number
+        color?: string | number
+        speed?: string | number
+      }
     }
   }
 }

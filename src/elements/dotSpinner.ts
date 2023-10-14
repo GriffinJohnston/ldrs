@@ -1,16 +1,14 @@
-import { HTMLAttributes } from 'react'
 import Base from '../lib/LdrsBaseElement.js'
 import styles from './dotSpinner.scss'
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'l-dot-spinner': LdrAttributes
-    }
-    interface LdrAttributes extends HTMLAttributes<HTMLElement> {
-      size: string
-      color: string
-      speed: string
+      'l-dot-spinner': {
+        size?: string | number
+        color?: string | number
+        speed?: string | number
+      }
     }
   }
 }

@@ -1,16 +1,14 @@
-import { HTMLAttributes } from 'react'
 import Base from '../lib/LdrsBaseElement.js'
 import styles from './dotWave.scss'
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'l-dot-wave': LdrAttributes
-    }
-    interface LdrAttributes extends HTMLAttributes<HTMLElement> {
-      size: string
-      color: string
-      speed: string
+      'l-dot-wave': {
+        size?: string | number
+        color?: string | number
+        speed?: string | number
+      }
     }
   }
 }
