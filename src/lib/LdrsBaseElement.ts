@@ -13,7 +13,7 @@ export default class LdrsBaseElement extends HTMLElement {
 
   storePropsToUpgrade(props: string[]): void {
     props.forEach((prop) => {
-      if (this.hasOwnProperty(prop)) {
+      if (this.hasOwnProperty(prop) && typeof this[prop] !== 'undefined') {
         this._propsToUpgrade[prop] = this[prop]
         delete this[prop]
       }

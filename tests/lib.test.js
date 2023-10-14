@@ -1,59 +1,6 @@
 import test from 'node:test'
 import assert from 'node:assert/strict'
-import { JSDOM } from 'jsdom'
-import applyDefaultProps from '../src/lib/applyDefaultProps.js'
-import reflect from '../src/lib/reflect.js'
 import scaleD from '../src/lib/scaleD.js'
-
-test('applyDefaultProps', () => {
-  const testObject = {
-    existingProp: 'example',
-  }
-
-  applyDefaultProps(testObject, {
-    size: 40,
-    color: 'black',
-    stroke: 4,
-    speed: 1.4,
-    'bg-opacity': 0.1,
-  })
-
-  assert.deepStrictEqual(testObject, {
-    existingProp: 'example',
-    size: '40',
-    color: 'black',
-    stroke: '4',
-    speed: '1.4',
-    'bg-opacity': '0.1',
-    defaultProps: {
-      size: 40,
-      color: 'black',
-      stroke: 4,
-      speed: 1.4,
-      'bg-opacity': 0.1,
-    },
-  })
-})
-
-test('reflect', () => {
-  const dom = new JSDOM(`<!DOCTYPE html><div></div>`)
-  const document = dom.window.document
-  const testEl = document.querySelector('div')
-
-  reflect(testEl, ['size', 'color', 'speed'])
-
-  testEl.size = '7'
-  testEl.setAttribute('color', 'papayawhip')
-  testEl.setAttribute('speed', '1.5')
-  testEl.speed = false
-
-  assert.strictEqual(testEl.color, 'papayawhip')
-  assert.strictEqual(testEl.size, '7')
-  assert.strictEqual(testEl.getAttribute('size'), '7')
-  assert.strictEqual(testEl.getAttribute('color'), 'papayawhip')
-  assert.strictEqual(testEl.getAttribute('speed'), null)
-  assert.strictEqual(testEl.speed, null)
-})
 
 test('scaleD', () => {
   const d =

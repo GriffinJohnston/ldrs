@@ -41,22 +41,23 @@
     "url": "https://github.com/GriffinJohnston/ldrs/issues"
   },
   "scripts": {
-    "build": "npm test && rm -rf dist && npx tsc && npx rollup -c rollup.config.js",
-    "dev": "npx rollup -c rollup.config.js -w",
+    "build:setup": "mkdir -p temp-ts-out/elements && cp src/elements/*.scss temp-ts-out/elements && rm -rf dist",
+    "build:cleanup": "rm -rf temp-ts-out",
+    "build:rollup": "npx rollup -c rollup.config.js",
+    "build": "npm test && npm run build:setup && npx tsc && npm run build:rollup && node utils/copyDefs && npm run build:cleanup",
     "demo": "cp -r src/demos dist && npx http-server dist",
-    "start": "npm run dev",
     "test": "node --test"
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
     "change-case": "^5.0.2",
+    "cpy": "^10.1.0",
     "eslint": "^8.51.0",
     "eslint-config-prettier": "^9.0.0",
     "jsdom": "^22.1.0",
     "postcss": "^8.4.31",
     "prettier": "3.0.3",
     "rollup": "^4.0.2",
-    "rollup-plugin-copy": "^3.5.0",
     "rollup-plugin-multi-input": "^1.4.1",
     "rollup-plugin-node-externals": "^6.1.2",
     "rollup-plugin-postcss": "^4.0.2",

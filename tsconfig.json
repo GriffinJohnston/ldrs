@@ -7,8 +7,8 @@
     "esModuleInterop": true,
     "allowJs": true,
     "declaration": true,
-    "emitDeclarationOnly": true,
-    "outDir": "dist",
+    "emitDeclarationOnly": false,
+    "outDir": "temp-ts-out",
     "declarationMap": true
   }
 }
