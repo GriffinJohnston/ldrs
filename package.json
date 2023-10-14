@@ -45,8 +45,8 @@
     "build:cleanup": "rm -rf temp-ts-out",
     "build:rollup": "npx rollup -c rollup.config.js",
     "build": "npm test && npm run build:setup && npx tsc && npm run build:rollup && node utils/copyDefs && npm run build:cleanup",
-    "demo": "cp -r src/demos dist && npx http-server dist",
-    "test": "node --test"
+    "demo": "cp -r src/demos dist && http-server dist",
+    "test": "npx tsc --noEmit && node --loader tsx --test tests/*.test.ts"
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
@@ -54,7 +54,9 @@
     "cpy": "^10.1.0",
     "eslint": "^8.51.0",
     "eslint-config-prettier": "^9.0.0",
+    "http-server": "^14.1.1",
     "jsdom": "^22.1.0",
+    "npx": "^10.2.2",
     "postcss": "^8.4.31",
     "prettier": "3.0.3",
     "rollup": "^4.0.2",
@@ -62,6 +64,7 @@
     "rollup-plugin-node-externals": "^6.1.2",
     "rollup-plugin-postcss": "^4.0.2",
     "sass": "^1.69.0",
+    "tsx": "^3.13.0",
     "typescript": "^5.2.2"
   }
 }

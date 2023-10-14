@@ -5,19 +5,19 @@ fs.rmSync('src/auto', { recursive: true, force: true })
 fs.mkdirSync('src/auto')
 
 fs.readdir('./src/elements', (err, files) => {
-  const loaders = files.filter((file) => file.includes('.js'))
+  const loaders = files.filter((file) => file.includes('.ts'))
   let indexString = ''
 
   loaders.forEach((file) => {
-    const sansJs = file.replace('.js', '')
+    const stem = file.replace('.ts', '')
 
-    indexString += `export { default as ${sansJs} } from './elements/${sansJs}'
+    indexString += `export { default as ${stem} } from './elements/${stem}.js'
     `
 
     fs.writeFileSync(
       `src/auto/${file}`,
-      `import ${sansJs} from '../elements/${sansJs}'
-${sansJs}.register()`,
+      `import ${stem} from '../elements/${stem}'
+${stem}.register()`,
     )
   })
 
