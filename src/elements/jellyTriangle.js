@@ -1,4 +1,4 @@
-import Base from '../lib/LdrsBaseElement'
+import Base from '../lib/LdrsBaseElement.js'
 import styles from './jellyTriangle.scss'
 
 class JellyTriangle extends Base {

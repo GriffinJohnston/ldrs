@@ -1,5 +1,5 @@
-import scaleD from '../lib/scaleD'
-import Base from '../lib/LdrsBaseElement'
+import scaleD from '../lib/scaleD.js'
+import Base from '../lib/LdrsBaseElement.js'
 import styles from './cardio.scss'
 
 class Cardio extends Base {

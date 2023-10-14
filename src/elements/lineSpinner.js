@@ -1,4 +1,4 @@
-import Base from '../lib/LdrsBaseElement'
+import Base from '../lib/LdrsBaseElement.js'
 import styles from './lineSpinner.scss'
 
 class LineSpinner extends Base {

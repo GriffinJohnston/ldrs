@@ -1,4 +1,4 @@
-import Base from '../lib/LdrsBaseElement'
+import Base from '../lib/LdrsBaseElement.js'
 import styles from './spiral.scss'
 
 class Spiral extends Base {
