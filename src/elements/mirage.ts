@@ -1,10 +1,10 @@
 import Base from '../lib/LdrsBaseElement.js'
-import styles from './jellyStream.scss'
+import styles from './mirage.scss'
 
 declare global {
   namespace JSX {
     interface IntrinsicElements {
-      'l-jelly-stream': {
+      'l-mirage': {
         size?: string | number
         color?: string | number
         speed?: string | number
@@ -13,7 +13,7 @@ declare global {
   }
 }
 
-class JellyStream extends Base {
+class Mirage extends Base {
   _attributes: string[] = ['size', 'color', 'speed']
   size: string
   color: string
@@ -96,10 +96,10 @@ class JellyStream extends Base {
 }
 
 export default {
-  register: (name = 'l-jelly-stream') => {
+  register: (name = 'l-mirage') => {
     if (!customElements.get(name)) {
-      customElements.define(name, class extends JellyStream {})
+      customElements.define(name, class extends Mirage {})
     }
   },
-  element: JellyStream,
+  element: Mirage,
 }
