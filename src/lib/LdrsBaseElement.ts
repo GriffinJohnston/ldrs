@@ -3,6 +3,7 @@ export default class LdrsBaseElement extends HTMLElement {
   shadow: ShadowRoot
   template: HTMLTemplateElement
   defaultProps: object
+  isAttached: boolean = false
 
   constructor() {
     super()

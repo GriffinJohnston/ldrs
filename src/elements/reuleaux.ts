@@ -89,8 +89,6 @@ class Reuleaux extends Base {
     `
 
     this.shadow.replaceChildren(this.template.content.cloneNode(true))
-
-    this.dispatchEvent(new Event('ready'))
   }
 
   attributeChangedCallback() {

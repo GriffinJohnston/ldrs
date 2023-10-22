@@ -1,7 +1,13 @@
 <div align="center">
-  <a href="https://uiball.com/ldrs"><img src="thumbnail.png" alt="U-I Ball LDRS" 
-  width="100%"
-  height="auto"></a>
+  <a href="https://uiball.com/ldrs">
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="thumbnail-dark.png">
+      <source media="(prefers-color-scheme: light)" srcset="thumbnail-light.png">
+      <img src="thumbnail-dark.png" alt="U-I Ball LDRS" 
+      width="100%"
+      height="auto">
+    </picture>
+  </a>
 </div>
 
 # LDRS
@@ -12,7 +18,7 @@ Lightweight loaders & spinners for your next web project. The successor to @uiba
 - **Powered by web components 🛠️** : Use with React, Vue, Svelte, Solid, plain HTML... If it runs in a browser LDRS will work
 - **Customizable 🎚️** : Set the size, color, stroke width, and animation speed to match your design
 - **Tiny 🐭** : No frameworks. No bloat. Dues-paying member of the iddy biddy bundle committee
-- **Typed 🇹** : No one likes a red underline
+- **Typed 🇹** : No one likes a squiggly red underline
 - **No gifs 🎥** : Built with HTML, CSS and some lightweight SVG
 - **Zero dependencies 🔗** : Zero worries
 
