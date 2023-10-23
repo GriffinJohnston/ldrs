@@ -1,10 +1,11 @@
 :host {
+  --uib-dot-size: calc(var(--uib-size) * 0.23);
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  height: calc(var(--uib-size) * 0.23);
   width: var(--uib-size);
+  height: var(--uib-dot-size);
 }
 
 :host([hidden]) {
@@ -12,7 +13,6 @@
 }
 
 .container {
-  --uib-dot-size: calc(var(--uib-size) * 0.23);
   position: relative;
   display: flex;
   align-items: center;

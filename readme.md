@@ -12,7 +12,7 @@
 
 # LDRS
 
-Lightweight loaders & spinners for your next web project. The successor to @uiball/loaders. Rebuilt from the ground up with Typescript and Web Components. Plus 20 new loaders for good measure.
+Lightweight loaders & spinners for your next web project. The successor to @uiball/loaders. Rebuilt from the ground up with Typescript and Web Components. 20 new loaders added for good measure.
 
 - **44 types 🎨** : Unique enough to be interesting; simple enough to use in real-world projects
 - **Powered by web components 🛠️** : Use with React, Vue, Svelte, Solid, plain HTML... If it runs in a browser LDRS will work

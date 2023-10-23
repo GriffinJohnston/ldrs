@@ -98,8 +98,6 @@ class Cardio extends Base {
 
     if (!styleEl) return
 
-    const m = sizeInt / 40
-
     svgEl.setAttribute('height', String(sizeInt * (25 / 40)))
     svgEl.setAttribute('width', this.size)
     svgEl.setAttribute('viewBox', `0 0 ${this.size} ${sizeInt * (25 / 40)}`)
