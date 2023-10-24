@@ -12,12 +12,13 @@
 
 # LDRS
 
-Lightweight loaders & spinners for your next web project. The successor to @uiball/loaders. Rebuilt from the ground up with Typescript and Web Components. 20 new loaders added for good measure.
+Lightweight loaders & spinners for your next web project. The successor to @uiball/loaders. Rebuilt from the ground up using Typescript and web components, with 20 new loaders added for good measure.
 
 - **44 types 🎨** : Unique enough to be interesting; simple enough to use in real-world projects
 - **Powered by web components 🛠️** : Use with React, Vue, Svelte, Solid, plain HTML... If it runs in a browser LDRS will work
 - **Customizable 🎚️** : Set the size, color, stroke width, and animation speed to match your design
 - **Tiny 🐭** : No frameworks. No bloat. Dues-paying member of the iddy biddy bundle committee
+- **Vanilla 🍦** : Just want the HTML & CSS? No worries. Just select a loader on [the website](https://uiball.com/ldrs) and go to `Source` -> `Raw`
 - **Typed 🇹** : No one likes a squiggly red underline
 - **No gifs 🎥** : Built with HTML, CSS and some lightweight SVG
 - **Zero dependencies 🔗** : Zero worries
@@ -42,35 +43,50 @@ yarn add ldrs
 
 Import individual loader components. Use them wherever you like. The full list can be found on [the website](https://uiball.com/ldrs).
 
+LDRS is built using web components ([here's why](/why-web-components.md)). Web components need to be registered or "defined" to work. Until registration they're just unusual, empty HTML elements that don't do anything. For convenience, LDRS come in two varieties: auto-defining and manually defined. Auto-defining elements are released as individual .js files that register themselves on import. Manually defined elements are named exports that come with a `register()` method.
+
+```js
+// Auto-defining
+import 'ldrs/ring'
+
+// Manually defined
+import { ring } from 'ldrs'
+ring.register()
+```
+
+You can rename your loader by passing a string to the `register()` method. Note that custom element names must contain a dash `-`.
+
+```js
+import { ring } from 'ldrs'
+ring.register('my-precious')
+```
+
+```html
+<my-precious color="black"></my-precious>
+```
+
+Here's a very simple example of using an auto-defining loader in a client-rendered React SPA:
+
 ```jsx
-import { waveform } from 'ldrs'
+import 'ldrs/helix'
 
 export default function PageSection({ isLoading }) {
   return (
     <div aria-live="polite" aria-busy={isLoading}>
-      {isLoading && <l-waveform></l-waveform>}
+      {isLoading && <l-helix></l-helix>}
     </div>
   )
 }
 ```
 
-## SSR
+## Frameworks
 
-Currently the one big drawback of web components is that they generally aren't compatible with server-side rendering (yet). That's why I think they are best used for "leaf" components at the moment. These loaders are a perfect example - they are a small, discrete bit of UI that contain no descendents. All this means is that you don't want to call .register() import the auto-registering version
+LDRS can only be run in a client-side environment, so they should be excluded from SSR and SSG.
 
-## Platform Support
-
-This is a pure ESM library, so no `require()`-ing from CommonJS. It makes use of CSS custom properties (CSS variables) and keyframe animations, which work great in all modern browsers. Internet Explorer is not supported, however.
-
-**Next.js** versions less than 12 don't transpile ESM modules by default and will throw an error. If you are using Next v11.1, you can add support with an [experimental flag](https://nextjs.org/blog/next-11-1#es-modules-support). Otherwise you can add support with this package: https://www.npmjs.com/package/next-transpile-modules.
-
-**Remix** requires an additional step to import pure ESM packages. See https://remix.run/docs/en/v1/pages/gotchas#importing-esm-packages.
-
-TL;DR — add the following code to remix.config.js:
-
-```
-module.exports = { serverDependenciesToBundle: ["ldrs"] };
-```
+[📖 Next.js guide →](/framework-guides.md#nextjs)  
+[📖 Astro guide →](/framework-guides.md#astro)  
+[📖 Remix guide →](/framework-guides.md#remix)  
+[📖 Gatsby guide →](/framework-guides.md#gatsby)
 
 ## Options
 
