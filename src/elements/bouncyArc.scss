@@ -46,7 +46,7 @@
     transform: rotate(var(--uib-arc-1));
   }
 
-  5% {
+  10% {
     transform: rotate(var(--uib-arc-1));
     animation-timing-function: ease-out;
   }
@@ -55,7 +55,7 @@
     transform: rotate(var(--uib-arc-2));
   }
 
-  55% {
+  63% {
     transform: rotate(var(--uib-arc-2));
     animation-timing-function: ease-out;
   }

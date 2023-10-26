@@ -46,6 +46,8 @@ class Ring extends Base {
 
     const sizeInt = parseInt(this.size)
     const strokeInt = parseInt(this.stroke)
+    const centerPoint = sizeInt / 2
+    const radius = Math.max(0, sizeInt / 2 - strokeInt / 2)
 
     this.template.innerHTML = `
       <svg
@@ -56,18 +58,18 @@ class Ring extends Base {
       >
         <circle 
           class="track"
-          cx="${sizeInt / 2}" 
-          cy="${sizeInt / 2}" 
-          r="${sizeInt / 2 - strokeInt / 2}" 
+          cx="${centerPoint}" 
+          cy="${centerPoint}" 
+          r="${radius}" 
           pathlength="100" 
           stroke-width="${this.stroke}px" 
           fill="none" 
         />
         <circle 
           class="car"
-          cx="${sizeInt / 2}" 
-          cy="${sizeInt / 2}" 
-          r="${sizeInt / 2 - strokeInt / 2}" 
+          cx="${centerPoint}" 
+          cy="${centerPoint}" 
+          r="${radius}" 
           pathlength="100" 
           stroke-width="${this.stroke}px" 
           fill="none" 
@@ -96,15 +98,17 @@ class Ring extends Base {
 
     const sizeInt = parseInt(this.size)
     const strokeInt = parseInt(this.stroke)
+    const centerPoint = String(sizeInt / 2)
+    const radius = String(Math.max(0, sizeInt / 2 - strokeInt / 2))
 
     svgEl.setAttribute('height', this.stroke)
     svgEl.setAttribute('width', this.stroke)
     svgEl.setAttribute('viewBox', `0 0 ${sizeInt} ${sizeInt}`)
 
     circleEls.forEach((circleEl) => {
-      circleEl.setAttribute('cx', String(sizeInt / 2))
-      circleEl.setAttribute('cy', String(sizeInt / 2))
-      circleEl.setAttribute('r', String(sizeInt / 2 - strokeInt / 2))
+      circleEl.setAttribute('cx', centerPoint)
+      circleEl.setAttribute('cy', centerPoint)
+      circleEl.setAttribute('r', radius)
       circleEl.setAttribute('stroke-width', this.stroke)
     })
 

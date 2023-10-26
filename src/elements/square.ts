@@ -46,6 +46,8 @@ class Square extends Base {
 
     const sizeInt = parseInt(this.size)
     const strokeInt = parseInt(this.stroke)
+    const centerPoint = strokeInt / 2
+    const strokeAdjustedSize = Math.max(sizeInt - strokeInt / 2, 0)
 
     this.template.innerHTML = `
       <svg
@@ -56,21 +58,21 @@ class Square extends Base {
       >
         <rect 
           class="track"
-          x="${strokeInt / 2}" 
-          y="${strokeInt / 2}" 
+          x="${centerPoint}" 
+          y="${centerPoint}" 
           fill="none" 
           stroke-width="${this.stroke}px" 
-          width="${sizeInt - strokeInt / 2}" 
-          height="${sizeInt - strokeInt / 2}"
+          width="${strokeAdjustedSize}" 
+          height="${strokeAdjustedSize}"
         />
         <rect 
           class="car"
-          x="${strokeInt / 2}" 
-          y="${strokeInt / 2}" 
+          x="${centerPoint}" 
+          y="${centerPoint}" 
           fill="none" 
           stroke-width="${this.stroke}px" 
-          width="${sizeInt - strokeInt / 2}" 
-          height="${sizeInt - strokeInt / 2}"
+          width="${strokeAdjustedSize}" 
+          height="${strokeAdjustedSize}"
           pathlength="100"
         />
       </svg>
@@ -97,6 +99,8 @@ class Square extends Base {
 
     const sizeInt = parseInt(this.size)
     const strokeInt = parseInt(this.stroke)
+    const centerPoint = String(strokeInt / 2)
+    const strokeAdjustedSize = String(Math.max(sizeInt - strokeInt / 2, 0))
 
     svgEl.setAttribute('height', this.size)
     svgEl.setAttribute('width', this.size)
@@ -104,10 +108,10 @@ class Square extends Base {
 
     squareEls.forEach((squareEl) => {
       squareEl.setAttribute('stroke-width', this.stroke)
-      squareEl.setAttribute('width', String(sizeInt - strokeInt / 2))
-      squareEl.setAttribute('height', String(sizeInt - strokeInt / 2))
-      squareEl.setAttribute('x', String(strokeInt / 2))
-      squareEl.setAttribute('y', String(strokeInt / 2))
+      squareEl.setAttribute('width', strokeAdjustedSize)
+      squareEl.setAttribute('height', strokeAdjustedSize)
+      squareEl.setAttribute('x', centerPoint)
+      squareEl.setAttribute('y', centerPoint)
     })
 
     styleEl.innerHTML = `

@@ -50,13 +50,10 @@
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
-    "change-case": "^5.0.2",
     "cpy": "^10.1.0",
     "eslint": "^8.51.0",
     "eslint-config-prettier": "^9.0.0",
     "http-server": "^14.1.1",
-    "jsdom": "^22.1.0",
-    "npx": "^10.2.2",
     "postcss": "^8.4.31",
     "prettier": "3.0.3",
     "rollup": "^4.0.2",

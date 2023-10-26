@@ -58,7 +58,7 @@
     transform: translateY(0px);
   }
 
-  30% {
+  28% {
     transform: translateY(0px);
     animation-timing-function: ease-out;
   }
@@ -68,7 +68,7 @@
     animation-timing-function: ease-in;
   }
 
-  75% {
+  74% {
     transform: translateY(0px);
     animation-timing-function: ease-in;
   }
@@ -98,13 +98,13 @@
     transform: scaleY(1);
   }
 
-  70%,
-  85%,
+  72%,
+  87%,
   100% {
     transform: scaleY(1);
   }
 
-  75% {
+  77% {
     transform: scaleY(0.8) scaleX(1.2);
   }
 }

@@ -1,12 +1,36 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initiascale=1.0" />
+    <meta name="viewport" content="width=device-width, initialscale=1.0" />
     <title>Manually Defined Elements</title>
   </head>
   <body>
     <div>
       <h1>Manually Defined Elements</h1>
+
+      <div class="controls">
+        <label
+          >Color
+          <input type="color" class="color" />
+        </label>
+        <label
+          >Size
+          <input type="range" class="size" min="0" max="100" />
+        </label>
+        <label
+          >Speed
+          <input type="range" class="speed" min="0" max="5" step="0.1" />
+        </label>
+        <label
+          >Stroke
+          <input type="range" class="stroke" min="0" max="10" step="1" />
+        </label>
+        <label
+          >Background Opacity
+          <input type="range" class="bg-opacity" min="0" max="1" step="0.1" />
+        </label>
+      </div>
+
       <div class="container"></div>
     </div>
 
@@ -151,8 +175,38 @@
       tags.forEach((tag) => {
         const loaderCard = document.createElement('div')
         loaderCard.classList.add('cell')
-        loaderCard.innerHTML = `<my-${tag}></my-${tag}>${tag}`
+        loaderCard.innerHTML = `<my-${tag} class="loader"></my-${tag}>${tag}`
         containerEl.append(loaderCard)
+      })
+
+      function updateLoaderAttribute(attribute, value) {
+        const loaderEls = document.querySelectorAll('.loader')
+
+        loaderEls.forEach((loaderEl) => {
+          loaderEl.setAttribute(attribute, value)
+        })
+      }
+
+      const colorControl = document.querySelector('.color')
+      const sizeControl = document.querySelector('.size')
+      const speedControl = document.querySelector('.speed')
+      const strokeControl = document.querySelector('.stroke')
+      const bgOpacityControl = document.querySelector('.bg-opacity')
+
+      colorControl.addEventListener('input', (evt) => {
+        updateLoaderAttribute('color', evt.target.value)
+      })
+      sizeControl.addEventListener('input', (evt) => {
+        updateLoaderAttribute('size', evt.target.value)
+      })
+      speedControl.addEventListener('input', (evt) => {
+        updateLoaderAttribute('speed', 5.1 - evt.target.value)
+      })
+      strokeControl.addEventListener('input', (evt) => {
+        updateLoaderAttribute('stroke', evt.target.value)
+      })
+      bgOpacityControl.addEventListener('input', (evt) => {
+        updateLoaderAttribute('bg-opacity', evt.target.value)
       })
     </script>
 
@@ -168,6 +222,25 @@
         grid-auto-rows: 300px;
         gap: 5px;
         padding: 40px;
+      }
+
+      .controls {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        padding: 30px;
+        position: sticky;
+        z-index: 100;
+        top: 0;
+        left: 0;
+        background-color: #fff;
+      }
+
+      label {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        font-family: monospace;
       }
 
       .cell {

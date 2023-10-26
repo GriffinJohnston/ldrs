@@ -43,7 +43,7 @@ yarn add ldrs
 
 Import individual loader components. Use them wherever you like. The full list can be found on [the website](https://uiball.com/ldrs).
 
-LDRS is built using web components ([here's why](/why-web-components.md)). Web components need to be registered or "defined" to work. Until registration they're just unusual, empty HTML elements that don't do anything. For convenience, LDRS come in two varieties: auto-defining and manually defined. Auto-defining elements are released as individual .js files that register themselves on import. Manually defined elements are named exports that come with a `register()` method.
+LDRS is built using web components ([here's why](/why-web-components.md)). Web components need to be registered or "defined" to work. Until registration they're just empty HTML elements that don't do anything. For convenience, LDRS come in two varieties: auto-defining and manually defined. Auto-defining elements are released as individual .js files that register themselves on import. Manually defined elements are named exports that come with a `register()` method.
 
 ```js
 // Auto-defining
@@ -81,12 +81,16 @@ export default function PageSection({ isLoading }) {
 
 ## Frameworks
 
-LDRS can only be run in a client-side environment, so they should be excluded from SSR and SSG.
+LDRS can only be run in a client-side environment, so they need to be excluded from SSR and SSG.
 
 [📖 Next.js guide →](/framework-guides.md#nextjs)  
 [📖 Astro guide →](/framework-guides.md#astro)  
 [📖 Remix guide →](/framework-guides.md#remix)  
 [📖 Gatsby guide →](/framework-guides.md#gatsby)
+
+## Where are the old React Components?
+
+They will continue to live on [npm](npmjs.com/package/@uiball/loaders), but are no longer maintained. That being said, switching to LDRS is pretty darn easy, and many of the loaders themselves have been improved. Give it a go, I dare you. I double dog dare you.
 
 ## Options
 
