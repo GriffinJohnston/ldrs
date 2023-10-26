@@ -15,10 +15,10 @@
 Lightweight loaders & spinners for your next web project. The successor to @uiball/loaders. Rebuilt from the ground up using Typescript and web components, with 20 new loaders added for good measure.
 
 - **44 types 🎨** : Unique enough to be interesting; simple enough to use in real-world projects
-- **Powered by web components 🛠️** : Use with React, Vue, Svelte, Solid, plain HTML... If it runs in a browser LDRS will work
+- **Powered by web components 🛠️** : Use with React, Vue, Svelte, Solid, plain HTML...
 - **Customizable 🎚️** : Set the size, color, stroke width, and animation speed to match your design
 - **Tiny 🐭** : No frameworks. No bloat. Dues-paying member of the iddy biddy bundle committee
-- **Vanilla 🍦** : Just want the HTML & CSS? No worries. Just select a loader on [the website](https://uiball.com/ldrs) and go to `Source` -> `Raw`
+- **Vanilla 🍦** : Only want the HTML & CSS? Just select a loader on [the website](https://uiball.com/ldrs) and go to `Source` -> `Raw`
 - **Typed 🇹** : No one likes a squiggly red underline
 - **No gifs 🎥** : Built with HTML, CSS and some lightweight SVG
 - **Zero dependencies 🔗** : Zero worries
@@ -81,7 +81,7 @@ export default function PageSection({ isLoading }) {
 
 ## Frameworks
 
-LDRS can only be run in a client-side environment, so they need to be excluded from SSR and SSG.
+LDRS can only be run in a client-side environment, so they need to be excluded from SSR.
 
 [📖 Next.js guide →](/framework-guides.md#nextjs)  
 [📖 Astro guide →](/framework-guides.md#astro)  
@@ -90,7 +90,7 @@ LDRS can only be run in a client-side environment, so they need to be excluded f
 
 ## Where are the old React Components?
 
-They will continue to live on [npm](npmjs.com/package/@uiball/loaders), but are no longer maintained. That being said, switching to LDRS is pretty darn easy, and many of the loaders themselves have been improved. Give it a go, I dare you. I double dog dare you.
+They will continue to live on [npm](npmjs.com/package/@uiball/loaders), but are no longer maintained. That being said, switching to LDRS is pretty darn easy, and many of the loaders themselves have been improved. Give it a go why dontcha.
 
 ## Options
 
