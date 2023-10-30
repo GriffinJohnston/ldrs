@@ -26,6 +26,16 @@
           <input type="range" class="stroke" min="0" max="10" step="1" />
         </label>
         <label
+          >Stroke Length
+          <input
+            type="range"
+            class="stroke-length"
+            min="0"
+            max="1"
+            step=".01"
+          />
+        </label>
+        <label
           >Background Opacity
           <input type="range" class="bg-opacity" min="0" max="1" step="0.1" />
         </label>
@@ -49,6 +59,7 @@
         hatch,
         helix,
         hourglass,
+        infinity,
         jelly,
         tailChase,
         mirage,
@@ -93,6 +104,7 @@
       hatch.register('my-hatch')
       helix.register('my-helix')
       hourglass.register('my-hourglass')
+      infinity.register('my-infinity')
       jelly.register('my-jelly')
       mirage.register('my-mirage')
       jellyTriangle.register('my-jelly-triangle')
@@ -191,6 +203,7 @@
       const sizeControl = document.querySelector('.size')
       const speedControl = document.querySelector('.speed')
       const strokeControl = document.querySelector('.stroke')
+      const strokeLengthControl = document.querySelector('.stroke-length')
       const bgOpacityControl = document.querySelector('.bg-opacity')
 
       colorControl.addEventListener('input', (evt) => {
@@ -204,6 +217,9 @@
       })
       strokeControl.addEventListener('input', (evt) => {
         updateLoaderAttribute('stroke', evt.target.value)
+      })
+      strokeLengthControl.addEventListener('input', (evt) => {
+        updateLoaderAttribute('stroke-length', evt.target.value)
       })
       bgOpacityControl.addEventListener('input', (evt) => {
         updateLoaderAttribute('bg-opacity', evt.target.value)

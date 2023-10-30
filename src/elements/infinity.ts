@@ -10,6 +10,7 @@ declare global {
         color?: string | number
         speed?: string | number
         stroke?: string | number
+        'stroke-length'?: string | number
         'bg-opacity'?: string | number
       }
     }
@@ -17,16 +18,24 @@ declare global {
 }
 
 class Infinity extends Base {
-  _attributes = ['size', 'color', 'speed', 'stroke', 'bg-opacity']
+  _attributes = [
+    'size',
+    'color',
+    'speed',
+    'stroke',
+    'stroke-length',
+    'bg-opacity',
+  ]
   size: string
   color: string
   speed: string
   stroke: string
+  'stroke-length': string
   'bg-opacity': string
   d: string
 
   static get observedAttributes() {
-    return ['size', 'color', 'speed', 'stroke', 'bg-opacity']
+    return ['size', 'color', 'speed', 'stroke', 'stroke-length', 'bg-opacity']
   }
 
   constructor() {
@@ -46,6 +55,7 @@ class Infinity extends Base {
       color: 'black',
       speed: 1.3,
       stroke: 4,
+      'stroke-length': 0.15,
       'bg-opacity': 0.1,
     })
 
@@ -83,6 +93,8 @@ class Infinity extends Base {
           --uib-size: ${this.size}px;
           --uib-color: ${this.color};
           --uib-speed: ${this.speed}s;
+          --uib-dash: ${parseFloat(this['stroke-length']) * 100};
+          --uib-gap: ${100 - parseFloat(this['stroke-length']) * 100};
           --uib-bg-opacity: ${this['bg-opacity']};
         }
         ${styles}
@@ -114,6 +126,8 @@ class Infinity extends Base {
         --uib-size: ${this.size}px;
         --uib-color: ${this.color};
         --uib-speed: ${this.speed}s;
+        --uib-dash: ${parseFloat(this['stroke-length']) * 100};
+        --uib-gap: ${100 - parseFloat(this['stroke-length']) * 100};
         --uib-bg-opacity: ${this['bg-opacity']};
       }
       ${styles}

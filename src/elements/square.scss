@@ -22,7 +22,7 @@
 .car {
   fill: none;
   stroke: var(--uib-color);
-  stroke-dasharray: 25, 75;
+  stroke-dasharray: var(--uib-dash), var(--uib-gap);
   stroke-dashoffset: 0;
   animation: travel var(--uib-speed) linear infinite;
   will-change: stroke-dasharray, stroke-dashoffset;

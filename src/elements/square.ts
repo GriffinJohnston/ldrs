@@ -9,6 +9,7 @@ declare global {
         color?: string | number
         speed?: string | number
         stroke?: string | number
+        'stroke-length'?: string | number
         'bg-opacity'?: string | number
       }
     }
@@ -16,15 +17,23 @@ declare global {
 }
 
 class Square extends Base {
-  _attributes = ['size', 'color', 'speed', 'stroke', 'bg-opacity']
+  _attributes = [
+    'size',
+    'color',
+    'speed',
+    'stroke',
+    'stroke-length',
+    'bg-opacity',
+  ]
   size: string
   color: string
   speed: string
   stroke: string
+  'stroke-length': string
   'bg-opacity': string
 
   static get observedAttributes() {
-    return ['size', 'color', 'stroke', 'speed', 'bg-opacity']
+    return ['size', 'color', 'stroke', 'stroke-length', 'speed', 'bg-opacity']
   }
 
   constructor() {
@@ -40,6 +49,7 @@ class Square extends Base {
       size: 35,
       color: 'black',
       stroke: 5,
+      'stroke-length': 0.25,
       speed: 1.2,
       'bg-opacity': 0.1,
     })
@@ -81,6 +91,8 @@ class Square extends Base {
           --uib-size: ${this.size}px;
           --uib-color: ${this.color};
           --uib-speed: ${this.speed}s;
+          --uib-dash: ${parseFloat(this['stroke-length']) * 100};
+          --uib-gap: ${100 - parseFloat(this['stroke-length']) * 100};
           --uib-bg-opacity: ${this['bg-opacity']};
         }
         ${styles}
@@ -119,6 +131,8 @@ class Square extends Base {
         --uib-size: ${this.size}px;
         --uib-color: ${this.color};
         --uib-speed: ${this.speed}s;
+        --uib-dash: ${parseFloat(this['stroke-length']) * 100};
+        --uib-gap: ${100 - parseFloat(this['stroke-length']) * 100};
         --uib-bg-opacity: ${this['bg-opacity']};
       }
       ${styles}
