@@ -88,9 +88,9 @@ LDRS can only be run in a client-side environment, so they need to be excluded f
 [📖 Remix guide →](/framework-guides.md#remix)  
 [📖 Gatsby guide →](/framework-guides.md#gatsby)
 
-## Where are the old React Components?
+## Where's the old library?
 
-They will continue to live on [npm](npmjs.com/package/@uiball/loaders), but are no longer maintained. That being said, switching to LDRS is pretty darn easy, and many of the loaders themselves have been improved. Give it a go why dontcha.
+It will continue to live on [npm](npmjs.com/package/@uiball/loaders) and [GitHub](https://github.com/GriffinJohnston/uiball-loaders-legacy), but is no longer maintained. That being said, upgrading to LDRS is pretty darn easy, and many of the loaders themselves have been improved. Give it a go why dontcha.
 
 ## Options
 
@@ -130,7 +130,7 @@ The width / stroke in pixels of line-based loaders like `<l-waveform />` or `<l-
 
 ### `stroke-length: number | string`
 
-The length of the animated element of track-based loaders like `<l-ring-2 />` or `<l-infinity />`. Expressed as a percent of total. Accepts a value from 0 to 1 (for example `.1` or `0.14159`).
+The length of the animated element of track-based loaders like `<l-ring-2 />` or `<l-infinity />`. Expressed as a fraction of total. Accepts a value from 0 to 1 (for example `.1` or `0.14159`).
 
 ```jsx
 <l-trefoil stroke-length=".15" />
