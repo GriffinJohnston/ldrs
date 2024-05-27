@@ -14,13 +14,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <script
-        type="module"
-        defer
-        src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/spiral.js"
-      ></script>
-
-      <body className={inter.className}>{children}</body>
+      <body>
+        <script
+          type="module"
+          defer
+          src="https://cdn.jsdelivr.net/npm/ldrs/dist/auto/spiral.js"
+        ></script>
+        {children}
+      </body>
     </html>
   )
 }
