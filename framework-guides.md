@@ -50,6 +50,32 @@ export default function Loader() {
 
 Then you can import and render `<Loader />` in any client component.
 
+
+## Nuxt.js
+
+Web components can only be run on the client, so no SSR or SSG.
+
+Use a dynamic import in `onMounted` Lifecycle Hook.
+For convenience you can wrap your loader in a Vue component that handles the import and registration.
+[`<ClientOnly>`](https://nuxt.com/docs/api/components/client-only) ensures rendering a component only on client side. Even with SSR
+
+```vue
+<script setup>
+onMounted(async () => {
+  const { spiral } = await import('ldrs')
+  spiral.register()
+})
+</script>
+
+<template>
+  <ClientOnly>
+    <l-spiral color="coral"></l-spiral>
+  </ClientOnly>
+</template>
+```
+
+Then you can import and render this component in any client component.
+
 ## Astro
 
 To use LDRS with Astro, just import and register your loader inside of a `<script>` tag. Since you only need to register your loader(s) once, it might make sense to simply include them in the relevant layout file.
