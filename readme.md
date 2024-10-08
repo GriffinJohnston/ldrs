@@ -84,6 +84,7 @@ export default function PageSection({ isLoading }) {
 LDRS can only be run in a client-side environment, so they need to be excluded from SSR.
 
 [📖 Next.js guide →](/framework-guides.md#nextjs)  
+[📖 Nuxt.js guide →](/framework-guides.md#nuxtjs)  
 [📖 Astro guide →](/framework-guides.md#astro)  
 [📖 Remix guide →](/framework-guides.md#remix)  
 [📖 Gatsby guide →](/framework-guides.md#gatsby)

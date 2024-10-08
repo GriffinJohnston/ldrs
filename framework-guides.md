@@ -50,14 +50,13 @@ export default function Loader() {
 
 Then you can import and render `<Loader />` in any client component.
 
-
 ## Nuxt.js
 
 Web components can only be run on the client, so no SSR or SSG.
 
-Use a dynamic import in `onMounted` Lifecycle Hook.
+To add LDRS to a Nuxt project use a dynamic import in the `onMounted` Lifecycle Hook.
 For convenience you can wrap your loader in a Vue component that handles the import and registration.
-[`<ClientOnly>`](https://nuxt.com/docs/api/components/client-only) ensures rendering a component only on client side. Even with SSR
+[`<ClientOnly>`](https://nuxt.com/docs/api/components/client-only) ensures the component will only on the client side, even with SSR.
 
 ```vue
 <script setup>

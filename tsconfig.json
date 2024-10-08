@@ -9,6 +9,8 @@
     "declaration": true,
     "emitDeclarationOnly": false,
     "outDir": "temp-ts-out",
-    "declarationMap": true
+    "declarationMap": true,
+    "jsx": "preserve",
+    "jsxImportSource": "@builder.io/mitosis"
   }
 }

@@ -49,6 +49,7 @@
     "test": "npx tsc --noEmit && node --loader tsx --test tests/*.test.ts"
   },
   "devDependencies": {
+    "@builder.io/mitosis-cli": "^0.3.14",
     "@rollup/plugin-terser": "^0.4.4",
     "cpy": "^10.1.0",
     "eslint": "^8.51.0",
@@ -61,6 +62,7 @@
     "rollup-plugin-node-externals": "^6.1.2",
     "rollup-plugin-postcss": "^4.0.2",
     "sass": "^1.69.0",
+    "seedrandom": "^3.0.5",
     "tsx": "^3.13.0",
     "typescript": "^5.2.2"
   }
