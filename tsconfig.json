@@ -1,5 +1,10 @@
 {
-  "include": ["src/**/*.ts"],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/scss.d.ts",
+    "src/cssvars.d.ts"
+  ],
   "compilerOptions": {
     "module": "nodenext",
     "moduleResolution": "nodenext",
@@ -10,7 +15,6 @@
     "emitDeclarationOnly": false,
     "outDir": "temp-ts-out",
     "declarationMap": true,
-    "jsx": "preserve",
-    "jsxImportSource": "@builder.io/mitosis"
+    "jsx": "react-jsx"
   }
 }

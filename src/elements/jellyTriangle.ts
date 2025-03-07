@@ -42,27 +42,38 @@ class JellyTriangle extends Base {
       <div
         class="container"
       >
-      <div class="dot"></div>
-      <div class="traveler"></div>
+        <svg 
+          class="svg"         
+          x="0px" 
+          y="0px"
+          viewBox="0 0 ${this.size} ${this.size}"
+          height="${this.size}"
+          width="${this.size}"
+          preserveAspectRatio='xMidYMid meet'
+        >
+          <circle class="dot"/>
+          <circle class="dot"/>
+          <circle class="dot"/>
+          <circle class="traveler"/>
+          <defs>
+            <filter id="uib-jelly-triangle-ooze">
+              <feGaussianBlur
+                in="SourceGraphic"
+                stdDeviation=${parseInt(this.size) / 9}
+                result="blur"
+              />
+              <feColorMatrix
+                in="blur"
+                mode="matrix"
+                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                result="ooze"
+              />
+              <feBlend in="SourceGraphic" in2="ooze" />
+            </filter>
+          </defs>
+        </svg>  
       </div>
-      <svg width="0" height="0" class="svg">
-        <defs>
-          <filter id="uib-jelly-triangle-ooze">
-            <feGaussianBlur
-              in="SourceGraphic"
-              stdDeviation=${parseInt(this.size) / 9}
-              result="blur"
-            />
-            <feColorMatrix
-              in="blur"
-              mode="matrix"
-              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
-              result="ooze"
-            />
-            <feBlend in="SourceGraphic" in2="ooze" />
-          </filter>
-        </defs>
-      </svg>
+
       <style>
         :host{
           --uib-size: ${this.size}px;

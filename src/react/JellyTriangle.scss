@@ -1,0 +1,86 @@
+.container {
+  --uib-dot-size: calc(var(--uib-size) / 3);
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--uib-size);
+  width: var(--uib-size);
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--uib-size);
+  width: var(--uib-size);
+}
+
+.svg {
+  filter: url('#uib-jelly-triangle-filter');
+  overflow: visible;
+}
+
+.dot,
+.traveler {
+  display: block;
+  transition: fill 0.3s ease;
+  transform-origin: center;
+  transform-box: fill-box;
+  fill: var(--uib-color);
+  r: calc(var(--uib-dot-size) / 2);
+  will-change: transform;
+}
+
+.dot:nth-child(1) {
+  cy: calc(var(--uib-dot-size) / 2);
+  cx: calc(var(--uib-size) / 2);
+  animation: grow var(--uib-speed) ease infinite;
+}
+
+.dot:nth-child(2) {
+  cy: calc(var(--uib-size) - var(--uib-dot-size) / 2);
+  cx: calc(var(--uib-size) - var(--uib-dot-size) / 2);
+  animation: grow var(--uib-speed) ease calc(var(--uib-speed) * -0.666) infinite;
+}
+
+.dot:nth-child(3) {
+  cy: calc(var(--uib-size) - var(--uib-dot-size) / 2);
+  cx: calc(var(--uib-dot-size) / 2);
+  animation: grow var(--uib-speed) ease calc(var(--uib-speed) * -0.333) infinite;
+}
+
+.traveler {
+  cy: calc(var(--uib-dot-size) / 2);
+  cx: calc(var(--uib-size) / 2);
+  animation: triangulate var(--uib-speed) ease infinite;
+}
+
+@keyframes triangulate {
+  0%,
+  100% {
+    transform: none;
+  }
+
+  33.333% {
+    transform: translate(100%, 200%);
+  }
+
+  66.666% {
+    transform: translate(-100%, 200%);
+  }
+}
+
+@keyframes grow {
+  0%,
+  85%,
+  100% {
+    transform: scale(1.5);
+  }
+
+  50%,
+  60% {
+    transform: scale(0);
+  }
+}

@@ -1,6 +1,6 @@
 {
   "name": "ldrs",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "author": "Griffin Johnston",
   "license": "MIT",
   "description": "Tiny HTML and SVG loaders as web components",
@@ -24,7 +24,10 @@
   "exports": {
     ".": "./dist/index.js",
     "./*": "./dist/auto/*.js",
-    "./*.js": "./dist/auto/*.js"
+    "./*.js": "./dist/auto/*.js",
+    "./react": "./dist/react/index.js",
+    "./react/*": "./dist/react/*.js",
+    "./react/*.js": "./dist/react/*.js"
   },
   "files": [
     "dist"
@@ -41,7 +44,7 @@
     "url": "https://github.com/GriffinJohnston/ldrs/issues"
   },
   "scripts": {
-    "build:setup": "mkdir -p temp-ts-out/elements && cp src/elements/*.scss temp-ts-out/elements && rm -rf dist",
+    "build:setup": "mkdir -p temp-ts-out/elements && mkdir -p temp-ts-out/react && cp src/elements/*.scss temp-ts-out/elements && cp src/react/*.scss temp-ts-out/react && rm -rf dist",
     "build:cleanup": "rm -rf temp-ts-out",
     "build:rollup": "npx rollup -c rollup.config.js",
     "build": "npm test && npm run build:setup && npx tsc && npm run build:rollup && node utils/copyDefs && npm run build:cleanup",
@@ -49,8 +52,9 @@
     "test": "npx tsc --noEmit && node --loader tsx --test tests/*.test.ts"
   },
   "devDependencies": {
-    "@builder.io/mitosis-cli": "^0.3.14",
     "@rollup/plugin-terser": "^0.4.4",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
     "cpy": "^10.1.0",
     "eslint": "^8.51.0",
     "eslint-config-prettier": "^9.0.0",
@@ -62,8 +66,10 @@
     "rollup-plugin-node-externals": "^6.1.2",
     "rollup-plugin-postcss": "^4.0.2",
     "sass": "^1.69.0",
-    "seedrandom": "^3.0.5",
     "tsx": "^3.13.0",
     "typescript": "^5.2.2"
+  },
+  "peerDependencies": {
+    "react": "^18.0.0"
   }
 }

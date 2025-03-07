@@ -38,32 +38,44 @@ class Mirage extends Base {
       speed: 2.5,
     })
 
+    const sizeInt = parseInt(this.size)
+    const height = sizeInt * 0.23
+
     this.template.innerHTML = `
       <div class="container">
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
-        <div class="dot"></div>
+        <svg 
+          class="svg"         
+          x="0px" 
+          y="0px"
+          viewBox="0 0 ${this.size} ${height}"
+          height="${height}"
+          width="${this.size}"
+          preserveAspectRatio='xMidYMid meet'
+        >
+          <circle class="dot" />
+          <circle class="dot" />
+          <circle class="dot" />
+          <circle class="dot" />
+          <circle class="dot" />
+          <defs>
+            <filter id="uib-jelly-ooze">
+              <feGaussianBlur
+                in="SourceGraphic"
+                stdDeviation=${parseInt(this.size) / 20}
+                result="blur"
+              />
+              <feColorMatrix
+                in="blur"
+                mode="matrix"
+                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                result="ooze"
+              />
+              <feBlend in="SourceGraphic" in2="ooze" />
+            </filter>
+          </defs>
+        </svg>
       </div>
-      <svg width="0" height="0" class="svg">
-        <defs>
-          <filter id="uib-jelly-ooze">
-            <feGaussianBlur
-              in="SourceGraphic"
-              stdDeviation=${parseInt(this.size) / 20}
-              result="blur"
-            />
-            <feColorMatrix
-              in="blur"
-              mode="matrix"
-              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
-              result="ooze"
-            />
-            <feBlend in="SourceGraphic" in2="ooze" />
-          </filter>
-        </defs>
-      </svg>
+
       <style>
         :host{
           --uib-size: ${this.size}px;
@@ -79,10 +91,20 @@ class Mirage extends Base {
 
   attributeChangedCallback() {
     const styleEl = this.shadow.querySelector('style')
+    const svgEl = this.shadow.querySelector('svg')
 
-    if (!styleEl) return
+    if (svgEl) {
+      const blurDef = svgEl.querySelector('feGaussianBlur')
+      const sizeInt = parseInt(this.size)
+      const height = sizeInt * 0.23
+      blurDef.setAttribute('stdDeviation', String(sizeInt / 20))
+      svgEl.setAttribute('height', String(height))
+      svgEl.setAttribute('width', this.size)
+      svgEl.setAttribute('viewBox', `0 0 ${this.size} ${height}`)
+    }
 
-    styleEl.innerHTML = `
+    if (styleEl) {
+      styleEl.innerHTML = `
       :host{
         --uib-size: ${this.size}px;
         --uib-color: ${this.color};
@@ -90,6 +112,7 @@ class Mirage extends Base {
       }
       ${styles}
     `
+    }
   }
 }
 

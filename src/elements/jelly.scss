@@ -1,4 +1,5 @@
 :host {
+  --uib-dot-size: calc(var(--uib-size) / 2);
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
@@ -13,39 +14,38 @@
 
 .container {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   height: calc(var(--uib-size) / 2);
   width: var(--uib-size);
-  filter: url('#uib-jelly-ooze');
   animation: rotate calc(var(--uib-speed) * 2) linear infinite;
   will-change: transform;
 }
 
-.container::before,
-.container::after {
-  content: '';
-  position: absolute;
-  top: 0%;
-  left: 25%;
-  width: 50%;
-  height: 100%;
-  background-color: var(--uib-color);
-  border-radius: 100%;
-  will-change: transform;
-  transition: background-color 0.3s ease;
+.svg {
+  filter: url('#uib-jelly-ooze');
+  overflow: visible;
 }
 
-.container::before {
+.dot {
+  cy: 50%;
+  cx: 50%;
+  r: calc(var(--uib-dot-size) / 2);
+  display: block;
+  will-change: transform;
+  fill: var(--uib-color);
+  transition: fill 0.3s ease;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+.dot:first-child {
   animation: shift-left var(--uib-speed) ease infinite;
 }
 
-.container::after {
+.dot:nth-child(2) {
   animation: shift-right var(--uib-speed) ease infinite;
-}
-
-.svg {
-  width: 0;
-  height: 0;
-  position: absolute;
 }
 
 @keyframes rotate {
@@ -64,7 +64,7 @@
 @keyframes shift-left {
   0%,
   100% {
-    transform: translateX(0%);
+    transform: scale(1) translateX(0%);
   }
   50% {
     transform: scale(0.65) translateX(-75%);
@@ -74,7 +74,7 @@
 @keyframes shift-right {
   0%,
   100% {
-    transform: translateX(0%);
+    transform: scale(1) translateX(0%);
   }
   50% {
     transform: scale(0.65) translateX(75%);

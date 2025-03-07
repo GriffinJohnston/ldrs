@@ -19,20 +19,25 @@
   justify-content: space-between;
   width: var(--uib-size);
   height: var(--uib-dot-size);
+}
+
+.svg {
   filter: url('#uib-jelly-ooze');
+  overflow: visible;
 }
 
 .dot {
-  position: absolute;
-  top: calc(50% - var(--uib-dot-size) / 2);
-  left: calc(0px - var(--uib-dot-size) / 2);
+  cy: 50%;
+  cx: 0;
+  r: calc(var(--uib-dot-size) / 2);
   display: block;
   height: var(--uib-dot-size);
   width: var(--uib-dot-size);
-  border-radius: 50%;
-  background-color: var(--uib-color);
+  fill: var(--uib-color);
   animation: stream var(--uib-speed) linear infinite both;
-  transition: background-color 0.3s ease;
+  transition: fill 0.3s ease;
+  transform-origin: center;
+  transform-box: fill-box;
 }
 
 .dot:nth-child(2) {

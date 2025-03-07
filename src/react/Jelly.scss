@@ -1,0 +1,78 @@
+.container {
+  --uib-dot-size: calc(var(--uib-size) / 2);
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--uib-size);
+  width: var(--uib-size);
+}
+
+.inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: calc(var(--uib-size) / 2);
+  width: var(--uib-size);
+  animation: rotate calc(var(--uib-speed) * 2) linear infinite;
+  will-change: transform;
+}
+
+.svg {
+  filter: url('#uib-jelly-filter');
+  overflow: visible;
+}
+
+.dot {
+  cy: 50%;
+  cx: 50%;
+  r: calc(var(--uib-dot-size) / 2);
+  display: block;
+  will-change: transform;
+  fill: var(--uib-color);
+  transition: fill 0.3s ease;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+.dot:first-child {
+  animation: shift-left var(--uib-speed) ease infinite;
+}
+
+.dot:nth-child(2) {
+  animation: shift-right var(--uib-speed) ease infinite;
+}
+
+@keyframes rotate {
+  0%,
+  49.999%,
+  100% {
+    transform: none;
+  }
+
+  50%,
+  99.999% {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes shift-left {
+  0%,
+  100% {
+    transform: scale(1) translateX(0%);
+  }
+  50% {
+    transform: scale(0.65) translateX(-75%);
+  }
+}
+
+@keyframes shift-right {
+  0%,
+  100% {
+    transform: scale(1) translateX(0%);
+  }
+  50% {
+    transform: scale(0.65) translateX(75%);
+  }
+}

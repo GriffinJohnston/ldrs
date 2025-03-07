@@ -78,7 +78,6 @@ class Squircle extends Base {
           pathlength="100"
           d="${scaledD}"
         />
-
         <path
           class="car" 
           fill="none" 
