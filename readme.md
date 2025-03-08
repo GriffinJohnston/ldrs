@@ -12,7 +12,7 @@
 
 # LDRS
 
-Lightweight loaders & spinners for your next web project. Web component and React exports available.
+Lightweight loaders & spinners for your next web project. Built with web components.
 
 - **44 types** : Unique enough to be interesting; simple enough to use in real-world projects
 - **Universal** : Use with React, Vue, Svelte, Solid, plain HTML...
@@ -39,18 +39,7 @@ npm install ldrs
 yarn add ldrs
 ```
 
-## React
-
-React component exports have been added to LDRS as of `v1.1.0`. They can be imported from `ldrs/react` and use PascalCase. The full list can be found on [the website](https://uiball.com/ldrs).
-
-```jsx
-import { NewtonsCradle } from 'ldrs/react'
-
-<NewtonsCradle size={120} speed={1.5} />
-```
-
-## Web Components
-
+## Getting started
 Web components need to be registered or "defined" to work. Until registration they're just empty HTML elements that don't do anything. For convenience, LDRS come in two varieties: auto-defining and manually defined. Auto-defining elements are released as individual .js files that register themselves on import. Manually defined elements are named exports that come with a `register()` method. 
 
 The full list of loaders can be found on [the website](https://uiball.com/ldrs).
