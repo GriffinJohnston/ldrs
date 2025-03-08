@@ -1,6 +1,6 @@
 {
   "name": "ldrs",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "author": "Griffin Johnston",
   "license": "MIT",
   "description": "Tiny HTML and SVG loaders as web components",
@@ -68,8 +68,5 @@
     "sass": "^1.69.0",
     "tsx": "^3.13.0",
     "typescript": "^5.2.2"
-  },
-  "peerDependencies": {
-    "react": "^18.0.0"
   }
 }
