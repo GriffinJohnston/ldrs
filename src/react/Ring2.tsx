@@ -1,20 +1,22 @@
 import styles from './Ring2.scss'
 
-export default function Ring2({
-  size = 40,
-  color = 'black',
-  speed = 0.8,
-  stroke = 5,
-  strokeLength = 0.25,
-  bgOpacity = 0.1,
-}: {
+interface Ring2Props {
   size?: number | string
   color?: string
   speed?: number | string
   stroke?: number | string
   strokeLength?: number | string
   bgOpacity?: number | string
-}) {
+}
+
+const Ring2: React.FC<Ring2Props> = ({
+  size = 40,
+  color = 'black',
+  speed = 0.8,
+  stroke = 5,
+  strokeLength = 0.25,
+  bgOpacity = 0.1,
+}) => {
   const sizeInt = parseInt(size + '')
   const strokeInt = parseInt(stroke + '')
   const centerPoint = sizeInt / 2
@@ -60,3 +62,4 @@ export default function Ring2({
     </div>
   )
 }
+export default Ring2

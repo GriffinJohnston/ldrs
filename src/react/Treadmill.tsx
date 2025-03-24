@@ -1,14 +1,16 @@
 import styles from './Treadmill.scss'
 
-export default function Treadmill({
-  size = 70,
-  color = 'black',
-  speed = 1.25,
-}: {
+interface TreadmillProps {
   size?: number | string
   color?: string
   speed?: number | string
-}) {
+}
+
+const Treadmill: React.FC<TreadmillProps> = ({
+  size = 70,
+  color = 'black',
+  speed = 1.25,
+}) => {
   return (
     <div
       className={styles.container}
@@ -24,3 +26,5 @@ export default function Treadmill({
     </div>
   )
 }
+
+export default Treadmill

@@ -1,14 +1,16 @@
 import styles from './Momentum.scss'
 
-export default function Momentum({
-  size = 40,
-  color = 'black',
-  speed = 1.1,
-}: {
+interface MomentumProps {
   size?: number | string
   color?: string
   speed?: number | string
-}) {
+}
+
+const Momentum: React.FC<MomentumProps> = ({
+  size = 40,
+  color = 'black',
+  speed = 1.1,
+}) => {
   return (
     <div
       className={styles.container}
@@ -22,3 +24,5 @@ export default function Momentum({
     </div>
   )
 }
+
+export default Momentum

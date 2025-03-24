@@ -1,14 +1,16 @@
 import styles from './Mirage.scss'
 
-export default function Mirage({
-  size = 60,
-  color = 'black',
-  speed = 2.5,
-}: {
+interface MirageProps {
   size?: number | string
   color?: string
   speed?: number | string
-}) {
+}
+
+const Mirage: React.FC<MirageProps> = ({
+  size = 60,
+  color = 'black',
+  speed = 2.5,
+}) => {
   const sizeInt = parseInt(size + '')
   const height = sizeInt * 0.23
 
@@ -57,3 +59,5 @@ export default function Mirage({
     </div>
   )
 }
+
+export default Mirage

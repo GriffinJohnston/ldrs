@@ -5,9 +5,9 @@ declare global {
   namespace JSX {
     interface IntrinsicElements {
       'l-bouncy': {
-        size?: string | number
-        color?: string | number
-        speed?: string | number
+        size?: number | string
+        color?: number | string
+        speed?: number | string
       }
     }
   }

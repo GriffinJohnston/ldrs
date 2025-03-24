@@ -1,14 +1,16 @@
 import styles from './Leapfrog.scss'
 
-export default function Leapfrog({
-  size = 40,
-  color = 'black',
-  speed = 2.5,
-}: {
+interface LeapfrogProps {
   size?: number | string
   color?: string
   speed?: number | string
-}) {
+}
+
+const Leapfrog: React.FC<LeapfrogProps> = ({
+  size = 40,
+  color = 'black',
+  speed = 2.5,
+}) => {
   return (
     <div
       className={styles.container}
@@ -26,3 +28,5 @@ export default function Leapfrog({
     </div>
   )
 }
+
+export default Leapfrog

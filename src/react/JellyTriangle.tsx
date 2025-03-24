@@ -1,14 +1,16 @@
 import styles from './JellyTriangle.scss'
 
-export default function JellyTriangle({
-  size = 30,
-  color = 'black',
-  speed = 1.75,
-}: {
+interface JellyTriangleProps {
   size?: number | string
   color?: string
   speed?: number | string
-}) {
+}
+
+const JellyTriangle: React.FC<JellyTriangleProps> = ({
+  size = 30,
+  color = 'black',
+  speed = 1.75,
+}) => {
   const sizeInt = parseInt(size + '')
 
   return (
@@ -55,3 +57,5 @@ export default function JellyTriangle({
     </div>
   )
 }
+
+export default JellyTriangle

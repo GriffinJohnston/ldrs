@@ -1,14 +1,16 @@
 import styles from './DotPulse.scss'
 
-export default function DotPulse({
-  size = 43,
-  color = 'black',
-  speed = 1.3,
-}: {
+interface DotPulseProps {
   size?: number | string
   color?: string
   speed?: number | string
-}) {
+}
+
+const ChaoticOrbit: React.FC<DotPulseProps> = ({
+  size = 43,
+  color = 'black',
+  speed = 1.3,
+}) => {
   return (
     <div
       className={styles.container}
@@ -24,3 +26,5 @@ export default function DotPulse({
     </div>
   )
 }
+
+export default ChaoticOrbit

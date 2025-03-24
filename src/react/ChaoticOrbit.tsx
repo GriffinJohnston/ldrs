@@ -1,14 +1,16 @@
 import styles from './ChaoticOrbit.scss'
 
-export default function ChaoticOrbit({
-  size = 35,
-  color = 'black',
-  speed = 1.5,
-}: {
+interface ChaoticOrbitProps {
   size?: number | string
   color?: string
   speed?: number | string
-}) {
+}
+
+const ChaoticOrbit: React.FC<ChaoticOrbitProps> = ({
+  size = 35,
+  color = 'black',
+  speed = 1.5,
+}) => {
   return (
     <div
       className={styles.container}
@@ -22,3 +24,5 @@ export default function ChaoticOrbit({
     </div>
   )
 }
+
+export default ChaoticOrbit

@@ -1,14 +1,16 @@
 import styles from './Wobble.scss'
 
-export default function Wobble({
-  size = 45,
-  color = 'black',
-  speed = 0.9,
-}: {
+interface WobbleProps {
   size?: number | string
   color?: string
   speed?: number | string
-}) {
+}
+
+const Wobble: React.FC<WobbleProps> = ({
+  size = 45,
+  color = 'black',
+  speed = 0.9,
+}) => {
   return (
     <div
       className={styles.container}
@@ -22,3 +24,5 @@ export default function Wobble({
     </div>
   )
 }
+
+export default Wobble

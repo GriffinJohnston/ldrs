@@ -1,21 +1,23 @@
 import scaleD from '../lib/scaleD.js'
 import styles from './Reuleaux.scss'
 
-export default function Reuleaux({
-  size = 37,
-  color = 'black',
-  speed = 0.9,
-  stroke = 5,
-  strokeLength = 0.15,
-  bgOpacity = 0.1,
-}: {
+interface ReuleauxProps {
   size?: number | string
   color?: string
   speed?: number | string
   stroke?: number | string
   strokeLength?: number | string
   bgOpacity?: number | string
-}) {
+}
+
+const Reuleaux: React.FC<ReuleauxProps> = ({
+  size = 37,
+  color = 'black',
+  speed = 0.9,
+  stroke = 5,
+  strokeLength = 0.15,
+  bgOpacity = 0.1,
+}) => {
   const d =
     'M49.5,42.9c0-18.1-9.9-34-24.5-42.4C10.4,9,0.5,24.8,0.5,42.9c7.2,4.2,15.6,6.6,24.5,6.6S42.3,47.1,49.5,42.9z'
   const sizeInt = parseInt(size + '')
@@ -60,3 +62,5 @@ export default function Reuleaux({
     </div>
   )
 }
+
+export default Reuleaux

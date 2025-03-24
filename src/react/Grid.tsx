@@ -1,14 +1,16 @@
 import styles from './Grid.scss'
 
-export default function Grid({
-  size = 60,
-  color = 'black',
-  speed = 1.5,
-}: {
+interface GridProps {
   size?: number | string
   color?: string
   speed?: number | string
-}) {
+}
+
+const Grid: React.FC<GridProps> = ({
+  size = 60,
+  color = 'black',
+  speed = 1.5,
+}) => {
   return (
     <div
       className={styles.container}
@@ -39,3 +41,5 @@ export default function Grid({
     </div>
   )
 }
+
+export default Grid

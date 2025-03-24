@@ -1,14 +1,16 @@
 import styles from './Helix.scss'
 
-export default function Helix({
-  size = 45,
-  color = 'black',
-  speed = 2.5,
-}: {
+interface HelixProps {
   size?: number | string
   color?: string
   speed?: number | string
-}) {
+}
+
+const Helix: React.FC<HelixProps> = ({
+  size = 45,
+  color = 'black',
+  speed = 2.5,
+}) => {
   return (
     <div
       className={styles.container}
@@ -29,3 +31,4 @@ export default function Helix({
     </div>
   )
 }
+export default Helix

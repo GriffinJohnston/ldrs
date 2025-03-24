@@ -1,6 +1,7 @@
 import terser from '@rollup/plugin-terser'
 import postcss from 'rollup-plugin-postcss'
 import multiInput from 'rollup-plugin-multi-input'
+import { libStylePlugin } from 'rollup-plugin-lib-style'
 
 export default [
   {
@@ -20,12 +21,11 @@ export default [
       },
     },
     plugins: [
-      multiInput.default(),
+      multiInput(),
       terser(),
       postcss({
         inject: false,
         autoModules: true,
-        external: false,
         minimize: true,
       }),
     ],
@@ -42,14 +42,17 @@ export default [
       },
     },
     plugins: [
-      multiInput.default(),
+      multiInput(),
       terser(),
-      postcss({
-        inject: true,
-        autoModules: false,
-        modules: true,
-        external: false,
-        minimize: true,
+      libStylePlugin({
+        importCSS: false,
+        scopedName: '[local]_[hash:hex:6]',
+        customCSSPath: (id) => {
+          return id
+            .replace(process.cwd(), '')
+            .replace(/\\/g, '/')
+            .replace('temp-ts-out/', '')
+        },
       }),
     ],
   },

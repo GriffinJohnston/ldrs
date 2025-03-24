@@ -1,14 +1,16 @@
 import styles from './TailChase.scss'
 
-export default function TailChase({
-  size = 40,
-  color = 'black',
-  speed = 1.5,
-}: {
+interface TailChaseProps {
   size?: number | string
   color?: string
   speed?: number | string
-}) {
+}
+
+const TailChase: React.FC<TailChaseProps> = ({
+  size = 40,
+  color = 'black',
+  speed = 1.5,
+}) => {
   return (
     <div
       className={styles.container}
@@ -29,3 +31,5 @@ export default function TailChase({
     </div>
   )
 }
+
+export default TailChase

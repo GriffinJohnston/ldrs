@@ -1,16 +1,18 @@
 import styles from './Hatch.scss'
 
-export default function Hatch({
-  size = 28,
-  color = 'black',
-  speed = 3.5,
-  stroke = 4,
-}: {
+interface HatchProps {
   size?: number | string
   color?: string
   speed?: number | string
   stroke?: number | string
-}) {
+}
+
+const Hatch: React.FC<HatchProps> = ({
+  size = 28,
+  color = 'black',
+  speed = 3.5,
+  stroke = 4,
+}) => {
   return (
     <div
       className={styles.container}
@@ -27,3 +29,5 @@ export default function Hatch({
     </div>
   )
 }
+
+export default Hatch

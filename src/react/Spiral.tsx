@@ -1,14 +1,16 @@
 import styles from './Spiral.scss'
 
-export default function Spiral({
-  size = 40,
-  color = 'black',
-  speed = 0.9,
-}: {
+interface SpiralProps {
   size?: number | string
   color?: string
   speed?: number | string
-}) {
+}
+
+const Spiral: React.FC<SpiralProps> = ({
+  size = 40,
+  color = 'black',
+  speed = 0.9,
+}) => {
   return (
     <div
       className={styles.container}
@@ -31,3 +33,5 @@ export default function Spiral({
     </div>
   )
 }
+
+export default Spiral

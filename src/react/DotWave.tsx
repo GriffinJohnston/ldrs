@@ -1,14 +1,16 @@
 import styles from './DotWave.scss'
 
-export default function DotWave({
-  size = 47,
-  color = 'black',
-  speed = 1,
-}: {
+interface DotWaveProps {
   size?: number | string
   color?: string
   speed?: number | string
-}) {
+}
+
+const DotWave: React.FC<DotWaveProps> = ({
+  size = 47,
+  color = 'black',
+  speed = 1,
+}) => {
   return (
     <div
       className={styles.container}
@@ -27,3 +29,5 @@ export default function DotWave({
     </div>
   )
 }
+
+export default DotWave

@@ -6,11 +6,11 @@ declare global {
   namespace JSX {
     interface IntrinsicElements {
       'l-cardio': {
-        size?: string | number
-        color?: string | number
-        speed?: string | number
-        stroke?: string | number
-        'bg-opacity'?: string | number
+        size?: number | string
+        color?: number | string
+        speed?: number | string
+        stroke?: number | string
+        'bg-opacity'?: number | string
       }
     }
   }

@@ -1,14 +1,16 @@
 import styles from './BouncyArc.scss'
 
-export default function BouncyArc({
-  size = 70,
-  color = 'black',
-  speed = 1.65,
-}: {
+interface BouncyArcProps {
   size?: number | string
   color?: string
   speed?: number | string
-}) {
+}
+
+const BouncyArc: React.FC<BouncyArcProps> = ({
+  size = 70,
+  color = 'black',
+  speed = 1.65,
+}) => {
   return (
     <div
       className={styles.container}
@@ -24,3 +26,5 @@ export default function BouncyArc({
     </div>
   )
 }
+
+export default BouncyArc

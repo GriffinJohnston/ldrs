@@ -1,14 +1,16 @@
 import styles from './Ping.scss'
 
-export default function Ping({
-  size = 45,
-  color = 'black',
-  speed = 2,
-}: {
+interface PingProps {
   size?: number | string
   color?: string
   speed?: number | string
-}) {
+}
+
+const Ping: React.FC<PingProps> = ({
+  size = 45,
+  color = 'black',
+  speed = 2,
+}) => {
   return (
     <div
       className={styles.container}
@@ -22,3 +24,5 @@ export default function Ping({
     </div>
   )
 }
+
+export default Ping

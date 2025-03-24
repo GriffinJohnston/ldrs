@@ -5,10 +5,10 @@ declare global {
   namespace JSX {
     interface IntrinsicElements {
       'l-hourglass': {
-        size?: string | number
-        color?: string | number
-        speed?: string | number
-        'bg-opacity'?: string | number
+        size?: number | string
+        color?: number | string
+        speed?: number | string
+        'bg-opacity'?: number | string
       }
     }
   }

@@ -1,14 +1,16 @@
 import styles from './Ripples.scss'
 
-export default function Ripples({
-  size = 45,
-  color = 'black',
-  speed = 2,
-}: {
+interface RipplesProps {
   size?: number | string
   color?: string
   speed?: number | string
-}) {
+}
+
+const Ripples: React.FC<RipplesProps> = ({
+  size = 45,
+  color = 'black',
+  speed = 2,
+}) => {
   return (
     <div
       className={styles.container}
@@ -24,3 +26,5 @@ export default function Ripples({
     </div>
   )
 }
+
+export default Ripples

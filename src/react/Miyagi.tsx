@@ -1,16 +1,18 @@
 import styles from './Miyagi.scss'
 
-export default function Miyagi({
-  size = 35,
-  color = 'black',
-  speed = 0.9,
-  stroke = 3.5,
-}: {
+interface MiyagiProps {
   size?: number | string
   color?: string
   speed?: number | string
   stroke?: number | string
-}) {
+}
+
+const Miyagi: React.FC<MiyagiProps> = ({
+  size = 35,
+  color = 'black',
+  speed = 0.9,
+  stroke = 3.5,
+}) => {
   return (
     <div
       className={styles.container}
@@ -32,3 +34,4 @@ export default function Miyagi({
     </div>
   )
 }
+export default Miyagi

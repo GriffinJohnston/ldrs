@@ -1,14 +1,16 @@
 import styles from './Quantum.scss'
 
-export default function Quantum({
-  size = 45,
-  color = 'black',
-  speed = 1.75,
-}: {
+interface QuantumProps {
   size?: number | string
   color?: string
   speed?: number | string
-}) {
+}
+
+const Quantum: React.FC<QuantumProps> = ({
+  size = 45,
+  color = 'black',
+  speed = 1.75,
+}) => {
   return (
     <div
       className={styles.container}
@@ -35,3 +37,5 @@ export default function Quantum({
     </div>
   )
 }
+
+export default Quantum

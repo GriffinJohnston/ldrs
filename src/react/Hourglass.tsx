@@ -1,16 +1,18 @@
 import styles from './Hourglass.scss'
 
-export default function Hourglass({
-  size = 40,
-  color = 'black',
-  speed = 1.75,
-  bgOpacity = 0.1,
-}: {
+interface HourglassProps {
   size?: number | string
   color?: string
   speed?: number | string
   bgOpacity?: number | string
-}) {
+}
+
+const Hourglass: React.FC<HourglassProps> = ({
+  size = 40,
+  color = 'black',
+  speed = 1.75,
+  bgOpacity = 0.1,
+}) => {
   return (
     <div
       className={styles.container}
@@ -28,3 +30,5 @@ export default function Hourglass({
     </div>
   )
 }
+
+export default Hourglass

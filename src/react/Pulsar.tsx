@@ -1,14 +1,16 @@
 import styles from './Pulsar.scss'
 
-export default function Pulsar({
-  size = 40,
-  color = 'black',
-  speed = 1.75,
-}: {
+interface PulsarProps {
   size?: number | string
   color?: string
   speed?: number | string
-}) {
+}
+
+const Pulsar: React.FC<PulsarProps> = ({
+  size = 40,
+  color = 'black',
+  speed = 1.75,
+}) => {
   return (
     <div
       className={styles.container}
@@ -22,3 +24,5 @@ export default function Pulsar({
     </div>
   )
 }
+
+export default Pulsar

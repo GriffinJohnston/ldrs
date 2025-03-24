@@ -1,14 +1,16 @@
 import styles from './NewtonsCradle.scss'
 
-export default function NewtonsCradle({
-  size = 78,
-  color = 'black',
-  speed = 1.4,
-}: {
+interface NewtonsCradleProps {
   size?: number | string
   color?: string
   speed?: number | string
-}) {
+}
+
+const NewtonsCradle: React.FC<NewtonsCradleProps> = ({
+  size = 78,
+  color = 'black',
+  speed = 1.4,
+}) => {
   return (
     <div
       className={styles.container}
@@ -27,3 +29,5 @@ export default function NewtonsCradle({
     </div>
   )
 }
+
+export default NewtonsCradle

@@ -1,16 +1,18 @@
 import styles from './Waveform.scss'
 
-export default function Waveform({
-  size = 35,
-  color = 'black',
-  speed = 1,
-  stroke = 3.5,
-}: {
+interface WaveformProps {
   size?: number | string
   color?: string
   speed?: number | string
   stroke?: number | string
-}) {
+}
+
+const Waveform: React.FC<WaveformProps> = ({
+  size = 35,
+  color = 'black',
+  speed = 1,
+  stroke = 3.5,
+}) => {
   return (
     <div
       className={styles.container}
@@ -30,3 +32,5 @@ export default function Waveform({
     </div>
   )
 }
+
+export default Waveform

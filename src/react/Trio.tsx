@@ -1,14 +1,16 @@
 import styles from './Trio.scss'
 
-export default function Trio({
-  size = 40,
-  color = 'black',
-  speed = 1.3,
-}: {
+interface TrioProps {
   size?: number | string
   color?: string
   speed?: number | string
-}) {
+}
+
+const Trio: React.FC<TrioProps> = ({
+  size = 40,
+  color = 'black',
+  speed = 1.3,
+}) => {
   return (
     <div
       className={styles.container}
@@ -26,3 +28,5 @@ export default function Trio({
     </div>
   )
 }
+
+export default Trio

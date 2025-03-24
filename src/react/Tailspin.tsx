@@ -1,16 +1,18 @@
 import styles from './Tailspin.scss'
 
-export default function Tailspin({
-  size = 40,
-  color = 'black',
-  speed = 0.9,
-  stroke = 5,
-}: {
+interface TailspinProps {
   size?: number | string
   color?: string
   speed?: number | string
   stroke?: number | string
-}) {
+}
+
+const Tailspin: React.FC<TailspinProps> = ({
+  size = 40,
+  color = 'black',
+  speed = 0.9,
+  stroke = 5,
+}) => {
   return (
     <div
       className={styles.container}
@@ -25,3 +27,5 @@ export default function Tailspin({
     </div>
   )
 }
+
+export default Tailspin

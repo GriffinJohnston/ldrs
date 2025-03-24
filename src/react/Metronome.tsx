@@ -1,14 +1,16 @@
 import styles from './Metronome.scss'
 
-export default function Metronome({
-  size = 40,
-  color = 'black',
-  speed = 1.6,
-}: {
+interface MetronomeProps {
   size?: number | string
   color?: string
   speed?: number | string
-}) {
+}
+
+const Metronome: React.FC<MetronomeProps> = ({
+  size = 40,
+  color = 'black',
+  speed = 1.6,
+}) => {
   return (
     <div
       className={styles.container}
@@ -27,3 +29,5 @@ export default function Metronome({
     </div>
   )
 }
+
+export default Metronome

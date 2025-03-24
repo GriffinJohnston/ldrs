@@ -3,7 +3,7 @@
   "version": "1.1.2",
   "author": "Griffin Johnston",
   "license": "MIT",
-  "description": "Tiny HTML and SVG loaders as web components",
+  "description": "Minimalist loading animations for React and web components",
   "keywords": [
     "uiball",
     "loaders",
@@ -14,20 +14,34 @@
     "icon",
     "waiting",
     "custom elements",
-    "web components"
+    "web components",
+    "react",
+    "reactjs",
+    "react components"
   ],
   "type": "module",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
-  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "sideEffects": [
+    "*.css"
+  ],
   "types": "./dist/index.d.ts",
   "exports": {
     ".": "./dist/index.js",
     "./*": "./dist/auto/*.js",
     "./*.js": "./dist/auto/*.js",
-    "./react": "./dist/react/index.js",
-    "./react/*": "./dist/react/*.js",
-    "./react/*.js": "./dist/react/*.js"
+    "./react": {
+      "types": "./dist/react/index.d.ts",
+      "default": "./dist/react/index.js"
+    },
+    "./react/*.css": "./dist/react/*.css"
+  },
+  "typesVersions": {
+    "*": {
+      "react": [
+        "./dist/react/index.d.ts"
+      ]
+    }
   },
   "files": [
     "dist"
@@ -49,24 +63,29 @@
     "build:rollup": "npx rollup -c rollup.config.js",
     "build": "npm test && npm run build:setup && npx tsc && npm run build:rollup && node utils/copyDefs && npm run build:cleanup",
     "demo": "cp -r src/demos dist && http-server dist",
-    "test": "npx tsc --noEmit && node --loader tsx --test tests/*.test.ts"
+    "test": "npx tsc --noEmit && node --import tsx --test tests/*.test.ts"
   },
   "devDependencies": {
     "@rollup/plugin-terser": "^0.4.4",
-    "@types/react": "^19.0.10",
+    "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.4",
-    "cpy": "^10.1.0",
-    "eslint": "^8.51.0",
-    "eslint-config-prettier": "^9.0.0",
+    "cpy": "^11.1.0",
+    "eslint": "^9.23.0",
+    "eslint-config-prettier": "^10.1.1",
+    "glob": "^11.0.1",
     "http-server": "^14.1.1",
-    "postcss": "^8.4.31",
-    "prettier": "3.0.3",
-    "rollup": "^4.0.2",
-    "rollup-plugin-multi-input": "^1.4.1",
-    "rollup-plugin-node-externals": "^6.1.2",
+    "postcss": "^8.5.3",
+    "prettier": "3.5.3",
+    "react": "^19.0.0",
+    "rollup": "^4.36.0",
+    "rollup-plugin-multi-input": "^1.5.0",
+    "rollup-plugin-node-externals": "^8.0.0",
     "rollup-plugin-postcss": "^4.0.2",
-    "sass": "^1.69.0",
-    "tsx": "^3.13.0",
-    "typescript": "^5.2.2"
+    "sass": "^1.86.0",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  },
+  "dependencies": {
+    "rollup-plugin-lib-style": "^2.4.0"
   }
 }

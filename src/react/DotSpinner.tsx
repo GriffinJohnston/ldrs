@@ -1,14 +1,16 @@
 import styles from './DotSpinner.scss'
 
-export default function DotSpinner({
-  size = 40,
-  color = 'black',
-  speed = 0.9,
-}: {
+interface DotSpinnerProps {
   size?: number | string
   color?: string
   speed?: number | string
-}) {
+}
+
+const DotSpinner: React.FC<DotSpinnerProps> = ({
+  size = 40,
+  color = 'black',
+  speed = 0.9,
+}) => {
   return (
     <div
       className={styles.container}
@@ -31,3 +33,5 @@ export default function DotSpinner({
     </div>
   )
 }
+
+export default DotSpinner

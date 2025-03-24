@@ -1,14 +1,16 @@
 import styles from './DotStream.scss'
 
-export default function DotStream({
-  size = 60,
-  color = 'black',
-  speed = 2.5,
-}: {
+interface DotStreamProps {
   size?: number | string
   color?: string
   speed?: number | string
-}) {
+}
+
+const DotStream: React.FC<DotStreamProps> = ({
+  size = 60,
+  color = 'black',
+  speed = 2.5,
+}) => {
   return (
     <div
       className={styles.container}
@@ -28,3 +30,5 @@ export default function DotStream({
     </div>
   )
 }
+
+export default DotStream

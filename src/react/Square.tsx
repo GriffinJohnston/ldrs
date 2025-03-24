@@ -1,20 +1,22 @@
 import styles from './Square.scss'
 
-export default function Square({
-  size = 35,
-  color = 'black',
-  speed = 1.2,
-  stroke = 5,
-  strokeLength = 0.25,
-  bgOpacity = 0.1,
-}: {
+interface SquareProps {
   size?: number | string
   color?: string
   speed?: number | string
   stroke?: number | string
   strokeLength?: number | string
   bgOpacity?: number | string
-}) {
+}
+
+const Square: React.FC<SquareProps> = ({
+  size = 35,
+  color = 'black',
+  speed = 1.2,
+  stroke = 5,
+  strokeLength = 0.25,
+  bgOpacity = 0.1,
+}) => {
   const sizeInt = parseInt(size + '')
   const strokeInt = parseInt(stroke + '')
   const centerPoint = strokeInt / 2
@@ -61,3 +63,5 @@ export default function Square({
     </div>
   )
 }
+
+export default Square

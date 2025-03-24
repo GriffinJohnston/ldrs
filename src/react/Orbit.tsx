@@ -1,14 +1,16 @@
 import styles from './Orbit.scss'
 
-export default function Orbit({
-  size = 35,
-  color = 'black',
-  speed = 1.5,
-}: {
+interface OrbitProps {
   size?: number | string
   color?: string
   speed?: number | string
-}) {
+}
+
+const Orbit: React.FC<OrbitProps> = ({
+  size = 35,
+  color = 'black',
+  speed = 1.5,
+}) => {
   return (
     <div
       className={styles.container}
@@ -22,3 +24,5 @@ export default function Orbit({
     </div>
   )
 }
+
+export default Orbit

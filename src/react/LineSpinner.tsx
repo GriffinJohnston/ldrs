@@ -1,16 +1,18 @@
 import styles from './LineSpinner.scss'
 
-export default function LineSpinner({
-  size = 40,
-  color = 'black',
-  speed = 1,
-  stroke = 3,
-}: {
+interface LineSpinnerProps {
   size?: number | string
   color?: string
   speed?: number | string
   stroke?: number | string
-}) {
+}
+
+const LineSpinner: React.FC<LineSpinnerProps> = ({
+  size = 40,
+  color = 'black',
+  speed = 1,
+  stroke = 3,
+}) => {
   return (
     <div
       className={styles.container}
@@ -38,3 +40,5 @@ export default function LineSpinner({
     </div>
   )
 }
+
+export default LineSpinner

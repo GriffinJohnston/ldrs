@@ -1,14 +1,16 @@
 import styles from './Bouncy.scss'
 
-export default function Bouncy({
-  size = 45,
-  color = 'black',
-  speed = 1.75,
-}: {
+interface BouncyProps {
   size?: number | string
   color?: string
   speed?: number | string
-}) {
+}
+
+const Bouncy: React.FC<BouncyProps> = ({
+  size = 45,
+  color = 'black',
+  speed = 1.75,
+}) => {
   return (
     <div
       className={styles.container}
@@ -32,3 +34,5 @@ export default function Bouncy({
     </div>
   )
 }
+
+export default Bouncy

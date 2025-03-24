@@ -1,14 +1,16 @@
 import styles from './Jelly.scss'
 
-export default function Jelly({
-  size = 40,
-  color = 'black',
-  speed = 0.9,
-}: {
+interface JellyProps {
   size?: number | string
   color?: string
   speed?: number | string
-}) {
+}
+
+const Jelly: React.FC<JellyProps> = ({
+  size = 40,
+  color = 'black',
+  speed = 0.9,
+}) => {
   const sizeInt = parseInt(size + '')
   const height = sizeInt / 2
 
@@ -54,3 +56,5 @@ export default function Jelly({
     </div>
   )
 }
+
+export default Jelly

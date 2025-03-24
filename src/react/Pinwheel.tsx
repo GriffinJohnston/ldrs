@@ -1,16 +1,18 @@
 import styles from './Pinwheel.scss'
 
-export default function Pinwheel({
-  size = 35,
-  color = 'black',
-  speed = 0.9,
-  stroke = 3.5,
-}: {
+interface PinwheelProps {
   size?: number | string
   color?: string
   speed?: number | string
   stroke?: number | string
-}) {
+}
+
+const Pinwheel: React.FC<PinwheelProps> = ({
+  size = 35,
+  color = 'black',
+  speed = 0.9,
+  stroke = 3.5,
+}) => {
   return (
     <div
       className={styles.container}
@@ -32,3 +34,5 @@ export default function Pinwheel({
     </div>
   )
 }
+
+export default Pinwheel
