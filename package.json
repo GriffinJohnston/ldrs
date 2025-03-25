@@ -1,6 +1,6 @@
 {
   "name": "ldrs",
-  "version": "1.1.2",
+  "version": "1.1.4",
   "author": "Griffin Johnston",
   "license": "MIT",
   "description": "Minimalist loading animations for React and web components",

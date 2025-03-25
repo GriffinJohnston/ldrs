@@ -34,7 +34,7 @@ You can't import loaders in the frontmatter of your `.astro` components because 
 ```html #3,17-21
 ---
 const { title } = Astro.props
-<!-- No put here. Bad. -->
+<!-- Don't import here -->
 ---
 
 <html lang="en">
@@ -48,7 +48,7 @@ const { title } = Astro.props
       <slot />
     </article>
 
-    <!-- Yes put here. Good. -->
+    <!-- Do import here -->
     <script>
       import { hourglass } from 'ldrs'
       hourglass.register()
