@@ -26,7 +26,7 @@
   width: var(--uib-cube-size);
   height: var(--cube-container-height);
   transform-origin: center bottom;
-  transform: rotate(var(var(--uib-arc-1)));
+  transform: rotate(var(--uib-arc-1));
   animation: metronome var(--uib-speed) linear infinite;
 
   &::after {
