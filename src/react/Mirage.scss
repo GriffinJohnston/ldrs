@@ -34,7 +34,7 @@
   display: block;
   height: var(--uib-dot-size);
   width: var(--uib-dot-size);
-  background-color: var(--uib-color);
+  fill: var(--uib-color);
   animation: stream var(--uib-speed) linear infinite both;
   transition: background-color 0.3s ease;
   transform-origin: center;
