@@ -53,10 +53,21 @@ ${aggregatedProperties}
 
   const outputDir = 'dist'
   const outputPath = path.join(outputDir, 'jsx.d.ts')
+  const indexPath = path.join(outputDir, 'index.d.ts')
 
   try {
     await fs.mkdir(outputDir, { recursive: true })
-    await fs.writeFile(outputPath, runtimeDeclarations.trim(), 'utf8')
+    await fs.writeFile(
+      outputPath,
+      runtimeDeclarations.trim() + '\nexport {}',
+      'utf8',
+    )
+    const indexContents = await fs.readFile(indexPath, 'utf8')
+    await fs.writeFile(
+      indexPath,
+      "import './jsx.d.ts'\n" + indexContents,
+      'utf8',
+    )
     console.log(`Generated custom JSX types at ${outputPath}`)
   } catch (err) {
     console.error('Error writing .d.ts file:', err)
