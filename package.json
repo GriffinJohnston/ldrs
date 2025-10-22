@@ -61,7 +61,7 @@
     "build:setup": "mkdir -p temp-ts-out/elements && mkdir -p temp-ts-out/react && cp src/elements/*.scss temp-ts-out/elements && cp src/react/*.scss temp-ts-out/react && rm -rf dist",
     "build:cleanup": "rm -rf temp-ts-out",
     "build:rollup": "npx rollup -c rollup.config.js",
-    "build": "npm test && npm run build:setup && npx tsc && npm run build:rollup && node utils/copyDefs && npm run build:cleanup",
+    "build": "npm test && npm run build:setup && npx tsc && npm run build:rollup && node utils/copyDefs && node utils/generateJsxDefs && npm run build:cleanup",
     "demo": "cp -r src/demos dist && http-server dist",
     "test": "npx tsc --noEmit && node --import tsx --test tests/*.test.ts"
   },
@@ -73,13 +73,12 @@
     "glob": "^11.0.1",
     "http-server": "^14.1.1",
     "postcss": "^8.5.3",
-    "prettier": "3.5.3",
     "react": "^19.0.0",
     "rollup": "^4.36.0",
+    "rollup-plugin-lib-style": "^2.4.0",
     "rollup-plugin-multi-input": "^1.5.0",
     "rollup-plugin-node-externals": "^8.0.0",
     "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-lib-style": "^2.4.0",
     "sass": "^1.86.0",
     "tsx": "^4.19.3",
     "typescript": "^5.8.2"
