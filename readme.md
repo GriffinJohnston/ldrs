@@ -14,7 +14,7 @@
 
 Lightweight loaders & spinners for your next web project. Available as Web and React components.
 
-- **44 types** : Unique enough to be interesting; simple enough to use in real-world projects
+- **45 types** : Unique enough to be interesting; simple enough to use in real-world projects
 - **Universal** : Use with React, Vue, Svelte, Solid, plain HTML...
 - **Customizable** : Set the size, color, stroke width, and animation speed to match your design
 - **Tiny** : No frameworks. No bloat. Dues-paying member of the iddy biddy bundle committee

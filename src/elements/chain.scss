@@ -1,0 +1,69 @@
+:host {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--uib-size);
+  width: var(--uib-size);
+}
+
+:host([hidden]) {
+  display: none;
+}
+
+.container {
+  height: var(--uib-size);
+  width: var(--uib-size);
+  overflow: visible;
+}
+
+.track,
+.car {
+  fill: none;
+  stroke: var(--uib-color);
+  transition: stroke 0.5s ease;
+}
+
+.track {
+  opacity: var(--uib-bg-opacity);
+}
+
+.car {
+  stroke-dasharray: 25, 75;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: chain-flow var(--uib-speed) linear infinite;
+  will-change: stroke-dashoffset;
+}
+
+.link-b .car {
+  animation-delay: calc(var(--uib-speed) * -0.5);
+}
+
+.link-a {
+  animation: chain-pull-a var(--uib-speed) ease-in-out infinite;
+  will-change: transform;
+}
+
+.link-b {
+  animation: chain-pull-b var(--uib-speed) ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes chain-flow {
+  to {
+    stroke-dashoffset: -100;
+  }
+}
+
+@keyframes chain-pull-a {
+  50% {
+    transform: translateX(-2.5px);
+  }
+}
+
+@keyframes chain-pull-b {
+  50% {
+    transform: translateX(2.5px);
+  }
+}
