@@ -1,6 +1,7 @@
 export { default as bouncy } from './elements/bouncy.js'
 export { default as bouncyArc } from './elements/bouncyArc.js'
 export { default as cardio } from './elements/cardio.js'
+export { default as chain } from './elements/chain.js'
 export { default as chaoticOrbit } from './elements/chaoticOrbit.js'
 export { default as dotPulse } from './elements/dotPulse.js'
 export { default as dotSpinner } from './elements/dotSpinner.js'
